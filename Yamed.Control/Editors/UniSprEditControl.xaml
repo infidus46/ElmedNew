@@ -1,0 +1,26 @@
+﻿<UserControl xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+    xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
+    x:Class="Yamed.Control.Editors.UniSprEditControl" Name="LocalUniSprEditPanel">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
+    <dx:LoadingDecorator Name="LoadingDecorator1" OwnerLock="None" MinWidth="500">
+        <Grid Name="GridSprEdit">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <dxwui:AppBar IsOpen="True" HideMode="AlwaysVisible" Visibility="{Binding BarVisibility}">
+                <dxwui:AppBarButton Glyph="/Yamed.Icons;component/Icons/storage_drive_disk_flash_usb_check-512.png" Name="SaveButton" Label="Сохранить" Click="SaveButton_OnClick" IsEllipseEnabled="False" AllowGlyphTheming="True"/>
+                <dxwui:AppBarSeparator/>
+                <dxwui:AppBarToggleButton Glyph="/Yamed.Icons;component/Icons/4259-512.png" Name="LayoutToggleButton" Label="Настройки вида" HorizontalAlignment="Right" IsChecked="False" IsEllipseEnabled="False" AllowGlyphTheming="True" />
+                <dxwui:AppBarButton Glyph="/Yamed.Icons;component/Icons/49-512.png" Name="SaveLayoutButton" Label="Сохранить вид" Click="SaveLayoutButton_OnClick" HorizontalAlignment="Right" AllowGlyphTheming="True" IsEllipseEnabled="False"  Visibility="{Binding ElementName=LayoutToggleButton, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            </dxwui:AppBar>
+            <dxlc:DataLayoutControl Loaded="SprDataLayoutControl_OnLoaded" Grid.Row="1" IsCustomization="{Binding ElementName=LayoutToggleButton, Path=IsChecked}" Name="SprDataLayoutControl" CurrentItem="{Binding}" AutoGeneratingItem="DataLayoutControl_OnAutoGeneratingItem"/>
+        </Grid> 
+    </dx:LoadingDecorator>
+</UserControl>

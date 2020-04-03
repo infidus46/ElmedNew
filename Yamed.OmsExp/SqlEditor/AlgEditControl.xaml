@@ -1,0 +1,298 @@
+﻿<UserControl
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+    xmlns:sqlEditor="clr-namespace:Yamed.OmsExp.SqlEditor"
+    xmlns:expressionEditor="clr-namespace:ActiveQueryBuilder.View.WPF.ExpressionEditor;assembly=ActiveQueryBuilder.View.WPF"
+        xmlns:navigationBar="clr-namespace:ActiveQueryBuilder.View.WPF.NavigationBar;assembly=ActiveQueryBuilder.View.WPF"
+        xmlns:queryView="clr-namespace:ActiveQueryBuilder.View.WPF.QueryView;assembly=ActiveQueryBuilder.View.WPF"
+        xmlns:databaseSchemaView="clr-namespace:ActiveQueryBuilder.View.WPF.DatabaseSchemaView;assembly=ActiveQueryBuilder.View.WPF"
+
+    xmlns:Core="clr-namespace:ActiveQueryBuilder.Core;assembly=ActiveQueryBuilder.Core"
+
+    x:Class="Yamed.OmsExp.SqlEditor.AlgEditControl"
+        Unloaded="AlgEditControl_OnUnloaded">
+    <dx:LoadingDecorator OwnerLock="None">
+        <Grid x:Name="MekGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <dxlc:LayoutControl Orientation="Vertical" >
+                <dxlc:LayoutItem Label="Cписок алгоритмов" LabelPosition="Top" VerticalAlignment="Stretch" x:Name="ListLayoutItem">
+                    <!--<dxe:ListBoxEdit DisplayMember="AlgName" x:Name="AlgList" ValueMember="ID" ItemsSource="{Binding}" SelectedIndexChanged="AlgList_OnSelectedIndexChanged"/>-->
+                    <dxg:GridControl SelectionMode="Row" Name="AlgList" ItemsSource="{Binding}" SelectedItemChanged="AlgList_SelectedItemChanged" >
+                        <dxg:GridControl.View>
+                            <dxg:TableView ShowAutoFilterRow="True" ShowSearchPanelMode="Always" />
+                        </dxg:GridControl.View>
+                        <dxg:GridColumn FieldName="MekNpp" Header="Номер п/п" ReadOnly="True" Width="50"/>
+                        <dxg:GridColumn FieldName="AlgName" Header="Наименование"  ReadOnly="True" Width="400"/>
+                        <dxg:GridColumn FieldName="AlgType" Header="Тип алгоритма"  ReadOnly="True" Width="25"/>
+                        <dxg:GridColumn FieldName="PrEnable" Header="Включен"  ReadOnly="True" Width="25"/>
+                        <dxg:GridColumn FieldName="PrProblem" Header="Проблема"  ReadOnly="True" Width="25"/>
+                    </dxg:GridControl>
+                </dxlc:LayoutItem>
+            </dxlc:LayoutControl>
+
+            <!--<Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Медико-экономический контроль"></TextBlock>
+                <dxe:ListBoxEdit Grid.Row="1" DisplayMember="AlgName" x:Name="AlgList" ValueMember="Id" ItemsSource="{Binding}" Height="72" VerticalAlignment="Bottom"/>
+            </Grid>-->
+            <Grid Grid.Column="2" Grid.Row="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <dx:DXTabControl >
+                    <dx:DXTabItem Header="Параметры">
+                        <Grid Background="Transparent" Height="{Binding ActualHeight, ElementName=AlgList}">
+                            <dxlc:LayoutControl Orientation="Vertical" >
+                                <dxlc:LayoutGroup Header="Параметры" Orientation="Vertical" VerticalAlignment="Stretch">
+                                    <dxlc:LayoutItem Label="Наименование" >
+                                        <dxe:TextEdit EditValue="{Binding SelectedItem.AlgName, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutGroup dx:ScrollViewerTouchBehavior.IsEnabled="True">
+                                        <dxlc:LayoutGroup Header="Экспертиза" View="Group" Orientation="Vertical">
+                                            <dxlc:LayoutItem Label="Номер п/п">
+                                                <dxe:TextEdit EditValue="{Binding SelectedItem.MekNpp, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                            </dxlc:LayoutItem>
+                                            <dxlc:LayoutItem Label="Уровень алгоритма">
+                                                <dxe:TextEdit EditValue="{Binding SelectedItem.AlgLevel, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                            </dxlc:LayoutItem>
+                                            <dxlc:LayoutItem Label="Тип алгоритма">
+                                                <dxe:TextEdit EditValue="{Binding SelectedItem.AlgType, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                            </dxlc:LayoutItem>
+                                            <dxlc:LayoutItem Label="Тип экспертизы">
+                                                <dxe:TextEdit EditValue="{Binding SelectedItem.ExpType, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                            </dxlc:LayoutItem>
+                                            <dxlc:LayoutItem Label="Пункт удержания">
+                                                <dxe:ComboBoxEdit ItemsSource="{Binding}" x:Name="OsnBoxEdit" ValueMember="Osn" EditValue="{Binding SelectedItem.MekOsn, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}" DisplayMember="NameWithId" NullValueButtonPlacement="EditBox" AutoComplete="True" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True" HorizontalScrollBarVisibility="Disabled"/>
+                                            </dxlc:LayoutItem>
+                                        </dxlc:LayoutGroup>
+                                        <dxlc:LayoutGroup Header="ФЛК" View="Group" Orientation="Vertical">
+                                            <dxlc:LayoutItem Label="Код ошибки ФЛК">
+                                                <dxe:TextEdit EditValue="{Binding SelectedItem.FlkErrId, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                            </dxlc:LayoutItem>
+                                            <dxlc:LayoutItem Label="Наименование ФЛК">
+                                                <dxe:TextEdit EditValue="{Binding SelectedItem.FlkErrName, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                            </dxlc:LayoutItem>
+                                            <dxlc:LayoutItem Label="Тип файла">
+                                                <dxe:TextEdit EditValue="{Binding SelectedItem.XmlFileType, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                            </dxlc:LayoutItem>
+                                            <dxlc:LayoutItem Label="Родительский узел">
+                                                <dxe:TextEdit EditValue="{Binding SelectedItem.XmlNode, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                            </dxlc:LayoutItem>
+                                            <dxlc:LayoutItem Label="Элемент">
+                                                <dxe:TextEdit EditValue="{Binding SelectedItem.XmlItem, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                            </dxlc:LayoutItem>
+                                        </dxlc:LayoutGroup>
+                                        <dxlc:LayoutGroup Header="Справочник" View="Group" Orientation="Vertical">
+                                            <dxlc:LayoutItem Label="Код НСИ">
+                                                <dxe:TextEdit EditValue="{Binding SelectedItem.NsiCode, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                            </dxlc:LayoutItem>
+                                            <dxlc:LayoutItem Label="Ключ НСИ">
+                                                <dxe:TextEdit EditValue="{Binding SelectedItem.NsiField, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                            </dxlc:LayoutItem>
+                                            <dxlc:LayoutItem Label="Значения">
+                                                <dxe:TextEdit EditValue="{Binding SelectedItem.NsiValueList, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                            </dxlc:LayoutItem>
+                                        </dxlc:LayoutGroup>
+
+                                    </dxlc:LayoutGroup>
+                                    <dxlc:LayoutItem Label="Комментарий" >
+                                        <dxe:TextEdit EditValue="{Binding SelectedItem.AlgComment, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutItem Label="Включен">
+                                        <dxe:CheckEdit EditValue="{Binding SelectedItem.PrEnable, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutGroup >
+                                        <dxlc:LayoutItem Label="Проблема" Width="130">
+                                            <dxe:CheckEdit EditValue="{Binding SelectedItem.PrProblem, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </dxlc:LayoutItem>
+
+                                        <dxlc:LayoutItem Label="Описание" >
+                                            <dxe:TextEdit EditValue="{Binding SelectedItem.AlgProblem, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </dxlc:LayoutItem>
+                                    </dxlc:LayoutGroup>
+                                    <dxlc:LayoutItem Label="Примечание">
+                                        <dxe:TextEdit EditValue="{Binding SelectedItem.AlgFomsComment, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </dxlc:LayoutItem>
+                                </dxlc:LayoutGroup>
+
+                            </dxlc:LayoutControl>
+                        </Grid>
+                    </dx:DXTabItem>
+                    <dx:DXTabItem Header="Алгоритм">
+                        <Grid Background="Transparent"  Height="{Binding ActualHeight, ElementName=AlgList}">
+                            <expressionEditor:SqlTextEditor x:Name="sqlEditor"  Padding="5" TextChanged="SqlEditor_OnTextChanged" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" >
+
+                                <expressionEditor:SqlTextEditor.CommandBindings>
+                                    <CommandBinding Command="Undo" Executed="CommandUndo_OnExecuted"/>
+                                    <CommandBinding Command="Redo" Executed="CommandRedo_OnExecuted"/>
+                                    <CommandBinding Command="Copy" Executed="CommandCopy_OnExecuted"/>
+                                    <CommandBinding Command="Paste" Executed="CommandPaste_OnExecuted"/>
+                                    <CommandBinding Command="Cut" Executed="CommandCut_OnExecuted"/>
+                                    <CommandBinding Command="SelectAll" Executed="CommandSelectAll_OnExecuted"/>
+                                </expressionEditor:SqlTextEditor.CommandBindings>
+
+                                <expressionEditor:SqlTextEditor.Options>
+                                    <expressionEditor:TextEditorOptions WordWrap="True" HighlightMatchingParentheses="HighlightWithColor" AutoIndent="True" AutoInsertPairs="True" ShowLineNumbers="True" ChangeFontSizeByMouseWheel="True">
+
+                                    </expressionEditor:TextEditorOptions>
+                                </expressionEditor:SqlTextEditor.Options>
+                            </expressionEditor:SqlTextEditor>
+                            <sqlEditor:ErrorBox HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,3,3" x:Name="ErrorControl"/>
+
+                        </Grid>
+                    </dx:DXTabItem>
+                </dx:DXTabControl>
+
+                <!--<dxlc:LayoutControl Orientation="Vertical" >
+                    <dxlc:LayoutGroup Header="LayoutGroup" View="Tabs" MinHeight="{Binding ActualHeight, ElementName=ListLayoutItem, Mode=OneWay}" >
+                        <dxlc:LayoutGroup Header="Параметры" Orientation="Vertical" VerticalAlignment="Stretch">
+                            <dxlc:LayoutGroup dx:ScrollViewerTouchBehavior.IsEnabled="True">
+                                <dxlc:LayoutGroup Header="Экспертиза" View="Group" Orientation="Vertical">
+                                    <dxlc:LayoutItem Label="Номер п/п">
+                                        <dxe:TextEdit EditValue="{Binding SelectedItem.MekNpp, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutItem Label="Наименование" >
+                                        <dxe:TextEdit EditValue="{Binding SelectedItem.AlgName, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutItem Label="Уровень алгоритма">
+                                        <dxe:TextEdit EditValue="{Binding SelectedItem.AlgLevel, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutItem Label="Тип алгоритма">
+                                        <dxe:TextEdit EditValue="{Binding SelectedItem.AlgType, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutItem Label="Тип экспертизы">
+                                        <dxe:TextEdit EditValue="{Binding SelectedItem.ExpType, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutItem Label="Пункт удержания">
+                                        <dxe:ComboBoxEdit ItemsSource="{Binding}" x:Name="OsnBoxEdit" ValueMember="Osn" EditValue="{Binding SelectedItem.MekOsn, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}" DisplayMember="NameWithId" NullValueButtonPlacement="EditBox" AutoComplete="True" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True" HorizontalScrollBarVisibility="Disabled"/>
+                                    </dxlc:LayoutItem>
+                                </dxlc:LayoutGroup>
+                                <dxlc:LayoutGroup Header="ФЛК" View="Group" Orientation="Vertical">
+                                    <dxlc:LayoutItem Label="Код ошибки ФЛК">
+                                        <dxe:TextEdit EditValue="{Binding SelectedItem.FlkErrId, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutItem Label="Наименование ФЛК">
+                                        <dxe:TextEdit EditValue="{Binding SelectedItem.FlkErrName, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutItem Label="Тип файла">
+                                        <dxe:TextEdit EditValue="{Binding SelectedItem.XmlFileType, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutItem Label="Родительский узел">
+                                        <dxe:TextEdit EditValue="{Binding SelectedItem.XmlNode, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutItem Label="Элемент">
+                                        <dxe:TextEdit EditValue="{Binding SelectedItem.XmlItem, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </dxlc:LayoutItem>
+                                </dxlc:LayoutGroup>
+                                <dxlc:LayoutGroup Header="Справочник" View="Group" Orientation="Vertical">
+                                    <dxlc:LayoutItem Label="Код НСИ">
+                                        <dxe:TextEdit EditValue="{Binding SelectedItem.NsiCode, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutItem Label="Ключ НСИ">
+                                        <dxe:TextEdit EditValue="{Binding SelectedItem.NsiField, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutItem Label="Значения">
+                                        <dxe:TextEdit EditValue="{Binding SelectedItem.NsiValueList, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </dxlc:LayoutItem>
+                                </dxlc:LayoutGroup>
+
+                            </dxlc:LayoutGroup>
+                            <dxlc:LayoutItem Label="Комментарий" >
+                                <dxe:TextEdit EditValue="{Binding SelectedItem.AlgComment, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="Включен">
+                                <dxe:CheckEdit EditValue="{Binding SelectedItem.PrEnable, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutGroup >
+                                <dxlc:LayoutItem Label="Проблема" Width="130">
+                                    <dxe:CheckEdit EditValue="{Binding SelectedItem.PrProblem, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                </dxlc:LayoutItem>
+
+                                <dxlc:LayoutItem Label="Описание" >
+                                    <dxe:TextEdit EditValue="{Binding SelectedItem.AlgProblem, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                                </dxlc:LayoutItem>
+                            </dxlc:LayoutGroup>
+                            <dxlc:LayoutItem Label="Примечание">
+                                <dxe:TextEdit EditValue="{Binding SelectedItem.AlgFomsComment, ElementName=AlgList, UpdateSourceTrigger=PropertyChanged}"/>
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Header="Алгоритм" View="Group">
+                            <expressionEditor:SqlTextEditor x:Name="sqlEditor" FontFamily="Courier New" FontSize="16"  Padding="5" TextChanged="SqlEditor_OnTextChanged">
+                                <expressionEditor:SqlTextEditor.CommandBindings>
+                                    <CommandBinding Command="Undo" Executed="CommandUndo_OnExecuted"/>
+                                    <CommandBinding Command="Redo" Executed="CommandRedo_OnExecuted"/>
+                                    <CommandBinding Command="Copy" Executed="CommandCopy_OnExecuted"/>
+                                    <CommandBinding Command="Paste" Executed="CommandPaste_OnExecuted"/>
+                                    <CommandBinding Command="Cut" Executed="CommandCut_OnExecuted"/>
+                                    <CommandBinding Command="SelectAll" Executed="CommandSelectAll_OnExecuted"/>
+                                </expressionEditor:SqlTextEditor.CommandBindings>
+
+                                <expressionEditor:SqlTextEditor.Options>
+                                    <expressionEditor:TextEditorOptions ShowLineNumbers="True" />
+                                </expressionEditor:SqlTextEditor.Options>
+                            </expressionEditor:SqlTextEditor>
+                            <sqlEditor:ErrorBox HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,3,3" x:Name="ErrorControl"/>
+                        </dxlc:LayoutGroup>
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutControl>-->
+                <!--<StackPanel>
+                    <dxe:TextEdit EditValue="{Binding DataContext.AlgName, ElementName=MekGrid}"/>
+                    <dxe:ComboBoxEdit ItemsSource="{Binding}" x:Name="OsnBoxEdit" ValueMember="Osn" EditValue="{Binding DataContext.DOCTYPE, ElementName=MekGrid}" DisplayMember="NameWithID" NullValueButtonPlacement="EditBox" AutoComplete="True" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True" />
+                    <dxe:TextEdit EditValue="{Binding DataContext.Comments, ElementName=MekGrid}"/>
+                </StackPanel>-->
+                <!--<Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Алгоритм" Margin="12,0,0,0" />
+                -->
+                <!--<sqlEditor:BindableTextEditor Margin="12,2,12,10"
+					KeyUp="SqlEditor_OnKeyUp"
+                    Grid.Row="1"
+					x:Name="sqlEditor"
+					FontFamily="Consolas"
+					FontSize="10pt" 
+                    Text="{Binding SelectedItem.AlgSql, ElementName=AlgList, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+					LineNumbersForeground="#FF2B91AF" IsModified="True" ShowLineNumbers="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+</sqlEditor:BindableTextEditor>-->
+                <!--
+                <expressionEditor:SqlTextEditor Grid.Row="1" Grid.Column="0" x:Name="sqlEditor" BorderThickness="1" FontFamily="Courier New" FontSize="14"  Padding="5" Margin="5,1,5,2" TextChanged="SqlEditor_OnTextChanged"/>
+                <sqlEditor:ErrorBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,3,3" x:Name="ErrorControl"/>
+
+            </Grid>-->
+            </Grid>
+            <GridSplitter Grid.Row="0" Grid.RowSpan="3" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+            <GridSplitter Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            <dxg:GridControl x:Name="GridControl1" ItemsSource="{Binding}" AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="0">
+                <dxg:GridControl.View>
+                    <dxg:TableView x:Name="TableView1" AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
+                </dxg:GridControl.View>
+            </dxg:GridControl>
+        </Grid>
+    </dx:LoadingDecorator>
+
+</UserControl>
+

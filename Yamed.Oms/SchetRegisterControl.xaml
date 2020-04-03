@@ -1,0 +1,448 @@
+﻿<UserControl xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:oms="clr-namespace:Yamed.Oms"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             x:Class="Yamed.Oms.SchetRegisterControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1280">
+    <UserControl.Resources>
+        <Style x:Key="MyFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Control}">
+                        <Grid Margin="3 2">
+                            <Rectangle x:Name="r1" StrokeThickness="1" Stroke="Black" StrokeDashArray="2 2"/>
+                            <Border x:Name="border" Width="{TemplateBinding ActualWidth}" Height="{TemplateBinding ActualHeight}"  CornerRadius="2" BorderThickness="1" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ShadowStyle">
+            <Setter Property="Control.Foreground" Value="LightGray" />
+        </Style>
+        <Style x:Key="InformButton" TargetType="{x:Type Button}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FontFamily" Value="Verdana"/>
+            <Setter Property="FontSize" Value="11px"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FocusVisualStyle" Value="{StaticResource MyFocusVisual}" />
+            <Setter Property="Background" Value="Transparent">
+                <!--<Setter.Value>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
+                            <GradientStop Color="#FFA6D8F5" Offset="0"/>
+                            <GradientStop Color="#FF4B83CB" Offset="0.30"/>
+                            <GradientStop Color="#FF02428D" Offset="0.7"/>
+                            -->
+                <!--<GradientStop Color="#FFA6D8F5" Offset="1"/>-->
+                <!--
+                        </LinearGradientBrush>
+                    </Setter.Value>-->
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderThickness="0"	Padding="4,2" 
+				            BorderBrush="Transparent" 	CornerRadius="5" 
+				            Background="{TemplateBinding Background}">
+                            <Grid >
+                                <ContentPresenter HorizontalAlignment="Center" 
+	                               VerticalAlignment="Center" x:Name="contentShadow" 
+					                Style="{StaticResource ShadowStyle}">
+                                    <ContentPresenter.RenderTransform>
+                                        <TranslateTransform X="1.0" Y="1.0" />
+                                    </ContentPresenter.RenderTransform>
+                                </ContentPresenter>
+                                <ContentPresenter HorizontalAlignment="Center" 
+                            VerticalAlignment="Center" x:Name="content"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="SteelBlue" />
+                                <Setter Property="Background" Value="Gold" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" >
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" >
+                                            <GradientStop Color="Gold" Offset="0.2"/>
+                                            <GradientStop Color="Red" Offset="0.85"/>
+                                            <GradientStop Color="Gold" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="content" Property="RenderTransform" >
+                                    <Setter.Value>
+                                        <TranslateTransform Y="1.0" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <!--<Trigger Property="IsDefaulted" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF282828" />
+                            </Trigger>-->
+                            <!--<Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#13EF8F" />
+                            </Trigger>-->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Opacity" Value="0.7" />
+                                <Setter Property="Foreground" Value="Gray" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid x:Name="ReserveGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!--<Grid Background="#FFDA8615">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Grid.Column="0">
+                <Button Style="{StaticResource InformButton}" Click="ZslRefresh_OnClick"  Width="65" ToolTip="Обновить данные">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Yamed.Icons;component/Icons/iconico-089-256.png" Width="48" Height="48"/>
+                        --><!--<TextBlock Text="Обновить" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="12"></TextBlock>--><!--
+                    </StackPanel>
+                </Button>
+                --><!--<Button Style="{StaticResource InformButton}" Click="ZslEdit_OnClick" Width="80" ToolTip="Просмотр случая">
+                    <StackPanel Orientation="Horizontal" >
+                        <Image Source="/Yamed.Icons;component/Icons/1481287340_Medical_Book.png" Width="48" Height="48" />
+                        --><!--<TextBlock Text="Просмотр" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="14"></TextBlock>--><!--
+                    </StackPanel>
+                </Button>--><!--
+                <Button Style="{StaticResource InformButton}" Click="Zsl31Edit_OnClick" Width="80" ToolTip="Просмотр случая">
+                    <StackPanel Orientation="Horizontal" >
+                        <Image Source="/Yamed.Icons;component/Icons/1481287340_Medical_Book.png" Width="48" Height="48" />
+                        --><!--<TextBlock Text="Просмотр" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="14"></TextBlock>--><!--
+                    </StackPanel>
+                </Button>
+
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center">
+                <Button Style="{StaticResource InformButton}" Click="Req_OnClick" HorizontalAlignment="Left">
+                    <Grid HorizontalAlignment="Left">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="150"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="/Yamed.Icons;component/Icons/list-add-512.png" Width="24" Height="24" HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Column="1" Text="Добавить запрос ПД" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="12" HorizontalAlignment="Left"/>
+                    </Grid>
+                </Button>
+                <Button Style="{StaticResource InformButton}" Click="ReqDel_OnClick" HorizontalAlignment="Left">
+                    <Grid HorizontalAlignment="Left">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="150"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="/Yamed.Icons;component/Icons/list-subtract-256.png" Width="24" Height="24" HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Column="1" Text="Удалить запрос ПД" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="12" HorizontalAlignment="Left"/>
+                    </Grid>
+                </Button>
+                <Button Style="{StaticResource InformButton}" Click="ButtonBase_OnClick" HorizontalAlignment="Left">
+                    <Grid HorizontalAlignment="Left">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="150"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="/Yamed.Icons;component/Icons/Copy_Printer-256.png" Width="24" Height="24" HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Column="1" Text="Печатные формы" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="12" HorizontalAlignment="Left"/>
+                    </Grid>
+                </Button>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center">
+                <Button Style="{StaticResource InformButton}" Click="AddMek_OnClick" HorizontalAlignment="Left">
+                    <Grid HorizontalAlignment="Left">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="150"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="/Yamed.Icons;component/Icons/list-add-512.png" Width="24" Height="24" HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Column="1" Text="Провести МЭК" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="12" HorizontalAlignment="Left"/>
+                    </Grid>
+                </Button>
+                <Button Style="{StaticResource InformButton}" Click="AddMee_OnClick" HorizontalAlignment="Left">
+                    <Grid HorizontalAlignment="Left">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="150"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="/Yamed.Icons;component/Icons/list-add-512.png" Width="24" Height="24" HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Column="1" Text="Провести МЭЭ" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="12" HorizontalAlignment="Left"/>
+                    </Grid>
+                </Button>
+                <Button Style="{StaticResource InformButton}" Click="AddEkmp_OnClick" HorizontalAlignment="Left">
+                    <Grid HorizontalAlignment="Left">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="150"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="/Yamed.Icons;component/Icons/list-add-512.png" Width="24" Height="24" HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Column="1" Text="Провести ЭКМП" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="12" HorizontalAlignment="Left"/>
+                    </Grid>
+                </Button>
+            </StackPanel>
+
+            <Button Style="{StaticResource InformButton}" Click="SankDel_OnClick" HorizontalAlignment="Right" Width="200" Grid.Column="3" >
+                <StackPanel Orientation="Horizontal" >
+                    <Image Source="/Yamed.Icons;component/Icons/delete-512.png" Width="32" Height="32"/>
+                    <TextBlock Text="Удалить санкции" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="14"/>
+                </StackPanel>
+            </Button>
+
+            <Button Style="{StaticResource InformButton}" Click="ExcelButtonBase_OnClick" Width="80" ToolTip="Экспорт в Excel" HorizontalAlignment="Right" Grid.Column="0">
+                <StackPanel Orientation="Horizontal" >
+                    <Image Source="/Yamed.Icons;component/Icons/eb94f4c188d8cd0047e51f685096fbd4-512.png" Width="48" Height="48" />
+                    --><!--<TextBlock Text="Просмотр" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="14"></TextBlock>--><!--
+                </StackPanel>
+            </Button>
+
+        </Grid>-->
+        <dxb:BarContainerControl Grid.Row="1">
+            <dxb:MainMenuControl AllowCustomizationMenu="False" AllowHide="False" FontWeight="SemiBold" FontSize="16" >
+                <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                           ToolTip="Обновить данные" Content="Обновить" GlyphAlignment="Left" AllowGlyphTheming="True"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/iconico-089-256.png"
+                                           ItemClick="ZslRefresh_OnClick" />
+                <dxb:BarSubItem BarItemDisplayMode="ContentAndGlyph" Name="scVid"
+                                           ToolTip="Вид отображения записей счета" Content="Вид" GlyphAlignment="Left" AllowGlyphTheming="True"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/b505320b084d91f06e18509d1c95860d.png" >
+
+                    <dxb:BarCheckItem Tag="inogorodnie" Content="Только иногородние" AllowUncheckInGroup="True" GroupIndex="0" CheckedChanged="MtrCheckItem_CheckedChanged"/>
+                    <dxb:BarItemSeparator/>
+                    <dxb:BarCheckItem Tag="ZSL" Content="Зак. случаи" GroupIndex="1" IsChecked="True" CheckedChanged="ViewCheckItem_CheckedChanged"/>
+                    <dxb:BarCheckItem Tag="SL" Content="Случаи" GroupIndex="1"  CheckedChanged="ViewCheckItem_CheckedChanged"/>
+                    <dxb:BarCheckItem Tag="USL" Content="Только услуги" GroupIndex="1"  CheckedChanged="ViewCheckItem_CheckedChanged"/>
+                    <dxb:BarCheckItem Tag="SANK" x:Name="sank" Content="Только санкции" GroupIndex="1"  CheckedChanged="ViewCheckItem_CheckedChanged"/>
+                </dxb:BarSubItem>
+                <dxb:BarItemSeparator/>
+                <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                           ToolTip="Создать случай" Content="Создать" GlyphAlignment="Left" AllowGlyphTheming="True"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/Add_black-512.png"
+                                            x:Name="add_sl" ItemClick="Add_sl_ItemClick"/>
+                <dxb:BarItemSeparator/>
+                <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                           ToolTip="Редактор карты пациента" Content="Редактор" GlyphAlignment="Left" AllowGlyphTheming="True"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/1481287340_Medical_Book.png"
+                                           ItemClick="Zsl31Edit_OnClick" x:Name="zsledit"/>
+                <dxb:BarItemSeparator/>
+                <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                           ToolTip="Удалить случай" Content="Удалить" GlyphAlignment="Left" AllowGlyphTheming="True"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/delete-512.png"
+                                           x:Name="sl_del" ItemClick="Sl_del_ItemClick"/>
+                <dxb:BarItemSeparator/>
+                <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                           ToolTip="Объединить в обращения" Content="Объединить&#10;в обращения" GlyphAlignment="Left" AllowGlyphTheming="True"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/Leader-512.png"
+                                           x:Name="compilezsl" ItemClick="Compilezsl_ItemClick"/>
+                <dxb:BarItemSeparator/>
+                <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                           ToolTip="ФЛК/ОСП" Content="ФЛК/&#10;ОСП" GlyphAlignment="Left" AllowGlyphTheming="True"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/cloud__folder__download__upload-256.png"
+                                           x:Name="flk_osp" ItemClick="Flk_osp_ItemClick" />
+                <dxb:BarItemSeparator/>
+                <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                           ToolTip="Перенос" Content="Перенос" GlyphAlignment="Left" AllowGlyphTheming="True"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/527-512.png"
+                                           x:Name="perenos" ItemClick="Perenos_ItemClick"  />
+                <dxb:BarItemSeparator/>
+                <dxb:BarSubItem BarItemDisplayMode="ContentAndGlyph" 
+                                ToolTip="Акт экспертизы" Content="Акт экспертизы" GlyphAlignment="Left" AllowGlyphTheming="True"
+                                LargeGlyph="/Yamed.Icons;component/Icons/x-12-512.png" x:Name="aktExp">
+                    <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                       ToolTip="Создать акт экспертизы" Content="Создать" AllowGlyphTheming="True" Glyph="/Yamed.Icons;component/Icons/list-add-512.png" 
+                                       ItemClick="AddAktExp_OnItemClick" GlyphSize="Large" />
+                    <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                       ToolTip="Добавить в существующий акт" Content="Добавить" AllowGlyphTheming="True" Glyph="/Yamed.Icons;component/Icons/list-add-512.png" 
+                                       ItemClick="EditAktExp_OnItemClick" GlyphSize="Large" />
+
+                </dxb:BarSubItem>
+                <dxb:BarSubItem BarItemDisplayMode="ContentAndGlyph" 
+                                           ToolTip="Запросы первичной документации" Content="Запросы ПД" GlyphAlignment="Left" AllowGlyphTheming="True"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/x-12-512.png" x:Name="zapPD">
+                    <!--<dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                       ToolTip="Создать акт экспертизы" Content="Создать" AllowGlyphTheming="True" Glyph="/Yamed.Icons;component/Icons/list-add-512.png" 
+                                       ItemClick="AddAktExp_OnItemClick" GlyphSize="Large" />-->
+                    <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                           ToolTip="Добавить запрос ПД" Content="Добавить" AllowGlyphTheming="True" Glyph="/Yamed.Icons;component/Icons/list-add-512.png" 
+                                           ItemClick="Req_OnClick" GlyphSize="Large" />
+                    <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                           ToolTip="Удалить запрос ПД" Content="Удалить" AllowGlyphTheming="True" Glyph="/Yamed.Icons;component/Icons/list-subtract-256.png"
+                                           ItemClick="ReqDel_OnClick" GlyphSize="Large" />
+                </dxb:BarSubItem>
+                <dxb:BarSubItem BarItemDisplayMode="ContentAndGlyph" 
+                                ToolTip="Экспертизы/Санкции" Content="Экспертизы/Санкции" GlyphAlignment="Left" AllowGlyphTheming="True"
+                                LargeGlyph="/Yamed.Icons;component/Icons/x-12-512.png" x:Name="mek">
+                    <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                       x:Name="add_mek"
+                                       ToolTip="Создать МЭК" Content="МЭК" AllowGlyphTheming="True" Glyph="/Yamed.Icons;component/Icons/list-add-512.png" 
+                                       ItemClick="AddMek_OnClick" GlyphSize="Large"/>
+                    <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                          ToolTip="Создать МЭЭ" Content="МЭЭ" AllowGlyphTheming="True" Glyph="/Yamed.Icons;component/Icons/list-add-512.png" 
+                                           ItemClick="AddMee_OnClick" GlyphSize="Large"/>
+                    <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                           ToolTip="Создать ЭКМП" Content="ЭКМП" AllowGlyphTheming="True" Glyph="/Yamed.Icons;component/Icons/list-add-512.png" 
+                                           ItemClick="AddEkmp_OnClick" GlyphSize="Large"/>
+                    <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph"
+                                       ToolTip="Удаление Санкций" Content="Удаление" AllowGlyphTheming="True" Glyph="/Yamed.Icons;component/Icons/delete-512.png"
+                                       ItemClick="SankDel_OnClick" GlyphSize="Large"/>
+                </dxb:BarSubItem>
+                <dxb:BarSubItem BarItemDisplayMode="ContentAndGlyph"
+                                           ToolTip="Повторные экспертизы" Content="Реэкспертизы" GlyphAlignment="Left" AllowGlyphTheming="True"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/x-12-512.png" x:Name="reexpertise">
+                    <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph"
+                                           ToolTip="Создать повторный МЭК" x:Name="re_mek" Content="Повторный МЭК" AllowGlyphTheming="True" Glyph="/Yamed.Icons;component/Icons/list-add-512.png" 
+                                           ItemClick="AddRMek_OnClick" GlyphSize="Large"/>
+                    <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                           ToolTip="Создать повторную МЭЭ" Content="Повторная МЭЭ" AllowGlyphTheming="True" Glyph="/Yamed.Icons;component/Icons/list-add-512.png" 
+                                           ItemClick="AddRMee_OnClick" GlyphSize="Large"/>
+                    <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                           ToolTip="Создать повторную ЭКМП" Content="Повторная ЭКМП" AllowGlyphTheming="True" Glyph="/Yamed.Icons;component/Icons/list-add-512.png" 
+                                           ItemClick="AddREkmp_OnClick" GlyphSize="Large"/>
+
+                </dxb:BarSubItem>
+
+                <dxb:BarItemSeparator/>
+                <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                           ToolTip="Выгрузка для проверки через ресурс ТФОМС" Content="Выгрузка" GlyphAlignment="Left" AllowGlyphTheming="True"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/49-512.png"
+                                           ItemClick="TestBarnaul"
+                                           Name="Export22"/>
+                <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                           ToolTip="Загрузка ответа от ТФОМС" Content="Загрузка" GlyphAlignment="Left" AllowGlyphTheming="True"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/update.png"
+                                           ItemClick="TestBarnaul1"
+                                           Name="Load22"/>
+                <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                           ToolTip="Экспорт" Content="Экспорт" GlyphAlignment="Left" AllowGlyphTheming="True" Alignment="Far"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/eb94f4c188d8cd0047e51f685096fbd4-512.png" ItemClick="ExcelButtonBase_OnClick"/>
+                <dxb:BarButtonItem BarItemDisplayMode="ContentAndGlyph" 
+                                           ToolTip="Печатные формы" Content="Документы" GlyphAlignment="Left" x:Name="docs" AllowGlyphTheming="True" Alignment="Far"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/Copy_Printer-256.png" ItemClick="ButtonBase_OnClick"/>
+
+                <!--<Button Style="{StaticResource InformButton}" Click="MtrExport_OnClick">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Yamed.Icons;component/Icons/save.png" Width="48" Height="48"></Image>
+                                        <TextBlock Text="Экспорт МТР" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="14"></TextBlock>
+                                    </StackPanel>
+                                </Button>
+                                <Button Style="{StaticResource InformButton}" Click="SankExport_OnClick">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Yamed.Icons;component/Icons/save.png" Width="48" Height="48"></Image>
+                                        <TextBlock Text="Экспорт санкций" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="14"></TextBlock>
+                                    </StackPanel>
+                                </Button>-->
+            </dxb:MainMenuControl>
+        </dxb:BarContainerControl>
+        <dxdo:DockLayoutManager Grid.Row="2">
+            <dxdo:LayoutGroup AllowSplitters="True">
+                <dxdo:LayoutPanel ShowCaption="False" ShowBorder="False" AllowClose="False" AllowMove="False" AllowHide="False" AllowFloat="False" >
+                    <oms:SchetRegisterGrid x:Name="SchetRegisterGrid1"/>
+                </dxdo:LayoutPanel>
+                <dxdo:LayoutPanel x:Name="zaprosPD" Caption="Запросы первичной документации" ShowCloseButton="False" ItemWidth="350" AutoHidden="True">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <dxb:BarContainerControl >
+                            <dxb:ToolBarControl AllowCustomizationMenu="False" AllowHide="False" AllowQuickCustomization="False" IsCollapsed="False" ShowDragWidget="False" UseWholeRow="True" >
+                                <dxb:BarButtonItem x:Name="RepReqItem" Alignment="Near"
+                                           BarItemDisplayMode="ContentAndGlyph"
+                                           ToolTip="Печатная форма" GlyphAlignment="Top"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/_80ui-512.png"
+                                           ItemClick="RepReqItem_OnItemClick" />
+                                <dxb:BarButtonItem x:Name="RepReReqItem" Alignment="Near"
+                                           BarItemDisplayMode="ContentAndGlyph"
+                                           ToolTip="Печатная форма (повторная)" GlyphAlignment="Top"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/_80ui-512.png"
+                                           ItemClick="RepReReqItem_OnItemClick" />
+                                <dxb:BarButtonItem x:Name="RepReqCustomItem" Alignment="Near"
+                                           BarItemDisplayMode="ContentAndGlyph"
+                                           ToolTip="Печатная форма " GlyphAlignment="Top"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/_80ui-512.png"
+                                           ItemClick="RepReqCustomItem_OnItemClick" />
+                                <dxb:BarButtonItem x:Name="Spisok_Form" Alignment="Near"
+                                                   BarItemDisplayMode="ContentAndGlyph"
+                                                   ToolTip="Список форм " GlyphAlignment="Top"
+                                                   LargeGlyph="/Yamed.Icons;component/Icons/x-12-512.png" ItemClick="Spisok_Form_ItemClick"
+                                />
+
+                                <dxb:BarButtonItem x:Name="ReqAddItem" Alignment="Far"
+                                           BarItemDisplayMode="ContentAndGlyph"
+                                           ToolTip="Добавить" GlyphAlignment="Top"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/plus_orange.png"
+                                           ItemClick="ReqAddItem_OnItemClick" />
+                                <dxb:BarButtonItem x:Name="ReqEditItem" Alignment="Far"
+                                           BarItemDisplayMode="ContentAndGlyph"
+                                           ToolTip="Редактировать" GlyphAlignment="Top"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/pencil.png"
+                                           ItemClick="ReqEditItem_OnItemClick" />
+
+                                <dxb:BarButtonItem x:Name="ReqDelItem" Alignment="Far"
+                                           BarItemDisplayMode="ContentAndGlyph"
+                                           ToolTip="Удалить" GlyphAlignment="Top"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/deletered.png"
+                                           ItemClick="ReqDelItem_OnItemClick" />
+                                <dxb:BarItemSeparator BarItemDisplayMode="ContentAndGlyph" />
+
+                            </dxb:ToolBarControl>
+                        </dxb:BarContainerControl>
+
+                        <dxg:GridControl AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" Grid.Row="1" ItemsSource="{Binding}" Name="ReqGridControl">
+                            <dxg:GridControl.View>
+                                <dxg:TableView AllowPerPixelScrolling="True" ShowGroupPanel="False"/>
+                            </dxg:GridControl.View>
+                            <dxg:GridColumn FieldName="Name" Header="Наименование"/>
+                            <dxg:GridColumn FieldName="ReqDate" Header="Дата" Width="70"/>
+                            <dxg:GridColumn FieldName="ReqNum" Header="Номер" Width="70"/>
+                            <dxg:GridColumn FieldName="UserID" Header="Пользователь"/>
+                        </dxg:GridControl>
+                        <dxg:GridControl AutoGenerateColumns="None" EnableSmartColumnsGeneration="True" Grid.Row="2" ItemsSource="{Binding}" Name="ExpGridControl">
+                            <dxg:GridControl.View>
+                                <dxg:TableView AllowPerPixelScrolling="True" ShowGroupPanel="False"/>
+                            </dxg:GridControl.View>
+                            <dxg:GridColumn FieldName="UMPNAME" Header="Условие ок. пом."/>
+                            <dxg:GridColumn FieldName="cnt_exp" Header="Заказано" Width="50"/>
+                            <dxg:GridColumn FieldName="mee" Header="МЭЭ" Width="55"/>
+                            <dxg:GridColumn FieldName="ekmp" Header="ЭКМП" Width="55"/>
+                        </dxg:GridControl>
+
+                    </Grid>
+                </dxdo:LayoutPanel>
+
+            </dxdo:LayoutGroup>
+        </dxdo:DockLayoutManager>
+        <dxb:BarContainerControl Grid.Row="3" Visibility="Collapsed">
+            <dxb:StatusBarControl AllowCustomizationMenu="False" >
+                <dxb:BarStaticItem Name="ZaprosCountItem"/>
+            </dxb:StatusBarControl>
+        </dxb:BarContainerControl>
+
+
+    </Grid>
+</UserControl>

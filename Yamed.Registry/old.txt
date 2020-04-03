@@ -1,0 +1,113 @@
+﻿    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <GridSplitter Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <dxg:GridControl Name="GridControl1" AutoGenerateColumns="None" EnableSmartColumnsGeneration="True" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding}" SelectionMode="MultipleRow" SelectionChanged="GridControl1_SelectionChanged"    >
+            <dxg:GridControl.View>
+                <!--ShowIndicator="False"-->
+                <dxg:TableView AllowPerPixelScrolling="True" ShowTotalSummary="False" ShowGroupPanel="False" ShowColumnHeaders="TRUE" ShowSelectionRectangle="True" ShowCheckBoxSelectorColumn="True" CheckBoxSelectorColumnWidth="15" ShowCheckBoxSelectorInGroupRow="True" />
+            </dxg:GridControl.View>
+            <dxg:GridColumn FieldName="FAM" Width="75" Header="Фамилия"/>
+            <dxg:GridColumn FieldName="IM" Width="50" Header="Имя"/>
+            <dxg:GridColumn FieldName="OT" Width="50" Header="Отчество"/>
+            <dxg:GridColumn FieldName="Room" Width="25" Header="Кабинет"/>
+            <dxg:GridColumn FieldName="SpecName" GroupIndex="0" Header="Профиль" VisibleIndex="-1"/>
+            <dxg:GridColumn FieldName="id" VisibleIndex="5" Visible="False"/>
+        </dxg:GridControl>
+        <dx:LoadingDecorator Name="LoadingDecorator1" OwnerLock="None" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2">
+            <Grid Margin="3" >
+                <Grid.Resources>
+
+                    <!--<DataTemplate x:Key="ItemContentTemplate">
+                        <Grid x:Name="Grid_Content" MaxWidth="400" Background="Transparent" Margin="20,0">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Border HorizontalAlignment="Center" VerticalAlignment="Center" Background="White" BorderBrush="Black" BorderThickness="0" Margin="0">
+                                    <Image Margin="1" Source="{Binding Photo, Converter={StaticResource sourceConverter}}" Stretch="None" />
+                                </Border>
+                                <Grid Grid.Row="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="City:" FontWeight="Bold" />
+                                    <TextBlock Text="Birth Date:" Grid.Row="1" FontWeight="Bold"/>
+                                    <TextBlock Text="Hire Date:" Grid.Row="2" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding City}" TextWrapping="Wrap" Margin="10,0" Grid.Column="1"/>
+                                    <TextBlock Text="{Binding BirthDate}" TextWrapping="Wrap"  Margin="10,0" Grid.Column="1" Grid.Row="1"/>
+                                    <TextBlock Text="{Binding HireDate}" TextWrapping="Wrap"  Margin="10,0" Grid.Column="1" Grid.Row="2"/>
+                                </Grid>
+                                <Grid Grid.Row="2" Margin="0,20,0,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="{Binding PageContent}" TextWrapping="Wrap" Grid.Row="0"  />
+                                    <TextBlock Text="{Binding Notes}" TextWrapping="Wrap" Grid.Row="1" Margin="0,10,0,0" />
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>-->
+                </Grid.Resources>
+                <dxwui:SlideView Name="ScheduleItems" ItemsSource="{Binding}" Orientation="Horizontal" >
+                    <dxwui:SlideView.ItemTemplate>
+                        <DataTemplate>
+                            <views:ScheduleView Padding="2"/>
+                        </DataTemplate>
+                    </dxwui:SlideView.ItemTemplate>
+                    <dxwui:SlideView.ItemHeaderTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding DoctorInfo}" />
+                            </Grid>
+                        </DataTemplate>
+                    </dxwui:SlideView.ItemHeaderTemplate>
+                </dxwui:SlideView>
+
+                <!--<dxlc:FlowLayoutControl Name="ScheduleItems" ItemsSource="{Binding}" Orientation="Horizontal" StretchContent="True" AllowItemMoving="True">
+                    <dxlc:FlowLayoutControl.ItemTemplate>
+                        <DataTemplate>
+                            <views:ScheduleView MinWidth="275"/>
+                        </DataTemplate>
+                    </dxlc:FlowLayoutControl.ItemTemplate>
+                </dxlc:FlowLayoutControl>-->
+                <!--<ItemsControl Name="ScheduleItems" ScrollViewer.CanContentScroll="True" VirtualizingStackPanel.IsVirtualizing="True"  VirtualizingStackPanel.VirtualizationMode="Standard"  ItemsSource="{Binding}" >
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.Template>
+                        <ControlTemplate>
+                            <ScrollViewer x:Name="ScrollViewer" HorizontalScrollBarVisibility="Auto" 
+                                                              VerticalScrollBarVisibility="Disabled" IsDeferredScrollingEnabled="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <ItemsPresenter SnapsToDevicePixels="True"/>
+                            </ScrollViewer>
+                        </ControlTemplate>
+                    </ItemsControl.Template>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <views:ScheduleView MinWidth="275"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>-->
+            </Grid>
+        </dx:LoadingDecorator>
+        <dxe:DateNavigator Name="DateNavigator1" Grid.Row="0" Grid.Column="0" SelectedDatesChanged="DateNavigator1_OnSelectedDatesChanged"/>
+    </Grid>

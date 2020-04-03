@@ -1,0 +1,368 @@
+﻿<dx:DXTabbedWindow x:Class="Yamed.PrimaryWindow" Title="ЯМед. Электронная медицина." WindowStartupLocation="CenterScreen" WindowState="Normal" Loaded="PrimaryWindow_OnLoaded" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" 
+    xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" 
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" 
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+    xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"  MinHeight="768" MinWidth="1280" Height="768" Width="1280"
+    xmlns:materialMenu="clr-namespace:MaterialMenu;assembly=MaterialMenu"
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    Closed="PrimaryWindow_OnClosed">
+    <dx:DXTabbedWindow.Resources>
+        <Style x:Key="TabItemStyle" TargetType="{x:Type dx:DXTabItem}">
+            <Setter Property="Header" Value="{Binding Header}" />
+            <Setter Property="Content" Value="{Binding MyControl}" />
+            <Setter Property="AllowHide" Value="{Binding IsCloseable}" />
+        </Style>
+    </dx:DXTabbedWindow.Resources>
+    <Grid Name="PrimaryGrid">
+        <Grid.Resources>
+            <Style x:Key="MyFocusVisual">
+                <Setter Property="Control.Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Control}">
+                            <Grid Margin="3 2">
+                                <Rectangle Name="r1" StrokeThickness="1" Stroke="Black" StrokeDashArray="2 2"/>
+                                <Border Name="border" Width="{TemplateBinding ActualWidth}" Height="{TemplateBinding ActualHeight}"  CornerRadius="2" BorderThickness="1" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="ShadowStyle">
+                <Setter Property="Control.Foreground" Value="LightGray" />
+            </Style>
+            <Style x:Key="InformButton" TargetType="Button">
+                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                <Setter Property="Margin" Value="2"/>
+                <Setter Property="FontFamily" Value="Verdana"/>
+                <Setter Property="FontSize" Value="11px"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="FocusVisualStyle" Value="{StaticResource MyFocusVisual}" />
+                <Setter Property="Background" Value="Transparent">
+                    <!--<Setter.Value>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
+                            <GradientStop Color="#FFA6D8F5" Offset="0"/>
+                            <GradientStop Color="#FF4B83CB" Offset="0.30"/>
+                            <GradientStop Color="#FF02428D" Offset="0.7"/>
+                            -->
+                    <!--<GradientStop Color="#FFA6D8F5" Offset="1"/>-->
+                    <!--
+                        </LinearGradientBrush>
+                    </Setter.Value>-->
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Name="border" BorderThickness="1"	Padding="2,2" 
+				            BorderBrush="Transparent" 	CornerRadius="5" 
+				            Background="{TemplateBinding Background}">
+                                <Grid >
+                                    <!--<ContentPresenter HorizontalAlignment="Center" 
+	                               VerticalAlignment="Center" Name="contentShadow" 
+					                Style="{StaticResource ShadowStyle}">
+                                        <ContentPresenter.RenderTransform>
+                                            <TranslateTransform X="1.0" Y="1.0" />
+                                        </ContentPresenter.RenderTransform>
+                                    </ContentPresenter>-->
+                                    <ContentPresenter HorizontalAlignment="Left" 
+                            VerticalAlignment="Center" Name="content"/>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="BorderBrush" Value="SteelBlue" />
+                                    <Setter Property="Background" Value="LightSteelBlue" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" >
+                                        <Setter.Value>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" >
+                                                <GradientStop Color="LightSteelBlue" Offset="0.2"/>
+                                                <GradientStop Color="SteelBlue" Offset="0.85"/>
+                                                <GradientStop Color="LightSteelBlue" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="content" Property="RenderTransform" >
+                                        <Setter.Value>
+                                            <TranslateTransform Y="1.0" />
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                                <!--<Trigger Property="IsDefaulted" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF282828" />
+                            </Trigger>-->
+                                <!--<Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#13EF8F" />
+                            </Trigger>-->
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="border" Property="Opacity" Value="0.3" />
+                                    <Setter Property="Foreground" Value="Gray" />
+                                </Trigger>
+
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+                <!--<Grid>-->
+                    <Grid>
+                        <Grid.LayoutTransform>
+                            <ScaleTransform CenterX="0" CenterY="0" ScaleX="{Binding EditValue, ElementName=bZoom}" ScaleY="{Binding EditValue, ElementName=bZoom}" />
+                        </Grid.LayoutTransform>
+                    <dx:LoadingDecorator OwnerLock="None" Name="Decorator">
+                    <dx:LoadingDecorator.SplashScreenTemplate>
+                        <DataTemplate>
+                            <dx:WaitIndicator DeferedVisibility="True" Content="Загрузка данных...&#13;&#10;пожалуйста подождите"/>
+                        </DataTemplate>
+                    </dx:LoadingDecorator.SplashScreenTemplate>
+                        
+                    <dx:DXTabControl Name="DxTabControl1" ItemsSource="{Binding TabElements}" TabContentCacheMode="CacheAllTabs" SelectionChanged="DxTabControl1_OnSelectionChanged" ItemContainerStyle="{StaticResource TabItemStyle}" Padding="2">
+                            <dx:DXTabControl.View>
+                                <dx:TabControlScrollView HideButtonShowMode="InActiveTab" RemoveTabItemsOnHiding="True" AllowAnimation="True" />
+                            </dx:DXTabControl.View>
+                        </dx:DXTabControl>
+                    </dx:LoadingDecorator>
+                    </Grid>
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="dxwui:AppBarButton">
+                                <Setter Property="AllowGlyphTheming" Value="True" />
+                                <Setter Property="GlyphHeight" Value="32" />
+                                <Setter Property="EllipseDiameter" Value="50" />
+                            </Style>
+                        </Grid.Resources>
+                        <materialMenu:SideMenu HorizontalAlignment="Left" x:Name="Menu"
+                               MenuWidth="300"
+                               Theme="Default"
+                               State="Hidden" Visibility="Hidden">
+                            <materialMenu:SideMenu.Menu>
+                                <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                                <StackPanel Orientation="Vertical" >
+                                <Border Background="#FF0072C6">
+                                    
+                                    <Grid Height="150">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <TextBox Margin="10" BorderThickness="0" Background="Transparent" VerticalContentAlignment="Top" FontFamily="Calibri" FontSize="18" Foreground="WhiteSmoke" FontWeight="Bold">ЯМед</TextBox>
+                                        <dxlc:LayoutControl Grid.Row="1" Orientation="Vertical">
+                                            <dxlc:LayoutItem Label="Пользователь">
+                                                <dxe:TextEdit Loaded="UserTextEdit_OnLoaded" IsReadOnly="True" />
+                                            </dxlc:LayoutItem>
+
+                                            <dxlc:LayoutItem Label="Рабочая дата">
+                                                <dxe:DateEdit EditValueChanged="WorkDateEdit_OnEditValueChanged" Loaded="WorkDateEdit_OnLoaded"/>
+                                            </dxlc:LayoutItem>
+                                        </dxlc:LayoutControl>
+                                    </Grid>
+
+                                </Border>
+                                <Button Click="Reestr_OnClick" Style="{StaticResource InformButton}" IsEnabled="True" Tag="LPU" Visibility="Collapsed">
+                                    <Grid HorizontalAlignment="Left">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="75"></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="/Yamed.Icons;component/Icons/1472128961_07.Wallet.png" Width="48" Height="48"></Image>
+                                        <TextBlock Grid.Column="1" Text="Реестр" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="14"></TextBlock>
+                                    </Grid>
+                                </Button>
+                                <Button Click="OmsExpButton_OnClick" Style="{StaticResource InformButton}" IsEnabled="True" Visibility="Collapsed" Tag="OMS">
+                                    <Grid HorizontalAlignment="Left">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="75"></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="/Yamed.Icons;component/Icons/check_up-256.png" Width="48" Height="48"></Image>
+                                        <TextBlock Grid.Column="1" Text="Реестр счетов" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="14"></TextBlock>
+                                    </Grid>
+                                </Button>
+                                    <Button Click="OmsExpAktRegistr_OnClick" Style="{StaticResource InformButton}" IsEnabled="True" Visibility="Collapsed" Tag="OMS">
+                                        <Grid HorizontalAlignment="Left">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="75"></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                        <Image Source="/Yamed.Icons;component/Icons/1481287271_Medical_Report-2.png" Width="48" Height="48"></Image>
+                                            <TextBlock Grid.Column="1" Text="Реестр экспертиз" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="14"></TextBlock>
+                                        </Grid>
+                                    </Button>
+                                <!--<Button Click="Stat_OnClick" Style="{StaticResource InformButton}" IsEnabled="True">
+                                    <Grid HorizontalAlignment="Left">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="75"></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="/Yamed.Icons;component/Icons/1472128961_07.Wallet.png" Width="48" Height="48"></Image>
+                                        <TextBlock Grid.Column="1" Text="Стационар" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="14"></TextBlock>
+                                    </Grid>
+                                </Button>-->
+                                <Button Click="Registry_OnClick" Style="{StaticResource InformButton}"  Tag="LPU" Visibility="Collapsed">
+                                        <Grid HorizontalAlignment="Left">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="75"></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Source="/Yamed.Icons;component/Icons/time_sheduled-512.png" Width="48" Height="48"></Image>
+                                            <TextBlock Grid.Column="1" Text="Регистратура" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="14"></TextBlock>
+                                        </Grid>
+                                    </Button>
+
+                                <Button Click="WorkSpace_OnClick" Style="{StaticResource InformButton}" IsEnabled="False" Tag="LPU" Visibility="Collapsed">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="75"></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Source="/Yamed.Icons;component/Icons/Work_Desk-512.png" Width="48" Height="48" ></Image>
+                                            <TextBlock Grid.Column="1" Text="Рабочее место врача" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="14"></TextBlock>
+                                        </Grid>
+                                    </Button>
+                                <Button Click="Settings_OnClick" Style="{StaticResource InformButton}" IsEnabled="False">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="75"></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Source="/Yamed.Icons;component/Icons/1472140320_settings-24.png" Width="48" Height="48" ></Image>
+                                            <TextBlock Grid.Column="1" Text="Настройки" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="14"></TextBlock>
+                                        </Grid>
+                                    </Button>
+                                <Button Click="Reports_OnClick" Style="{StaticResource InformButton}" IsEnabled="True">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="75"></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="/Yamed.Icons;component/Icons/1481747560_Libros_01_20.png" Width="48" Height="48" ></Image>
+                                        <TextBlock Grid.Column="1" Text="Формы" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="14"></TextBlock>
+                                    </Grid>
+                                </Button>
+                                <Button Click="Nsi_OnClick" Style="{StaticResource InformButton}" IsEnabled="True">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="75"></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Source="/Yamed.Icons;component/Icons/1481747560_Libros_01_20.png" Width="48" Height="48" ></Image>
+                                            <TextBlock Grid.Column="1" Text="НСИ" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="14"></TextBlock>
+                                        </Grid>
+                                    </Button>
+                                <Button Click="Update_OnClick" Style="{StaticResource InformButton}" IsEnabled="True">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="75"></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="/Yamed.Icons;component/Icons/cloud_update-512.png" Width="48" Height="48" ></Image>
+                                        <TextBlock Grid.Column="1" Text="Обновление" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="14"></TextBlock>
+                                    </Grid>
+                                </Button>
+                                <!--<materialMenu:MenuButton Image="/Yamed.Icons;component/Icons/Doctor_2-512.png" Text="Поликлиника">
+                                            <materialMenu:MenuButton.Children >
+                                                <materialMenu:MenuButton Image="/Yamed.Icons;component/Icons/Work_Desk-512.png" Text="Рабочее место врача" MouseDown="WorkSpaceMenuButton_OnMouseDown" Margin="15,0,0,0"></materialMenu:MenuButton>
+                                                <materialMenu:MenuButton Image="/Yamed.Icons;component/Icons/time_sheduled-512.png" Text="Регистратура" MouseDown="UIElement_OnMouseDown" Margin="15,0,0,0"></materialMenu:MenuButton>
+                                                <materialMenu:MenuButton Text="Направление" IsEnabled="False" Margin="15,0,0,0"></materialMenu:MenuButton>
+
+                                            </materialMenu:MenuButton.Children>
+                                        </materialMenu:MenuButton>
+                                        <materialMenu:MenuButton Image="/Yamed.Icons;component/Icons/patient-512.png" Text="Стационар">
+                                            <materialMenu:MenuButton.Children >
+                                                <materialMenu:MenuButton  Text="Госпитализация" IsEnabled="False" Margin="15,0,0,0"></materialMenu:MenuButton>
+                                                <materialMenu:MenuButton  Text="Приемное отделение" IsEnabled="False" Margin="15,0,0,0"></materialMenu:MenuButton>
+                                            </materialMenu:MenuButton.Children>
+                                        </materialMenu:MenuButton>-->
+                                </StackPanel>
+                            </ScrollViewer>
+                            </materialMenu:SideMenu.Menu>
+                        </materialMenu:SideMenu>
+                        <dxwui:AppBar x:Name="ModulesAppBar" HideMode="Manual" MouseLeave="ModulesAppBar_OnMouseLeave" MouseEnter="ModulesAppBar_OnMouseEnter">
+                            <!--<dxwui:AppBarButton Label="Система" EllipseDiameter="60" Command="{Binding ResetScaleCommand}" Glyph="/Yamed.Icons;component/Icons/svg-2-512.png"  FontSize="16" FontWeight="SemiBold"/>-->
+                            <!--<dxwui:AppBarSeparator />-->
+                            <dxwui:AppBarButton Label="Поликлиника" HorizontalAlignment="Left" Glyph="/Yamed.Icons;component/Icons/Doctor_2-512.png" Width="140" FontSize="16" FontWeight="SemiBold">
+                                <dxwui:AppBarButton.Flyout>
+                                    <dxwui:MenuFlyout ShowIndicator="True">
+                                        <dxwui:MenuFlyoutItem Content="Регистратура" Command="{Binding ScheduleControlRun}" />
+                                        <!--<dxwui:MenuFlyoutItem Content="Поликлиника" Command="{Binding RotateCounterclockwiseCommand}" />
+                            <dxwui:MenuFlyoutSeparator />
+                            <dxwui:MenuFlyoutItem Content="Рабочее место врача" Command="{Binding Rotate180Command}" />-->
+                                    </dxwui:MenuFlyout>
+                                </dxwui:AppBarButton.Flyout>
+                            </dxwui:AppBarButton>
+
+                            <!--<dxwui:AppBarButton Label="Стационар" HorizontalAlignment="Left" Glyph="/Yamed.Icons;component/Icons/patient-512.png" FontSize="16" FontWeight="SemiBold">
+                    <dxwui:AppBarButton.Flyout>
+                        <dxwui:MenuFlyout ShowIndicator="True">
+                            <dxwui:MenuFlyoutItem Content="Регистратура" Command="{Binding RotateClockwise}" />
+                            <dxwui:MenuFlyoutItem Content="Поликлиника" Command="{Binding RotateCounterclockwiseCommand}" />
+                            <dxwui:MenuFlyoutSeparator />
+                            <dxwui:MenuFlyoutItem Content="Рабочее место врача" Command="{Binding Rotate180Command}" />
+                        </dxwui:MenuFlyout>
+                    </dxwui:AppBarButton.Flyout>
+                </dxwui:AppBarButton >-->
+                        </dxwui:AppBar>
+                    </Grid>
+                <!--</Grid>-->
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <dxb:BarContainerControl Grid.Column="0">
+                <dxb:StatusBarControl AllowCustomizationMenu="False" FontWeight="SemiBold" FontSize="16" Height="45">
+
+                    <dxb:BarButtonItem Name="MainMenuOpenItem" Content="Основное меню" ToolTip="Для показа/скрытия меню нажмите правую кнопку мыши в нижней части экрана" Glyph="/Yamed.Icons;component/Icons/_round_menu_one-512.png" LargeGlyph="/Yamed.Icons;component/Icons/_round_menu_one-512.png" Alignment="Near" AllowGlyphTheming="True" BarItemDisplayMode="ContentAndGlyph" ItemClick="MainMenuOpenItem_OnItemClick" />
+                    <dxb:BarItemSeparator />
+
+                </dxb:StatusBarControl>
+            </dxb:BarContainerControl>
+            <dxb:BarContainerControl Grid.Column="1">
+                <dxb:StatusBarControl Name="LocalBarControl" AllowCustomizationMenu="False" FontWeight="SemiBold" FontSize="16" Height="45" MouseRightButtonDown="UIElement_OnMouseRightButtonDown" ItemsSource="{Binding ElementName=DxTabControl1, Path=SelectedItem.TabLocalMenu}">
+                    <dxb:StatusBarControl.ItemTemplate>
+                        <DataTemplate>
+                            <ContentControl>
+                                <dxb:BarButtonItem Content="{Binding Content}" Glyph="{Binding Glyph}" LargeGlyph="{Binding Glyph}" Command="{Binding Command}" AllowGlyphTheming="True" Alignment="Near" BarItemDisplayMode="ContentAndGlyph" />
+                            </ContentControl>
+                        </DataTemplate>
+                    </dxb:StatusBarControl.ItemTemplate>
+                </dxb:StatusBarControl>
+            </dxb:BarContainerControl>
+            <dxb:BarContainerControl Grid.Column="2">
+                <dxb:StatusBarControl AllowCustomizationMenu="False" ShowSizeGrip="True" FontWeight="SemiBold" FontSize="16" Height="45">
+               
+                    <dxb:BarEditItem x:Name="bZoom" EditValue="1" EditWidth="150" Alignment="Far">
+                        <dxb:BarEditItem.EditSettings>
+                            <dxe:TrackBarEditSettings x:Name="uiScaleSlider" Minimum="0.5" Maximum="2" SmallStep="0.1" LargeStep="1">
+                                <dxe:TrackBarEditSettings.StyleSettings>
+                                    <dxe:TrackBarZoomStyleSettings />
+                                </dxe:TrackBarEditSettings.StyleSettings>
+                            </dxe:TrackBarEditSettings>
+                        </dxb:BarEditItem.EditSettings>
+                    </dxb:BarEditItem>
+                        <dxb:BarSplitButtonItem Alignment="Far" ToolTip="Темы" Glyph="{dx:DXImageGrayscale Image=Cube_32x32.png}" GlyphSize="Custom" CustomGlyphSize="24,24" AllowGlyphTheming="True" BeforeCommandExecute="BarSplitButtonItem_BeforeCommandExecute">
+                            <dxmvvm:Interaction.Behaviors >
+                                <dxb:BarSplitItemThemeSelectorBehavior />
+                            </dxmvvm:Interaction.Behaviors>
+                    </dxb:BarSplitButtonItem>    
+                </dxb:StatusBarControl>
+            </dxb:BarContainerControl>
+
+        </Grid>
+        <!--<Canvas Background="Transparent" IsHitTestVisible="False" x:Name="adornerLayer" Grid.Row="0" Grid.RowSpan="2" />-->
+    </Grid>
+</dx:DXTabbedWindow>

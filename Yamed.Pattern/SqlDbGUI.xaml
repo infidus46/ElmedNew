@@ -1,0 +1,53 @@
+﻿<UserControl
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        x:Class="Yamed.Pattern.SqlDbGUI">
+    <dx:LoadingDecorator Name="LoadingDecorator1" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <dxwui:AppBar IsOpen="True" HideMode="Sticky" >
+                <dxwui:AppBarButton Content="&#xE112;" x:Name="BackButton" Label="Назад" Click="BackButton_OnClick" AllowGlyphTheming="False" IsEllipseEnabled="True" GlyphStretch="UniformToFill"/>
+                <dxwui:AppBarSeparator/>
+                <dxwui:AppBarButton Content="&#xE109;" x:Name="NewButton" Label="Новая запись" Click="NewButton_OnClick"/>
+                <dxwui:AppBarButton Content="&#xE104;" x:Name="EditButton" Label="Редактировать запись" Click="EditButton_OnClick"/>
+                <dxwui:AppBarSeparator/>
+                <dxwui:AppBarButton Content="&#xE105;" x:Name="SaveButton" Label="Сохранить" Click="SaveButton_OnClick" IsCancel="False"/>
+                <dxwui:AppBarSeparator/>
+                <dxwui:AppBarButton Content="&#xE2AE;" x:Name="LayoutButton" Label="Настроить вид формы" Click="LayoutButton_OnClick"/>
+                <dxwui:AppBarButton Content="&#xE130;" x:Name="ReportButton" Label="Настроить вид печатной формы" Click="ReportButton_OnClick"/>
+                <dxwui:AppBarSeparator/>
+                <dxwui:AppBarButton Content="&#xE107;" x:Name="DeleteButton" Label="Удалить запись" HorizontalAlignment="Right" Click="DeleteButton_OnClick"/>
+                <!--<dxwui:AppBarButton Content="У" Name="DeleteButton" Label="Удалить запись" HorizontalAlignment="Right" />-->
+            </dxwui:AppBar>
+
+            <dxwui:NavigationFrame Navigated="NavigationFrame1_OnNavigated" x:Name="NavigationFrame1" Grid.Row="1" AnimationType="SlideHorizontal" AnimationSpeedRatio="2">
+                <dxwui:NavigationFrame.Source>
+                    <dxg:GridControl x:Name="GridControl1" AutoGenerateColumns="None" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0"
+					ItemsSource="{Binding}" EnableSmartColumnsGeneration="True" Grid.RowSpan="2" SelectedItemChanged="GridControl1_OnSelectedItemChanged">
+                        <dxg:GridControl.View>
+                            <dxg:TableView AllowPerPixelScrolling="True" ShowTotalSummary="True" ShowAutoFilterRow="True" ShowCriteriaInAutoFilterRow="True" />
+                        </dxg:GridControl.View>
+                        <dxg:GridColumn FieldName="ID"/>
+                        <dxg:GridColumn FieldName="TableName"/>
+                        <dxg:GridColumn FieldName="TableDisplayName"/>
+                        <dxg:GridColumn FieldName="TableLayout"/>
+                        <dxg:GridColumn FieldName="TableParent"/>
+                        <dxg:GridColumn FieldName="FieldParent"/>
+                        <dxg:GridColumn FieldName="Comment"/>
+                        <dxg:GridColumn FieldName="TableType"/>
+                        <dxg:GridColumn FieldName="TableLock"/>
+                    </dxg:GridControl>
+                </dxwui:NavigationFrame.Source>
+            </dxwui:NavigationFrame>
+        </Grid>
+    </dx:LoadingDecorator>
+</UserControl>

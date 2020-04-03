@@ -1,0 +1,955 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" 
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys"
+             xmlns:control="clr-namespace:Yamed.Control;assembly=Yamed.Control"
+             xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:Serialization="clr-namespace:DevExpress.Xpf.LayoutControl.Serialization;assembly=DevExpress.Xpf.LayoutControl.v19.2"
+             x:Class="Yamed.Emr.SluchTemplateD3"
+             control:EnterKeyTraversal.IsEnabled="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="1050" d:DesignWidth="1366">
+    <UserControl.Resources>
+        <Style x:Key="MyFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Control}">
+                        <Grid Margin="3 2">
+                            <Rectangle x:Name="r1" StrokeThickness="1" Stroke="Black" StrokeDashArray="2 2" />
+                            <Border x:Name="border" Width="{TemplateBinding ActualWidth}" Height="{TemplateBinding ActualHeight}" CornerRadius="2" BorderThickness="1" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ShadowStyle">
+            <Setter Property="Control.Foreground" Value="LightGray" />
+        </Style>
+        <Style x:Key="InformButton" TargetType="{x:Type Button}">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Margin" Value="2" />
+            <Setter Property="FontFamily" Value="Verdana" />
+            <Setter Property="FontSize" Value="11px" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FocusVisualStyle" Value="{StaticResource MyFocusVisual}" />
+            <Setter Property="Background" Value="Transparent">
+                <!--<Setter.Value>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
+                            <GradientStop Color="#FFA6D8F5" Offset="0"/>
+                            <GradientStop Color="#FF4B83CB" Offset="0.30"/>
+                            <GradientStop Color="#FF02428D" Offset="0.7"/>
+                            -->
+                <!--<GradientStop Color="#FFA6D8F5" Offset="1"/>-->
+                <!--
+                        </LinearGradientBrush>
+                    </Setter.Value>-->
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderThickness="0" Padding="4,2" 
+				            BorderBrush="Transparent" CornerRadius="5" 
+				            Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter HorizontalAlignment="Center" 
+	                               VerticalAlignment="Center" x:Name="contentShadow" 
+					                Style="{StaticResource ShadowStyle}">
+                                    <ContentPresenter.RenderTransform>
+                                        <TranslateTransform X="1.0" Y="1.0" />
+                                    </ContentPresenter.RenderTransform>
+                                </ContentPresenter>
+                                <ContentPresenter HorizontalAlignment="Center" 
+	                               VerticalAlignment="Center" x:Name="content" />
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="SteelBlue" />
+                                <Setter Property="Background" Value="Gold" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Color="Gold" Offset="0.2" />
+                                            <GradientStop Color="Red" Offset="0.85" />
+                                            <GradientStop Color="Gold" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="content" Property="RenderTransform">
+                                    <Setter.Value>
+                                        <TranslateTransform Y="1.0" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <!--<Trigger Property="IsDefaulted" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF282828" />
+                            </Trigger>-->
+                            <!--<Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#13EF8F" />
+                            </Trigger>-->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Opacity" Value="0.7" />
+                                <Setter Property="Foreground" Value="Gray" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--<local:DiagnosColorConverter x:Key="diagnosColorConverter" />
+        <local:KsgColorConverter x:Key="ksgColorConverter" />
+        <local:DiagnosShowConverter x:Key="diagnosShowConverter" />-->
+
+        <ControlTemplate x:Key="toggleButtonTemplate" TargetType="{x:Type ToggleButton}">
+            <Grid Width="22"
+                        Height="22"
+                        Background="Transparent">
+                <Image x:Name="ExpandImage"
+                                  Source="pack://application:,,,/Yamed.Icons;component/Icons/lock_open.png"
+                                  HorizontalAlignment="Center" 
+                                  VerticalAlignment="Center" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsChecked"
+                     Value="True">
+                    <Setter Property="Source"
+                              TargetName="ExpandImage"
+                            Value="pack://application:,,,/Yamed.Icons;component/Icons/lock_closed.png" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <Style x:Key="toggleButtonStyle" TargetType="{x:Type ToggleButton}">
+            <Setter Property="Template" Value="{StaticResource toggleButtonTemplate}" />
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid x:Name="ZSlGrid">
+        <Grid.Resources>
+            <Style TargetType="{x:Type dxe:ComboBoxEdit}">
+                <Setter Property="AutoComplete" Value="True" />
+                <Setter Property="FilterCondition" Value="Contains" />
+                <Setter Property="HorizontalScrollBarVisibility" Value="Disabled" />
+                <Setter Property="ImmediatePopup" Value="True" />
+                <Setter Property="IncrementalFiltering" Value="True" />
+                <Setter Property="InvalidValueBehavior" Value="AllowLeaveEditor" />
+                <Setter Property="NullValueButtonPlacement" Value="EditBox" />
+                <Setter Property="ValidateOnTextInput" Value="False" />
+                <!--<Setter Property="ValidateOnEnterKeyPressed" Value="True" />-->
+                <!--<Setter Property="ShowSizeGrip" Value="True" />-->
+
+            </Style>
+            <Style TargetType="{x:Type dxg:LookUpEdit}">
+                <Setter Property="AutoComplete" Value="True" />
+                <Setter Property="FilterCondition" Value="Contains" />
+                <Setter Property="HorizontalScrollBarVisibility" Value="Disabled" />
+                <Setter Property="ImmediatePopup" Value="True" />
+                <Setter Property="IncrementalFiltering" Value="True" />
+                <Setter Property="InvalidValueBehavior" Value="AllowLeaveEditor" />
+                <Setter Property="NullValueButtonPlacement" Value="EditBox" />
+                <Setter Property="ValidateOnTextInput" Value="False" />
+                <!--<Setter Property="ValidateOnEnterKeyPressed" Value="True" />-->
+                <!--<Setter Property="ShowSizeGrip" Value="True" />-->
+
+            </Style>
+
+            <Style TargetType="{x:Type dxlc:LayoutItem}">
+                <Setter Property="LabelPosition" Value="Left" />
+            </Style>
+        </Grid.Resources>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid Background="#FFDA8615">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5,2,5,2">
+                    <Button Style="{StaticResource InformButton}" Click="ButtonBase_OnClick">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Yamed.Icons;component/Icons/storage_drive_disk_flash_usb_check-512.png" Width="24" Height="24" />
+                            <TextBlock Text="Сохранить случай" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="14" />
+                        </StackPanel>
+                    </Button>
+
+                    <Button Style="{StaticResource InformButton}" Click="NewZSluch_OnClick">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Yamed.Icons;component/Icons/list-add-512.png" Width="24" Height="24" />
+                            <TextBlock Text="Создать новый случай" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="14" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <dxlc:LayoutControl Padding="4,3,4,4" IsCustomization="{Binding EditValue, ElementName=CheckBox1}" Grid.Row="1" Orientation="Vertical">
+                <dxlc:LayoutGroup Header="Пациент:" View="GroupBox" x:Name="PacientGroup">
+                    <dxlc:LayoutItem Label="Номер полиса" Width="400">
+                        <dxe:ButtonEdit AllowDefaultButton="False" Tag="IgnoreEnterKeyTraversal" x:Name="polisBox" MaxLength="16" KeyUp="PolisBox_OnKeyUp">
+                            <dxe:ButtonInfo Content="..." Click="PolisSearch_OnClick" />
+                            <dxe:ButtonInfo Content="Поиск" Click="PolisEmr_OnClick" IsEnabled="False" />
+                            <dxe:ButtonInfo Content="ЭМК" Click="EmrPacient_OnClick" />
+
+                        </dxe:ButtonEdit>
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="Группа инв." ToolTip="Группа инвалидности">
+                        <dxe:ComboBoxEdit x:Name="InvEdit" VerticalAlignment="Top" ItemsSource="{Binding}" EditValue="{Binding DataContext.INV, ElementName=ZSlGrid}" DisplayMember="NameWithID" ValueMember="Id" />
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="МСЭ">
+                        <dxe:ComboBoxEdit x:Name="MseEdit" VerticalAlignment="Top" ItemsSource="{Binding}" EditValue="{Binding DataContext.MSE, ElementName=ZSlGrid}" DisplayMember="NameWithID" ValueMember="Id" />
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="Ветеран" Width="230">
+                        <dxe:ComboBoxEdit x:Name="VetEdit" VerticalAlignment="Top" ItemsSource="{Binding}" EditValue="{Binding DataContext.VETERAN, ElementName=ZSlGrid}" DisplayMember="NameWithID" ValueMember="Id" />
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="Статус зан." ToolTip="Статус занятости">
+                        <dxe:ComboBoxEdit x:Name="KatLgEdit" VerticalAlignment="Top" ItemsSource="{Binding}" EditValue="{Binding DataContext.WORK_STAT, ElementName=ZSlGrid}" DisplayMember="NameWithID" ValueMember="Id" />
+                    </dxlc:LayoutItem>
+
+                </dxlc:LayoutGroup>
+                <dxlc:LayoutGroup Header="Законченный случай (обращение)" View="GroupBox">
+                    <dxlc:LayoutGroup dx:ScrollViewerTouchBehavior.IsEnabled="True" Orientation="Vertical" dxlc:LayoutControl.AllowHorizontalSizing="True">
+                        <dxlc:LayoutItem Label="Усл. ок. пом." IsRequired="True" ToolTip="Условие оказания помощи">
+                            <Grid x:Name="UslOkzGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <dxe:ComboBoxEdit Validate="dxEdit_Validate" HorizontalAlignment="Stretch" x:Name="UslOkzEdit" VerticalAlignment="Top" ItemsSource="{Binding}" EditValue="{Binding DataContext.USL_OK, ElementName=ZSlGrid}" DisplayMember="NameWithID" ValueMember="id" />
+                                <ToggleButton Style="{DynamicResource toggleButtonStyle}" Grid.Column="1" x:Name="UslOkzTb" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{x:Null}" IsTabStop="False" />
+                            </Grid>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="Вид помощи" IsRequired="True">
+                            <Grid x:Name="VidPomGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <dxe:ComboBoxEdit Validate="dxEdit_Validate" HorizontalAlignment="Stretch" x:Name="VidPomEdit" VerticalAlignment="Top" ItemsSource="{Binding}" EditValue="{Binding DataContext.VIDPOM, ElementName=ZSlGrid}" DisplayMember="NameWithID" ValueMember="Id" />
+                                <ToggleButton Style="{DynamicResource toggleButtonStyle}" Grid.Column="1" x:Name="VidPomTb" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{x:Null}" IsTabStop="False" />
+                            </Grid>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="Форма пом." IsRequired="True">
+                            <Grid x:Name="ForPomGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <dxe:ComboBoxEdit x:Name="ForPomEdit" DisplayMember="NameWithID" ValueMember="IDFRMMP" ItemsSource="{Binding}" EditValue="{Binding DataContext.FOR_POM, ElementName=ZSlGrid}" />
+                                <ToggleButton Grid.Column="1" x:Name="ForPomTb" HorizontalAlignment="Center" VerticalAlignment="Center" IsTabStop="False" Style="{DynamicResource toggleButtonStyle}" />
+                            </Grid>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="МО напр." ToolTip="МО напрвившая на лечение">
+                            <Grid x:Name="NaprMoGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <dxe:ComboBoxEdit HorizontalAlignment="Stretch" x:Name="NaprMoEdit" VerticalAlignment="Top" ItemsSource="{Binding}" DisplayMember="nam_mok" ValueMember="mcod" EditValue="{Binding DataContext.NPR_MO, ElementName=ZSlGrid}" />
+                                <ToggleButton Grid.Column="1" x:Name="NaprMoTb" HorizontalAlignment="Center" VerticalAlignment="Center" IsTabStop="False" Style="{DynamicResource toggleButtonStyle}" />
+                            </Grid>
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutGroup Header="LayoutGroup" View="Group" Orientation="Vertical" dxlc:LayoutControl.AllowHorizontalSizing="True">
+                        <dxlc:LayoutItem Label="Дата начала" ToolTip="Дата начала законченного случая" IsRequired="True">
+                            <Grid x:Name="DateZ1Grid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <dxe:DateEdit Validate="dxEdit_Validate" x:Name="DateZ1Edit" EditValue="{Binding DATE_Z_1}" MaskType="DateTimeAdvancingCaret" Mask="d" />
+                                <ToggleButton Grid.Column="1" x:Name="DateZ1Tb" HorizontalAlignment="Center" VerticalAlignment="Center" IsTabStop="False" Style="{DynamicResource toggleButtonStyle}" />
+                            </Grid>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="Дата окончания" ToolTip="Дата окончания законченного случая" IsRequired="True">
+                            <Grid x:Name="DateZ2Grid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <dxe:DateEdit Validate="dxEdit_Validate" x:Name="DateZ2Edit" EditValue="{Binding DATE_Z_2}" MaskType="DateTimeAdvancingCaret" Mask="d" />
+                                <ToggleButton Grid.Column="1" x:Name="DateZ2Tb" HorizontalAlignment="Center" VerticalAlignment="Center" IsTabStop="False" Style="{DynamicResource toggleButtonStyle}" />
+                            </Grid>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="Результат" ToolTip="Результат обращения / госпитализации" IsRequired="True">
+                            <Grid x:Name="RsltGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <dxe:ComboBoxEdit Validate="dxEdit_Validate" x:Name="RsltEdit" EditValue="{Binding DataContext.RSLT, ElementName=ZSlGrid}" VerticalAlignment="Top" ItemsSource="{Binding}" DisplayMember="NameWithID" ValueMember="IDRMP" />
+                                <ToggleButton Grid.Column="1" x:Name="RsltTb" HorizontalAlignment="Center" VerticalAlignment="Center" IsTabStop="False" Style="{DynamicResource toggleButtonStyle}" />
+                            </Grid>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="Исход" ToolTip="Исход заболевания" IsRequired="True">
+                            <Grid x:Name="IshodGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <dxe:ComboBoxEdit Validate="dxEdit_Validate" x:Name="IshodEdit" VerticalAlignment="Top" ItemsSource="{Binding}" EditValue="{Binding DataContext.ISHOD, ElementName=ZSlGrid}" ValueMember="id" DisplayMember="NameWithID" />
+                                <ToggleButton Grid.Column="1" x:Name="IshodTb" HorizontalAlignment="Center" VerticalAlignment="Center" IsTabStop="False" Style="{DynamicResource toggleButtonStyle}" />
+                            </Grid>
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutGroup Header="LayoutGroup" View="Group" Orientation="Vertical" dxlc:LayoutControl.AllowHorizontalSizing="True">
+                        <dxlc:LayoutItem Label="Способ опл." ToolTip="Код способа оплаты медицинской помощи" IsRequired="True">
+                            <Grid x:Name="IdspGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <dxe:ComboBoxEdit Validate="dxEdit_Validate" x:Name="IdspEdit" VerticalAlignment="Top" ItemsSource="{Binding}" EditValue="{Binding DataContext.IDSP, ElementName=ZSlGrid}" DisplayMember="NameWithID" ValueMember="Id" />
+                                <ToggleButton Style="{DynamicResource toggleButtonStyle}" Grid.Column="1" x:Name="IdspTb" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{x:Null}" IsTabStop="False" />
+                            </Grid>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="Рег. код опл." ToolTip="Региональный код способа оплаты МП">
+                            <Grid x:Name="SluchOsRegionGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <dxe:ComboBoxEdit x:Name="SluchOsRegionEdit" VerticalAlignment="Top" ItemsSource="{Binding}" EditValue="{Binding DataContext.OS_SLUCH_REGION, ElementName=ZSlGrid}" DisplayMember="NameWithID" ValueMember="Id" NullText="НЕТ ПРИЗНАКА" />
+                                <ToggleButton Style="{DynamicResource toggleButtonStyle}" Grid.Column="1" x:Name="SluchOsRegionTb" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{x:Null}" IsTabStop="False" />
+                            </Grid>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="Возраст" ToolTip="Возрастной признак оплаты МП">
+                            <Grid x:Name="VozrGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <dxe:ComboBoxEdit x:Name="VozrEdit" VerticalAlignment="Top" ItemsSource="{Binding}" EditValue="{Binding DataContext.VOZR, ElementName=ZSlGrid}" DisplayMember="NAME" ValueMember="ID" NullText="НЕТ ПРИЗНАКА" />
+                                <ToggleButton Style="{DynamicResource toggleButtonStyle}" Grid.Column="1" x:Name="VozrTb" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{x:Null}" IsTabStop="False" />
+                            </Grid>
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutGroup>
+                <dxlc:LayoutGroup Header="Список случаев (посещений)" View="GroupBox">
+                    <Grid Margin="-10,-10, 2,-10" Width="285" x:Name="SlGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <dxb:BarContainerControl IsTabStop="False">
+                            <dxb:ToolBarControl AllowCustomizationMenu="False"
+                                                        AllowHide="False"
+                                                        AllowQuickCustomization="False"
+                                                        IsCollapsed="False"
+                                                        IsTabStop="False"
+                                                        ShowDragWidget="False"
+                                                        UseWholeRow="True">
+                                <dxb:BarButtonItem x:Name="SlAddItem"
+                                                            BarItemDisplayMode="ContentAndGlyph"
+                                                            Content="Добавить случай"
+                                                            Glyph="pack://application:,,,/Yamed.Icons;component/Icons/plus_orange.png"
+                                                            ItemClick="SlAddItem_OnItemClick" />
+                                <dxb:BarButtonItem x:Name="SlDelItem"
+                                                            BarItemDisplayMode="ContentAndGlyph"
+                                                            Content="Удалить случай"
+                                                            Glyph="pack://application:,,,/Yamed.Icons;component/Icons/deletered.png"
+                                                            ItemClick="SlDelItem_OnItemClick" />
+                            </dxb:ToolBarControl>
+
+                        </dxb:BarContainerControl>
+                        <dxg:GridControl x:Name="SlGridControl" SelectedItemChanged="SlGridControl_OnSelectedItemChanged" 
+                                                    Grid.Row="1"
+                                                    AutoGenerateColumns="None"
+                                                    EnableSmartColumnsGeneration="True"
+                                                    IsTabStop="False"
+                                                    ItemsSource="{Binding}">
+
+                            <dxg:GridControl.View>
+                                <dxg:TableView AllowPerPixelScrolling="True" 
+                                                            ShowGroupPanel="False"
+                                                            ShowTotalSummary="False" />
+                            </dxg:GridControl.View>
+                            <dxg:GridColumn FieldName="DATE_1" Width="75" 
+                                                        Header="Дата начала"
+                                                        ReadOnly="True" />
+                            <dxg:GridColumn FieldName="DATE_2"
+                                                        Header="Дата окончания"
+                                                Width="75" 
+                                                        ReadOnly="True" />
+                            <dxg:GridColumn x:Name="DsColumn"
+                                                        FieldName="DS1" Width="100"
+                                                        Header="Диагноз"
+                                                        ReadOnly="True">
+                                <!--<dxg:GridColumn.EditSettings>
+                                    <dxe:ComboBoxEditSettings x:Name="DsColumnEdit"
+                                                                AllowDefaultButton="False"
+                                                                DisplayMember="NameWithID"
+                                                                ItemsSource="{Binding}"
+                                                                ValueMember="IDDS" />
+                                </dxg:GridColumn.EditSettings>-->
+
+                            </dxg:GridColumn>
+                        </dxg:GridControl>
+                    </Grid>
+                    <dxlc:LayoutGroup dx:ScrollViewerTouchBehavior.IsEnabled="True" Orientation="Vertical" Serialization:SerializableItem.TypeName="LayoutGroup" dxlc:LayoutControl.AllowHorizontalSizing="True">
+                        <dxlc:LayoutGroup>
+                            <dxlc:LayoutGroup dx:ScrollViewerTouchBehavior.IsEnabled="True" Orientation="Vertical" dxlc:LayoutControl.AllowHorizontalSizing="True">
+                                <dxlc:LayoutGroup dx:ScrollViewerTouchBehavior.IsEnabled="True" Serialization:SerializableItem.TypeName="LayoutGroup">
+                                    <dxlc:LayoutItem Label="Код МО" ToolTip="Код медицинской организации">
+                                        <Grid x:Name="LpuGrid">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="20" />
+                                            </Grid.ColumnDefinitions>
+                                            <dxe:ComboBoxEdit HorizontalAlignment="Stretch" x:Name="LpuEdit" VerticalAlignment="Top" ItemsSource="{Binding}" DisplayMember="NameWithID" ValueMember="Id" EditValue="{Binding SelectedItem.LPU_1, ElementName=SlGridControl}" />
+                                            <ToggleButton Grid.Column="1" x:Name="LpuTb" HorizontalAlignment="Center" VerticalAlignment="Center" IsTabStop="False" Style="{DynamicResource toggleButtonStyle}" />
+                                        </Grid>
+
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutItem Label="Подр." ToolTip="Подразделение медицинской организации" Width="150">
+                                        <Grid x:Name="PodrGrid">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="20" />
+                                            </Grid.ColumnDefinitions>
+                                            <dxe:ComboBoxEdit HorizontalAlignment="Stretch" x:Name="PodrEdit" VerticalAlignment="Top" ItemsSource="{Binding}" DisplayMember="NameWithID" ValueMember="Id" EditValue="{Binding SelectedItem.LPU_1, ElementName=SlGridControl}" />
+                                            <ToggleButton Grid.Column="1" x:Name="PodrTb" HorizontalAlignment="Center" VerticalAlignment="Center" IsTabStop="False" Style="{DynamicResource toggleButtonStyle}" />
+                                        </Grid>
+
+                                    </dxlc:LayoutItem>
+                                </dxlc:LayoutGroup>
+                                <dxlc:LayoutGroup dx:ScrollViewerTouchBehavior.IsEnabled="True" Serialization:SerializableItem.TypeName="LayoutGroup">
+                                    <dxlc:LayoutItem Label="Врач" IsRequired="True">
+                                        <Grid x:Name="DoctGrid">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition />
+                                                <ColumnDefinition Width="20" />
+                                            </Grid.ColumnDefinitions>
+                                            <!--AllowCollectionView="True"-->
+                                            <dxe:ComboBoxEdit Validate="dxEdit_Validate" x:Name="DoctEdit" ItemsSource="{Binding}" DisplayMember="NameWithID" ValueMember="SNILS" EditValue="{Binding SelectedItem.IDDOKT, ElementName=SlGridControl}" />
+                                            <ToggleButton Style="{DynamicResource toggleButtonStyle}" Grid.Column="1" x:Name="DoctTb" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{x:Null}" IsTabStop="False" />
+                                        </Grid>
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutItem Label="Отд." Width="150">
+                                        <Grid x:Name="OtdelGrid">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="20" />
+                                            </Grid.ColumnDefinitions>
+                                            <dxe:ComboBoxEdit HorizontalAlignment="Stretch" x:Name="OtdelEdit" VerticalAlignment="Top" ItemsSource="{Binding}" DisplayMember="NameWithID" ValueMember="Id" EditValue="{Binding SelectedItem.PODR, ElementName=SlGridControl}" />
+                                            <ToggleButton Grid.Column="1" x:Name="OtdelTb" HorizontalAlignment="Center" VerticalAlignment="Center" IsTabStop="False" Style="{DynamicResource toggleButtonStyle}" />
+                                        </Grid>
+
+                                    </dxlc:LayoutItem>
+                                </dxlc:LayoutGroup>
+                                <dxlc:LayoutItem Label="Специальность" IsRequired="True">
+                                    <Grid x:Name="PrvsGrid">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="20" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <dxg:LookUpEdit Validate="dxEdit_Validate" x:Name="PrvsEdit" 
+                                            DisplayMember="NameWithID"
+                                            ValueMember="IDSPEC" 
+                                            AutoPopulateColumns="False"
+                                        
+                                            EditValue="{Binding SelectedItem.PRVS, ElementName=SlGridControl}"
+                                         
+                                            IsPopupAutoWidth="True" ItemsSource="{Binding}" ImmediatePopup="True">
+                                            <dxg:LookUpEdit.PopupContentTemplate>
+                                                <ControlTemplate>
+                                                    <dxg:GridControl x:Name="PART_GridControl">
+
+                                                        <dxg:GridControl.View>
+                                                            <dxg:TreeListView AutoWidth="True" AutoExpandAllNodes="True" KeyFieldName="ID" ParentFieldName="HIGH" TreeDerivationMode="Selfreference" />
+                                                        </dxg:GridControl.View>
+                                                        <dxg:GridColumn FieldName="ID" Header="Код" Width="30" />
+                                                        <dxg:GridColumn FieldName="NameWithID" Header="Наименование" />
+                                                    </dxg:GridControl>
+
+                                                </ControlTemplate>
+                                            </dxg:LookUpEdit.PopupContentTemplate>
+                                        </dxg:LookUpEdit>
+                                        <ToggleButton Style="{DynamicResource toggleButtonStyle}" Grid.Column="1" x:Name="PrvsTb" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{x:Null}" IsTabStop="False" />
+                                    </Grid>
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutGroup dx:ScrollViewerTouchBehavior.IsEnabled="True" Serialization:SerializableItem.TypeName="LayoutGroup">
+                                    <dxlc:LayoutItem Label="Профиль МП" IsRequired="True">
+                                        <Grid x:Name="ProfilGrid">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="20" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <dxe:ComboBoxEdit Validate="dxEdit_Validate" x:Name="ProfilEdit" ItemsSource="{Binding}" DisplayMember="NameWithID" ValueMember="Id" EditValue="{Binding SelectedItem.PROFIL, ElementName=SlGridControl}" />
+                                            <ToggleButton Style="{DynamicResource toggleButtonStyle}" Grid.Column="1" x:Name="ProfilTb" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{x:Null}" IsTabStop="False" />
+                                        </Grid>
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutItem Label="Дет." ToolTip="Признак детского профиля" IsRequired="True" Width="120">
+                                        <Grid x:Name="DetGrid">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="20" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <dxe:ComboBoxEdit Validate="dxEdit_Validate" x:Name="DetEdit" ItemsSource="{Binding}" EditValue="{Binding SelectedItem.DET, ElementName=SlGridControl}" DisplayMember="NameWithID" ValueMember="ID" />
+                                            <ToggleButton Style="{DynamicResource toggleButtonStyle}" Grid.Column="1" x:Name="DetTb" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{x:Null}" IsTabStop="False" />
+                                        </Grid>
+                                    </dxlc:LayoutItem>
+                                </dxlc:LayoutGroup>
+                                <dxlc:LayoutItem Label="Цель посещения">
+                                    <Grid x:Name="PCelTypeGrid">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="20" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <dxe:ComboBoxEdit x:Name="PCelEdit" ItemsSource="{Binding}" EditValue="{Binding SelectedItem.P_CEL25, ElementName=SlGridControl}" DisplayMember="NameWithID" ValueMember="IDPC" />
+                                        <ToggleButton Style="{DynamicResource toggleButtonStyle}" Grid.Column="1" x:Name="PCelTypeTb" HorizontalAlignment="Center" VerticalAlignment="Center" IsTabStop="False" />
+                                    </Grid>
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem Label="№ истории болезни">
+                                    <dxe:TextEdit x:Name="NHistoryEdit" EditValue="{Binding SelectedItem.NHISTORY, ElementName=SlGridControl}" ToolTip="Номер истории болезни/ талона амбулаторного пациента" />
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem Label="0" IsEnabled="False">
+                                    <dxe:TextEdit />
+                                </dxlc:LayoutItem>
+
+                            </dxlc:LayoutGroup>
+                            <dxlc:LayoutGroup Header="LayoutGroup" View="Group" Orientation="Vertical" Width="320" dxlc:LayoutControl.AllowHorizontalSizing="True">
+                                <dxlc:LayoutItem Label="Диагноз осн." ToolTip="Диагноз основной" IsRequired="True">
+                                    <Grid x:Name="Ds1Grid">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="20" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <dxg:LookUpEdit Validate="dxEdit_Validate" x:Name="Ds1Edit" 
+                                                DisplayMember="IDDS" 
+                                                ValueMember="IDDS" 
+                                                AutoPopulateColumns="False"
+                                        
+                                            EditValue="{Binding SelectedItem.DS1, ElementName=SlGridControl}"
+                                         
+                                                IsPopupAutoWidth="True" ItemsSource="{Binding}" GotFocus="mkbBox_GotFocus" LostFocus="mkbBox_LostFocus">
+                                            <dxg:LookUpEdit.PopupContentTemplate>
+                                                <ControlTemplate>
+                                                    <dxg:GridControl x:Name="PART_GridControl">
+
+                                                        <dxg:GridControl.View>
+                                                            <dxg:TableView AutoWidth="True" />
+
+                                                            <!--CellStyle="{StaticResource customCellStyle}"-->
+
+                                                        </dxg:GridControl.View>
+                                                        <!--<dxg:GridControl.Resources>
+                                                        <Style x:Key="customCellStyle"
+                                                BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}" TargetType="{x:Type dxg:LightweightCellEditor}">
+                                                            <Setter Property="Foreground" Value="{Binding RowData.Row.PAYABLE}"/>
+                                                        </Style>
+                                                    </dxg:GridControl.Resources>-->
+                                                        <dxg:GridColumn FieldName="IDDS" Header="Код МКБ" Width="30" />
+                                                        <dxg:GridColumn FieldName="DSNAME" Header="Наименование МКБ" />
+                                                    </dxg:GridControl>
+
+                                                </ControlTemplate>
+                                            </dxg:LookUpEdit.PopupContentTemplate>
+                                        </dxg:LookUpEdit>
+                                        <ToggleButton Style="{DynamicResource toggleButtonStyle}" Grid.Column="1" x:Name="Ds1Tb" HorizontalAlignment="Center" VerticalAlignment="Center" IsTabStop="False" />
+                                    </Grid>
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem Label="Впервые выявл." ToolTip="Основной диагноз впервые выявлен">
+                                    <dxe:ComboBoxEdit x:Name="Ds1PrEdit" ItemsSource="{Binding}" EditValue="{Binding SelectedItem.DS1_PR, ElementName=SlGridControl}" DisplayMember="NameWithID" ValueMember="ID" />
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem Label="Дисп. набл." ToolTip="Диспансерное наблюдение по основному диагнозу">
+                                    <dxe:ComboBoxEdit x:Name="DnEdit" ItemsSource="{Binding}" EditValue="{Binding SelectedItem.DN, ElementName=SlGridControl}" DisplayMember="NameWithID" ValueMember="ID" />
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem Label="Реабилитация" ToolTip="Признак реабилитации">
+                                    <dxe:ComboBoxEdit x:Name="ReabnEdit" ItemsSource="{Binding}" EditValue="{Binding SelectedItem.REAB, ElementName=SlGridControl}" DisplayMember="NameWithID" ValueMember="ID" />
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem Label="Дата начала" IsRequired="True">
+                                    <Grid x:Name="Date1Grid">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="20" />
+                                        </Grid.ColumnDefinitions>
+                                        <dxe:DateEdit Validate="dxEdit_Validate" x:Name="Date1Edit" EditValue="{Binding SelectedItem.DATE_1, ElementName=SlGridControl}" MaskType="DateTimeAdvancingCaret" Mask="d" />
+                                        <ToggleButton Grid.Column="1" x:Name="Date1Tb" HorizontalAlignment="Center" VerticalAlignment="Center" IsTabStop="False" Style="{DynamicResource toggleButtonStyle}" />
+                                    </Grid>
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem Label="Дата окончания" IsRequired="True">
+                                    <Grid x:Name="Date2Grid">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="20" />
+                                        </Grid.ColumnDefinitions>
+                                        <dxe:DateEdit Validate="dxEdit_Validate" x:Name="Date2Edit" EditValue="{Binding SelectedItem.DATE_2, ElementName=SlGridControl}" MaskType="DateTimeAdvancingCaret" Mask="d" />
+                                        <ToggleButton Grid.Column="1" x:Name="Date2Tb" HorizontalAlignment="Center" VerticalAlignment="Center" IsTabStop="False" Style="{DynamicResource toggleButtonStyle}" />
+                                    </Grid>
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem Label="0" IsEnabled="False">
+                                    <dxe:TextEdit />
+                                </dxlc:LayoutItem>
+
+                            </dxlc:LayoutGroup>
+                            <dxlc:LayoutGroup Width="280">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <dxb:BarContainerControl>
+                                    <dxb:ToolBarControl AllowCustomizationMenu="False"
+                                        AllowHide="False"
+                                        AllowQuickCustomization="False"
+                                        IsCollapsed="False"
+                                        IsTabStop="False"
+                                        ShowDragWidget="False"
+                                        UseWholeRow="True">
+                                        <dxb:BarButtonItem x:Name="Ds2AddItem"
+                                            BarItemDisplayMode="ContentAndGlyph"
+                                            Content="Добавить диагноз"
+                                            Glyph="pack://application:,,,/Yamed.Icons;component/Icons/plus_orange.png"
+                                            ItemClick="Ds2AddItem_OnItemClick" />
+                                        <dxb:BarButtonItem x:Name="Ds2DelItem"
+                                            BarItemDisplayMode="ContentAndGlyph"
+                                            Content="Удалить диагноз"
+                                            Glyph="pack://application:,,,/Yamed.Icons;component/Icons/deletered.png"
+                                            ItemClick="Ds2DelItem_OnItemClick" />
+                                    </dxb:ToolBarControl>
+                                </dxb:BarContainerControl>
+
+                                <dxg:GridControl x:Name="Ds2GridControl"
+                                    Grid.Row="1"
+                                    AutoGenerateColumns="None"
+                                    EnableSmartColumnsGeneration="True"
+                                    ItemsSource="{Binding}">
+                                    <dxg:GridControl.View>
+                                        <dxg:TableView AllowPerPixelScrolling="True"
+                                            AutoWidth="True"
+                                            ShowGroupPanel="False"
+                                            ShowTotalSummary="False" />
+                                    </dxg:GridControl.View>
+                                    <dxg:GridColumn x:Name="Ds2Column"
+                                        FieldName="DS"
+                                        Header="Код по МКБ10">
+                                        <dxg:GridColumn.EditSettings>
+                                            <dxe:ComboBoxEditSettings x:Name="Ds2ColumnEdit"
+                                                AutoComplete="True"
+                                                DisplayMember="NameWithID"
+                                                FilterCondition="Contains"
+                                                ImmediatePopup="True"
+                                                IncrementalFiltering="True"
+                                                ItemsSource="{Binding}"
+                                                NullValueButtonPlacement="EditBox"
+                                                ValueMember="IDDS" />
+                                        </dxg:GridColumn.EditSettings>
+                                    </dxg:GridColumn>
+                                    <dxg:GridColumn FieldName="DS2_PR" Header="Выявлен впервые">
+                                        <dxg:GridColumn.EditSettings>
+                                            <dxe:ComboBoxEditSettings x:Name="Ds2PrColumnEdit"
+                                                AutoComplete="True"
+                                                DisplayMember="NameWithID"
+                                                FilterCondition="Contains"
+                                                ImmediatePopup="True"
+                                                IncrementalFiltering="True"
+                                                ItemsSource="{Binding}"
+                                                NullValueButtonPlacement="EditBox"
+                                                ValueMember="ID" />
+                                        </dxg:GridColumn.EditSettings>
+                                    </dxg:GridColumn>
+                                    <dxg:GridColumn FieldName="DS_TYPE" Header="Тип диагноза">
+                                        <dxg:GridColumn.EditSettings>
+                                            <dxe:ComboBoxEditSettings x:Name="Ds2TypeColumnEdit"
+                                                AutoComplete="True"
+                                                DisplayMember="NameWithID"
+                                                FilterCondition="Contains"
+                                                ImmediatePopup="True"
+                                                IncrementalFiltering="True"
+                                                ItemsSource="{Binding}"
+                                                NullValueButtonPlacement="EditBox"
+                                                ValueMember="ID" />
+                                        </dxg:GridColumn.EditSettings>
+                                    </dxg:GridColumn>
+
+                                </dxg:GridControl>
+                            </Grid>
+                                
+                            </dxlc:LayoutGroup>
+
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Header="Назначения:"
+                            IsCollapsible="True"
+                            Padding="-10"
+                            View="GroupBox">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <dxb:BarContainerControl>
+                                    <dxb:ToolBarControl AllowCustomizationMenu="False"
+                                        AllowHide="False"
+                                        AllowQuickCustomization="False"
+                                        IsCollapsed="False"
+                                        IsTabStop="False"
+                                        ShowDragWidget="False"
+                                        UseWholeRow="True">
+                                        <dxb:BarButtonItem x:Name="NaznAddItem"
+                                            BarItemDisplayMode="ContentAndGlyph"
+                                            Content="Добавить"
+                                            Glyph="pack://application:,,,/Yamed.Icons;component/Icons/plus_orange.png"
+                                            ItemClick="Ds3AddItem_OnItemClick" />
+                                        <dxb:BarButtonItem x:Name="NaznDelItem"
+                                            BarItemDisplayMode="ContentAndGlyph"
+                                            Content="Удалить"
+                                            Glyph="pack://application:,,,/Yamed.Icons;component/Icons/deletered.png"
+                                            ItemClick="Ds3DelItem_OnItemClick" />
+                                    </dxb:ToolBarControl>
+                                </dxb:BarContainerControl>
+
+                                <dxg:GridControl x:Name="Nazn3GridControl"
+                                    Grid.Row="1"
+                                    AutoGenerateColumns="None"
+                                    EnableSmartColumnsGeneration="True"
+                                    ItemsSource="{Binding}">
+                                    <dxg:GridControl.View>
+                                        <dxg:TableView AllowPerPixelScrolling="True"
+                                            AutoWidth="True"
+                                            ShowGroupPanel="False"
+                                            ShowTotalSummary="False" />
+                                    </dxg:GridControl.View>
+                                    <dxg:GridColumn FieldName="Column1" Header="Вид назначения" />
+                                    <dxg:GridColumn FieldName="Column2" Header="Специальность врача" />
+                                    <dxg:GridColumn FieldName="Column3" Header="Вид обследования" />
+                                    <dxg:GridColumn FieldName="Column4" Header="Профиль медицинской помощи" />
+                                    <dxg:GridColumn FieldName="Column5" Header="Профиль койки" />
+                                </dxg:GridControl>
+                            </Grid>
+                        </dxlc:LayoutGroup>
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutGroup>
+                <dxlc:LayoutGroup Header="Услуги:"
+                                  IsCollapsed="False"
+                                  IsCollapsible="True"
+                                  Padding="-10"
+                                  View="GroupBox">
+                    <Grid x:Name="UslGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <dxb:BarContainerControl>
+                            <dxb:ToolBarControl AllowCustomizationMenu="False"
+                                                        AllowHide="False"
+                                                        AllowQuickCustomization="False"
+                                                        IsCollapsed="False"
+                                                        IsTabStop="False"
+                                                        ShowDragWidget="False"
+                                                        UseWholeRow="True">
+                                <dxb:BarButtonItem x:Name="UslTemplateItem"
+                                               BarItemDisplayMode="ContentAndGlyph"
+                                                            Content="Шаблоны"
+                                               Glyph="pack://application:,,,/Yamed.Icons;component/Icons/catalogs.png"
+                                               ItemClick="UslTemplateItem_OnItemClick" Alignment="Near" />
+                                <dxb:BarItemSeparator />
+                                <dxb:BarButtonItem x:Name="UslAddItem"
+                                               BarItemDisplayMode="ContentAndGlyph"
+                                                            Content="Добавить"
+                                               Glyph="pack://application:,,,/Yamed.Icons;component/Icons/plus_orange.png"
+                                                            ItemClick="UslAddItem_OnItemClick" />
+                                <dxb:BarButtonItem x:Name="UslEditItem"
+                                               BarItemDisplayMode="ContentAndGlyph"
+                                                            Content="Редактировать"
+                                               Glyph="pack://application:,,,/Yamed.Icons;component/Icons/pencil.png"
+                                               ItemClick="UslEditItem_OnItemClick" />
+                                <dxb:BarButtonItem x:Name="UslDelItem"
+                                               BarItemDisplayMode="ContentAndGlyph"
+                                                            Content="Удалить"
+                                               Glyph="pack://application:,,,/Yamed.Icons;component/Icons/deletered.png"
+                                                            ItemClick="UslDelItem_OnItemClick" />
+                            </dxb:ToolBarControl>
+
+                        </dxb:BarContainerControl>
+
+                        <dxg:GridControl x:Name="UslGridControl" 
+                                         Grid.Row="1"
+                                                    AutoGenerateColumns="None"
+                                                    EnableSmartColumnsGeneration="True"
+                                                    ItemsSource="{Binding}">
+                            <dxg:GridControl.View>
+                                <dxg:TableView AllowPerPixelScrolling="True" 
+                                                            ShowFilterPanelMode="Never"
+                                               ShowGroupPanel="False"
+                                                            ShowTotalSummary="False" />
+                            </dxg:GridControl.View>
+                            <dxg:GridColumn x:Name="UslOtdelColumn"
+                                                FieldName="PODR"
+                                                Header="Отделение"
+                                                ReadOnly="False">
+                                <dxg:GridColumn.EditSettings>
+                                    <dxe:ComboBoxEditSettings x:Name="UslOtdelColumnEdit"
+                                                                  AllowDefaultButton="True"
+                                                                  DisplayMember="NameWithID"
+                                                                  ItemsSource="{Binding}"
+                                                                  ValueMember="Id" />
+                                </dxg:GridColumn.EditSettings>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn x:Name="UslDoctorColumn"
+                                                FieldName="CODE_MD"
+                                                Header="Врач"
+                                                ReadOnly="False">
+                                <dxg:GridColumn.EditSettings>
+                                    <dxe:ComboBoxEditSettings x:Name="UslDoctorColumnEdit" AutoComplete="True" FilterCondition="Contains" ImmediatePopup="True" IncrementalFiltering="True"
+                                                                  AllowDefaultButton="True"
+                                                                  DisplayMember="NameWithID"
+                                                                  ItemsSource="{Binding}"
+                                                                  ValueMember="SNILS" />
+                                </dxg:GridColumn.EditSettings>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn x:Name="UslPrvsColumn"
+                                                FieldName="PRVS"
+                                                Header="Специальность"
+                                                ReadOnly="False">
+                                <dxg:GridColumn.EditSettings>
+                                    <dxe:ComboBoxEditSettings x:Name="UslPrvsColumnEdit" AutoComplete="True" FilterCondition="Contains" ImmediatePopup="True" IncrementalFiltering="True"
+                                                                  AllowDefaultButton="True"
+                                                                  DisplayMember="NameWithID"
+                                                                  ItemsSource="{Binding}"
+                                                                  ValueMember="IDSPEC" />
+                                </dxg:GridColumn.EditSettings>
+                            </dxg:GridColumn>
+
+                            <dxg:GridColumn x:Name="UslProfilColumn"
+                                                FieldName="PROFIL"
+                                                Header="Профиль"
+                                                ReadOnly="False">
+                                <dxg:GridColumn.EditSettings>
+                                    <dxe:ComboBoxEditSettings x:Name="UslProfilColumnEdit" AutoComplete="True" FilterCondition="Contains" ImmediatePopup="True" IncrementalFiltering="True"
+                                                                  AllowDefaultButton="True"
+                                                                  DisplayMember="NameWithID"
+                                                                  ItemsSource="{Binding}"
+                                                                  ValueMember="Id" />
+                                </dxg:GridColumn.EditSettings>
+                            </dxg:GridColumn>
+
+                            <dxg:GridColumn FieldName="DATE_IN"
+                                                Header="Дата начала"
+                                                        ReadOnly="False" />
+
+                            <dxg:GridColumn FieldName="DATE_OUT"
+                                                Header="Дата окончания"
+                                                ReadOnly="False" />
+                            <dxg:GridColumn x:Name="UslDsColumn"
+                                                FieldName="DS"
+                                                Header="Диагноз"
+                                                        ReadOnly="False">
+
+                                <dxg:GridColumn.EditSettings>
+                                    <dxe:ComboBoxEditSettings x:Name="UslDsColumnEdit" AutoComplete="True" FilterCondition="Contains" ImmediatePopup="True" IncrementalFiltering="True"
+                                                                  AllowDefaultButton="True"
+                                                                  DisplayMember="NameWithID"
+                                                                  ItemsSource="{Binding}"
+                                                                  ValueMember="IDDS" />
+                                </dxg:GridColumn.EditSettings>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn x:Name="UslComentColumn"
+                                                FieldName="COMENTU"
+                                                Header="Комментарий"
+                                                ReadOnly="False" />
+                            <dxg:GridColumn x:Name="UslVidVmeColumn"
+                                                FieldName="VID_VME"
+                                                Header="Вид медицинского вмешательства"
+                                                ReadOnly="False">
+                                <dxg:GridColumn.EditSettings>
+                                    <dxe:ComboBoxEditSettings x:Name="UslVidVmeColumnEdit" AutoComplete="True" FilterCondition="Contains" ImmediatePopup="True" IncrementalFiltering="True"
+                                                                  AllowDefaultButton="True"
+                                                                  DisplayMember="NameWithID"
+                                                                  ItemsSource="{Binding}"
+                                                                  ValueMember="ID" />
+                                </dxg:GridColumn.EditSettings>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn x:Name="UslPOtkColumn"
+                                                FieldName="P_OTK"
+                                                Header="Признак отказа"
+                                                ReadOnly="False">
+                                <dxg:GridColumn.EditSettings>
+                                    <dxe:ComboBoxEditSettings x:Name="UslPOtkColumnEdit" AutoComplete="True" FilterCondition="Contains" ImmediatePopup="True" IncrementalFiltering="True"
+                                                                  AllowDefaultButton="True"
+                                                                  DisplayMember="NameWithID"
+                                                                  ItemsSource="{Binding}"
+                                                                  ValueMember="ID" />
+                                </dxg:GridColumn.EditSettings>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn x:Name="UslNplColumn"
+                                                FieldName="NPL"
+                                                Header="Неполный объем"
+                                                ReadOnly="False">
+                                <dxg:GridColumn.EditSettings>
+                                    <dxe:ComboBoxEditSettings x:Name="UslNplEdit" AutoComplete="True" FilterCondition="Contains" ImmediatePopup="True" IncrementalFiltering="True"
+                                                                  AllowDefaultButton="True"
+                                                                  DisplayMember="NameWithID"
+                                                                  ItemsSource="{Binding}"
+                                                                  ValueMember="ID" />
+                                </dxg:GridColumn.EditSettings>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn x:Name="UslCodeUslColumn" 
+                                                FieldName="CODE_USL"
+                                                Header="Код услуги"
+                                                ReadOnly="False">
+                                <dxg:GridColumn.EditSettings>
+                                    <dxe:ComboBoxEditSettings x:Name="UslCodeUslColumnEdit" AutoComplete="True" FilterCondition="Contains" ImmediatePopup="True" IncrementalFiltering="True"
+                                                                  AllowDefaultButton="True"
+                                                                  DisplayMember="NameWithID"
+                                                                  ItemsSource="{Binding}"
+                                                                  ValueMember="ID" />
+                                </dxg:GridColumn.EditSettings>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn x:Name="UslKolUslColumn"
+                                                FieldName="KOL_USL"
+                                                Header="Количество"
+                                                ReadOnly="False" />
+                        </dxg:GridControl>
+                    </Grid>
+
+                </dxlc:LayoutGroup>
+
+            </dxlc:LayoutControl>
+            <!--<dxe:CheckEdit Name="CheckBox1" Grid.Row="1" ></dxe:CheckEdit>-->
+
+        </Grid>
+        <!--<dxlc:LayoutControl Orientation="Vertical" View="GroupBox">
+            <dxlc:LayoutGroup Header="LayoutGroup" View="Group">
+                <dxlc:LayoutItem IsRequired="True" Label="Условия оказания помощи"></dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
+        </dxlc:LayoutControl>-->
+
+    </Grid>
+</UserControl>

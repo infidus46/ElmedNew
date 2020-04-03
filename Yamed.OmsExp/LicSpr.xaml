@@ -1,0 +1,62 @@
+﻿<UserControl
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+        x:Class="Yamed.OmsExp.LicSpr">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <dxlc:GroupBox Header="Выбор лицензий">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Grid.ColumnSpan="2" >
+                    <TextBlock Text="Медицинская организация"  />
+                    <dxe:ComboBoxEdit NullValueButtonPlacement="EditBox" AutoComplete="True" ValidateOnTextInput="False" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True"  InvalidValueBehavior="AllowLeaveEditor" x:Name="MOBox" ItemsSource="{Binding}" DisplayMember="NameWithID" ValueMember="mcod" SelectedIndexChanged="MOBox_OnSelectedIndexChanged" />
+
+                    <TextBlock Text="Номер лицензии"  />
+                    <dxe:ComboBoxEdit NullValueButtonPlacement="EditBox" AutoComplete="True" ValidateOnTextInput="False" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True"  InvalidValueBehavior="AllowLeaveEditor" x:Name="LicBox" ItemsSource="{Binding}" DisplayMember="LICN" ValueMember="ID" SelectedIndexChanged="LicBox_OnSelectedIndexChanged"/>
+
+                    <TextBlock Text="Вид помощи"  />
+                    <dxe:ComboBoxEdit HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Stretch" x:Name="typeHelpBox" VerticalAlignment="Top" ItemsSource="{Binding}" SelectedItem="{Binding DataContext.V008, ElementName=sluchGrid}" DisplayMember="NameWithID" ValueMember="Id" NullValueButtonPlacement="EditBox" AutoComplete="True" ValidateOnTextInput="False" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True"  InvalidValueBehavior="AllowLeaveEditor" SelectedIndexChanged="TypeHelpBox_OnSelectedIndexChanged" />
+
+                    <TextBlock Text="Условия оказания помощи"  />
+                    <dxe:ComboBoxEdit NullValueButtonPlacement="EditBox" AutoComplete="True" ValidateOnTextInput="False" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True"  InvalidValueBehavior="AllowLeaveEditor" x:Name="conditionHelpBox" ItemsSource="{Binding}" DisplayMember="NameWithID" ValueMember="id" SelectedItem="{Binding DataContext.V006, ElementName=sluchGrid}" SelectedIndexChanged="ConditionHelpBox_OnSelectedIndexChanged"/>
+
+                    <TextBlock Text="Выбор лицензии"  />
+
+                </StackPanel>
+                <dxe:ListBoxEdit Grid.Row="1" Grid.Column="0" x:Name="LicListBoxEdit" ItemsSource="{Binding}" DisplayMember="NameWithID" ValueMember="Id" >
+                    <dxe:ListBoxEdit.StyleSettings>
+                        <dxe:CheckedListBoxEditStyleSettings />
+                    </dxe:ListBoxEdit.StyleSettings>
+                </dxe:ListBoxEdit>
+                <Grid Grid.Column="1" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <Button Content="&lt;" Grid.Row="0"  Margin="5,10" Width="40" Click="DelButton_OnClick" />
+                    <Button Content="&gt;&gt;" Grid.Row="1"  Margin="5,10" Width="40" Click="InsertBase_OnClick"/>
+                </Grid>
+                
+
+            </Grid>
+        </dxlc:GroupBox>
+        <dxlc:GroupBox Grid.Column="1" Header="Выданные лицензии" >
+            <dxe:ListBoxEdit x:Name="LicMOListBoxEdit" ItemsSource="{Binding}" DisplayMember="V002.NameWithID" ValueMember="ID"  />
+        </dxlc:GroupBox>
+
+
+
+    </Grid>
+</UserControl>

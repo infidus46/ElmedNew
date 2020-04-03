@@ -1,0 +1,125 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" 
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:editors="clr-namespace:Yamed.Control.Editors;assembly=Yamed.Control"
+             x:Class="Yamed.OmsExp.EmrPacientControl" Initialized="EmrPacientControl_OnInitialized"
+             mc:Ignorable="d" 
+             d:DesignWidth="800"
+             >
+    <Grid Name="PacientGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <dxlc:LayoutControl Orientation="Vertical" Padding="0" >
+            <dxlc:LayoutGroup Header="Персональные данные" View="GroupBox">
+                <dxlc:LayoutGroup Orientation="Vertical">
+                    <dxlc:LayoutGroup Header="LayoutGroup" View="Group" ItemLabelsAlignment="Local">
+                        <dxlc:LayoutItem Label="Фамилия" IsRequired="True">
+                            <dxe:TextEdit x:Name="FamBox" EditValue="{Binding FAM, UpdateSourceTrigger=PropertyChanged}" FontWeight="DemiBold" CharacterCasing="Upper" Validate="Required_OnValidate" InvalidValueBehavior="AllowLeaveEditor" />
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="Имя" IsRequired="True">
+                            <dxe:TextEdit x:Name="ImBox" EditValue="{Binding IM, UpdateSourceTrigger=PropertyChanged}" Validate="Required_OnValidate" InvalidValueBehavior="AllowLeaveEditor" FontWeight="DemiBold" CharacterCasing="Upper"/>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="Отчество">
+                            <dxe:TextEdit x:Name="OtBox" EditValue="{Binding OT, UpdateSourceTrigger=PropertyChanged}" Validate="Conditional_OnValidate" InvalidValueBehavior="AllowLeaveEditor" FontWeight="DemiBold" CharacterCasing="Upper"/>
+                        </dxlc:LayoutItem>
+
+                    </dxlc:LayoutGroup>
+
+                    <dxlc:LayoutGroup ItemLabelsAlignment="Local">
+                        <dxlc:LayoutItem Label="Дата рождения" IsRequired="True">
+                            <dxe:DateEdit MaskType="DateTimeAdvancingCaret" Mask="d" x:Name="drBox" EditValue="{Binding DR, UpdateSourceTrigger=PropertyChanged}" Validate="Required_OnValidate" InvalidValueBehavior="AllowLeaveEditor" FontWeight="DemiBold" />
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="Пол" Width="200" HorizontalAlignment="Left" IsRequired="True" >
+                            <dxe:ComboBoxEdit EditValue="{Binding DataContext.W, ElementName=PacientGrid, UpdateSourceTrigger=PropertyChanged}" x:Name="wBox" ItemsSource="{Binding}" DisplayMember="NameWithID" ValueMember="Id" HorizontalScrollBarVisibility="Disabled" NullValueButtonPlacement="EditBox" AutoComplete="True" ValidateOnTextInput="False" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True" Validate="Required_OnValidate" InvalidValueBehavior="AllowLeaveEditor" FontWeight="DemiBold" />
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="Новорожденый" IsRequired="True">
+                            <dxe:TextEdit x:Name="novorBox" EditValue="{Binding NOVOR, UpdateSourceTrigger=PropertyChanged}" ToolTip="Указывается в случае оказания медицин-ской помощи ребёнку до государственной регистрации рожде-ния.&#xA;                                          0 – признак отсут-ствует.&#xA;                                          Если значение при-знака отлично от ну-ля, он заполняется по следующему шабло-ну:&#xA;                                          ПДДММГГН, где&#xA;                                          П – пол ребёнка в со-ответствии с класси-фикатором V005 Приложения А;&#xA;                                          ДД – день рождения;&#xA;                                          ММ – месяц рожде-ния;&#xA;                                          ГГ – последние две цифры года рожде-ния;&#xA;                                          Н – порядковый но-мер ребёнка (до двух знаков)." />
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutItem Label="Код надёжности идентификации пациента">
+                        <dxe:ComboBoxEdit EditValue="{Binding ., UpdateSourceTrigger=PropertyChanged}" x:Name="DostEdit" DisplayMember="NameWithID" HorizontalScrollBarVisibility="Disabled" NullValueButtonPlacement="EditBox" AutoComplete="True" ValidateOnTextInput="False" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True" InvalidValueBehavior="AllowLeaveEditor">
+                            <dxe:ComboBoxEdit.StyleSettings>
+                                <dxe:CheckedComboBoxStyleSettings/>
+                            </dxe:ComboBoxEdit.StyleSettings>
+                        </dxe:ComboBoxEdit>
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutGroup Header="Страхование ОМС" Orientation="Vertical" View="GroupBox">
+                        <dxlc:LayoutGroup Header="LayoutGroup" View="Group">
+                            <dxlc:LayoutItem Label="Тип полиса ОМС" IsRequired="True" Width="200" >
+                                <dxe:ComboBoxEdit  AutoComplete="True" ValidateOnTextInput="False" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True"  x:Name="policyTypeBox" ItemsSource="{Binding}" ValueMember="Id" DisplayMember="NameWithId" EditValue="{Binding DataContext.VPOLIS, ElementName=PacientGrid, UpdateSourceTrigger=PropertyChanged}" HorizontalScrollBarVisibility="Disabled" NullValueButtonPlacement="EditBox" Validate="Required_OnValidate" InvalidValueBehavior="AllowLeaveEditor" FontWeight="DemiBold" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="Серия" Width="150">
+                                <dxe:TextEdit x:Name="serPolisTextBox" EditValue="{Binding SPOLIS, UpdateSourceTrigger=PropertyChanged}" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="Номер" IsRequired="True">
+                                <dxe:ButtonEdit Tag="IgnoreEnterKeyTraversal" x:Name="polisBox" EditValue="{Binding NPOLIS, UpdateSourceTrigger=PropertyChanged}"  MaxLength="16" Validate="Required_OnValidate" InvalidValueBehavior="AllowLeaveEditor" FontWeight="DemiBold" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutItem Label="Код СМО" IsRequired="True">
+                            <dxe:ComboBoxEdit x:Name="smoBox" ItemsSource="{Binding}" ValueMember="smocod" DisplayMember="NameWithID" EditValue="{Binding DataContext.SMO, ElementName=PacientGrid, UpdateSourceTrigger=PropertyChanged}" HorizontalScrollBarVisibility="Disabled" NullValueButtonPlacement="EditBox" AutoComplete="True" ValidateOnTextInput="False" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True" Validate="Required_OnValidate" InvalidValueBehavior="AllowLeaveEditor" FontWeight="DemiBold" />
+                        </dxlc:LayoutItem>
+
+                    </dxlc:LayoutGroup>
+
+                    <dxlc:LayoutGroup View="GroupBox" Header="Документ" Orientation="Vertical" ItemLabelsAlignment="Local">
+                        <dxlc:LayoutGroup Header="LayoutGroup" View="Group">
+                            <dxlc:LayoutItem Label="Документ УДЛ">
+                                <dxe:ComboBoxEdit ItemsSource="{Binding}" x:Name="typeUdlBox" ValueMember="Id" EditValue="{Binding DataContext.DOCTYPE, ElementName=PacientGrid, UpdateSourceTrigger=PropertyChanged}" DisplayMember="NameWithID" HorizontalScrollBarVisibility="Disabled" NullValueButtonPlacement="EditBox" AutoComplete="True" ValidateOnTextInput="False" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True" InvalidValueBehavior="AllowLeaveEditor" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="Серия" Width="170">
+                                <dxe:TextEdit EditValue="{Binding DOCSER, UpdateSourceTrigger=PropertyChanged}" x:Name="udlSerialBox" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="Номер">
+                                <dxe:TextEdit EditValue="{Binding DOCNUM, UpdateSourceTrigger=PropertyChanged}" x:Name="udlNumberBox" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup>
+                            <dxlc:LayoutItem Label="Дата выдачи">
+                                <dxe:TextEdit/>
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="Место рождения">
+                                <dxe:TextEdit EditValue="{Binding MR, UpdateSourceTrigger=PropertyChanged}" x:Name="mrBox" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutItem Label="СНИЛС">
+                            <dxe:TextEdit x:Name="snilsBox" EditValue="{Binding SNILS, UpdateSourceTrigger=PropertyChanged}" />
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutGroup  ItemLabelsAlignment="Local">
+                        <dxlc:LayoutItem Label="ОКАТО территории проживания:">
+                            <dxe:ComboBoxEdit AutoComplete="True" ValidateOnTextInput="False" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True" InvalidValueBehavior="AllowLeaveEditor" x:Name="okatoTerBox" ItemsSource="{Binding}" ValueMember="KOD_OKATO" DisplayMember="OKATO" EditValue="{Binding DataContext.OKATOG, ElementName=PacientGrid, UpdateSourceTrigger=PropertyChanged}" />
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="ОКАТО територии прибывания">
+                            <dxe:ComboBoxEdit AutoComplete="True" ValidateOnTextInput="False" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True" InvalidValueBehavior="AllowLeaveEditor" x:Name="okatoTerPribBox" ItemsSource="{Binding}" ValueMember="KOD_OKATO" DisplayMember="OKATO" EditValue="{Binding DataContext.OKATOP, ElementName=PacientGrid, UpdateSourceTrigger=PropertyChanged}" />
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+
+                    <dxlc:LayoutGroup Header="LayoutGroup" View="Group" ItemLabelsAlignment="Local"/>
+                    <dxlc:LayoutGroup ItemLabelsAlignment="Local">
+                        <dxlc:LayoutItem Label="Комментарий" >
+                            <dxe:TextEdit Height="50"  TextWrapping="Wrap" VerticalContentAlignment="Top" AcceptsReturn="True"/>
+                        </dxlc:LayoutItem>
+
+                    </dxlc:LayoutGroup>
+
+                </dxlc:LayoutGroup>
+
+            </dxlc:LayoutGroup>
+        </dxlc:LayoutControl>
+        <Button Grid.Row="1" Content="Сохранить" Width="150" Margin="10" HorizontalAlignment="Right" Click="SaveButton_OnClick"></Button>
+    </Grid>
+</UserControl>
+    
+    
+    
+    
+ 
+    
+    
+    
+    

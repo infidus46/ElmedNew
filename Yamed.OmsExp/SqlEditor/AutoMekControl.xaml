@@ -1,0 +1,30 @@
+﻿<UserControl xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"  x:Class="Yamed.OmsExp.SqlEditor.AutoMekControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Yamed.OmsExp"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:sqlEditor="clr-namespace:Yamed.OmsExp.SqlEditor"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <dx:DXTabControl >
+            <dx:DXTabItem Name="TabItem1" Header="Медико-экономический контроль" >
+                <sqlEditor:AutoMekElement x:Name="AutoMekElement1" />
+            </dx:DXTabItem>
+            <dx:DXTabItem Name="TabItem2" Header="Реэкспертиза МЭК" IsEnabled="False">
+                <sqlEditor:AutoMekElement x:Name="AutoMekElement2" />
+            </dx:DXTabItem>
+        </dx:DXTabControl>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" >
+            <dxe:ProgressBarEdit Name="progressBar1" Visibility="Hidden" Width="270" Height="25" Margin="5,0,0,0"/>
+            <TextBlock Name="StatusText" Margin="5,0,0,0"></TextBlock>
+        </StackPanel>
+        <Button Grid.Row="1" Name="AutoMekStartButton" Content="Запустить" Margin="10" Width="150" HorizontalAlignment="Right" Click="AutoMekStartButton_Click"></Button>
+    </Grid>
+</UserControl>

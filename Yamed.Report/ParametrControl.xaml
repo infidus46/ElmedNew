@@ -1,0 +1,82 @@
+﻿<UserControl xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"  x:Class="Yamed.Reports.ParametrControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+             mc:Ignorable="d" 
+             Width="400">
+    <Grid>
+        <dxlc:LayoutControl >
+            <dxlc:LayoutGroup Orientation="Vertical">
+                <dxlc:LayoutGroup Orientation="Vertical"  View="GroupBox" Header="Даты экспертиз" Name="SDatesLGroup">
+                        <dxe:ListBoxEdit Name="DateListBoxEdit" ItemsSource="{Binding}" SelectionMode="Extended" DisplayMember="S_DATE_RUS" ValueMember="S_DATE" Height="200">
+                            <dxe:ListBoxEdit.StyleSettings>
+                                <dxe:CheckedListBoxEditStyleSettings />
+                            </dxe:ListBoxEdit.StyleSettings>
+                        </dxe:ListBoxEdit>
+                </dxlc:LayoutGroup>
+                <dxlc:LayoutGroup Orientation="Vertical"  View="GroupBox" Header="Даты актов" Name="AktDatesLGroup">
+                    <dxe:ListBoxEdit Name="DateActListBoxEdit" ItemsSource="{Binding}" SelectedIndexChanged="getnomerAkt" SelectionMode="Extended" DisplayMember="DATE_ACT_RUS" ValueMember="DATE_ACT" Height="200" >
+                        <dxe:ListBoxEdit.StyleSettings>
+                            <dxe:CheckedListBoxEditStyleSettings />
+                        </dxe:ListBoxEdit.StyleSettings>
+                    </dxe:ListBoxEdit>
+                </dxlc:LayoutGroup>
+                <dxlc:LayoutGroup Name="SpisokAktLGroup">
+                    <dxlc:LayoutGroup Orientation="Vertical">
+                        <dxlc:LayoutItem Label="Номер акта">
+                            <dxe:ComboBoxEdit x:Name="NomerAktEdit" ItemsSource="{Binding}" EditValue="NUM_ACT" ValueMember="NUM_ACT" DisplayMember="NUM_ACT" HorizontalScrollBarVisibility="Disabled"  AutoComplete="True" ValidateOnTextInput="False" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True" EditValueChanged="PayerEdit_OnEditValueChanged"/>
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutGroup>
+                <dxlc:LayoutGroup Header="Период отчета" View="GroupBox" Name="PDatesLGroup">
+                    <dxlc:LayoutItem Label="C">
+                        <dxe:DateEdit Name="BeginDateEdit"
+                                  Mask="y"
+                                  MaskUseAsDisplayFormat="True"
+                                  AllowRoundOutOfRangeValue="true">
+                            <dxe:DateEdit.StyleSettings>
+                                <dxe:DateEditPickerStyleSettings />
+                            </dxe:DateEdit.StyleSettings>
+                        </dxe:DateEdit>
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="По">
+                        <dxe:DateEdit Name="EndDateEdit"
+                                  Mask="y"
+                                  MaskUseAsDisplayFormat="True"
+                                  AllowRoundOutOfRangeValue="true">
+                            <dxe:DateEdit.StyleSettings>
+                                <dxe:DateEditPickerStyleSettings />
+                            </dxe:DateEdit.StyleSettings>
+                        </dxe:DateEdit>
+                    </dxlc:LayoutItem>
+                </dxlc:LayoutGroup>
+                <dxlc:LayoutGroup Header="Реквизиты документа" View="GroupBox" Name="PayerLGroup">
+                    <dxlc:LayoutGroup Orientation="Vertical">
+                        <dxlc:LayoutItem Label="Плательщик">
+                            <dxe:ComboBoxEdit x:Name="PayerEdit" ItemsSource="{Binding}" ValueMember="ID" DisplayMember="NameWithID" HorizontalScrollBarVisibility="Disabled" NullValueButtonPlacement="EditBox" AutoComplete="True" ValidateOnTextInput="False" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True" EditValueChanged="PayerEdit_OnEditValueChanged"/>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="Номер">
+                            <dxe:TextEdit Name="DocNumEdit"/>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="Дата" >
+                            <dxe:DateEdit Name="DocDateEdit" />
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="КБ" >
+                            <dxe:TextEdit Name="DocKbEdit"/>
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+
+                </dxlc:LayoutGroup>
+                <dxlc:LayoutGroup Header="Тип документ" View="GroupBox" Name="DocTypeLGroup">
+                    <dxlc:LayoutGroup Orientation="Vertical">
+                        <dxe:ComboBoxEdit x:Name="DocTypeEdit" ItemsSource="{Binding}" ValueMember="Id" DisplayMember="NameWithID" HorizontalScrollBarVisibility="Disabled" NullValueButtonPlacement="EditBox" AutoComplete="True" ValidateOnTextInput="False" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True" />
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutGroup>
+
+                <Button Width="150" Height="25" Margin="0,5" HorizontalAlignment="Right" Click="Button_Click">Выполнить</Button>
+            </dxlc:LayoutGroup>
+        </dxlc:LayoutControl>
+    </Grid>
+</UserControl>

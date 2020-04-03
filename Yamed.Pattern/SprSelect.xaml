@@ -1,0 +1,22 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Yamed.Pattern"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Class="Yamed.Pattern.SprSelect"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="300">
+    <Grid>
+
+        <dxlc:LayoutControl Orientation="Vertical">
+            <dxlc:LayoutGroup Header="LayoutGroup" View="Group" Orientation="Vertical">
+                <dxlc:LayoutItem Label="Справочник">
+                    <dxe:ComboBoxEdit Name="SprEdit" EditValue="{Binding DataContext.TableParent, ElementName=Grid1}" DisplayMember="NAME" ValueMember="ID" ItemsSource="{Binding}" AutoComplete="True" IncrementalFiltering="True" ImmediatePopup="True" FilterCondition="Contains" ValidateOnTextInput="False" NullValueButtonPlacement="EditBox" />
+                </dxlc:LayoutItem>
+                <Button Width="150" Height="30" HorizontalAlignment="Right" Margin="10" Content="OK"></Button>
+            </dxlc:LayoutGroup>
+        </dxlc:LayoutControl>
+
+    </Grid>
+</UserControl>

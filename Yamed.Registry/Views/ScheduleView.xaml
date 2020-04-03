@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="Yamed.Registry.Views.ScheduleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:views="clr-namespace:Yamed.Registry.Views"
+             xmlns:dragAndDrop="clr-namespace:Yamed.Registry.DragAndDrop"
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid VerticalAlignment="Top" Background="#99000000" Height="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="-" FontSize="12" Command="{Binding CollapseAll}"  Margin="2" Grid.Column="0"/>
+            <Button Content="+" FontSize="12" Command="{Binding ExpandAll}" Margin="2" Grid.Column="1"/>
+            <Label x:Name="ChisloTXT" Grid.Column="2" Content="{Binding DateInfo}" FontSize="14" Foreground="#ffffffff"  FontFamily="Arial" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" ></Label>
+        </Grid>
+
+
+        <ItemsControl Name="schedule" ScrollViewer.CanContentScroll="True" VirtualizingStackPanel.IsVirtualizing="True" VirtualizingStackPanel.VirtualizationMode="Standard"
+                      dragAndDrop:AutoDragScrollingProvider.EnableAutomaticScrolling="True" ItemsSource="{Binding HourBookings}" Grid.Row="1" >
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.Template>
+                <ControlTemplate>
+                    <ScrollViewer x:Name="ScrollViewer" HorizontalScrollBarVisibility="Disabled" 
+                                                              VerticalScrollBarVisibility="Auto" IsDeferredScrollingEnabled="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <ItemsPresenter SnapsToDevicePixels="True"/>
+                    </ScrollViewer>
+                </ControlTemplate>
+            </ItemsControl.Template>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <views:HourBookingView/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</UserControl>

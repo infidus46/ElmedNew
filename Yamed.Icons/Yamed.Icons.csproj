@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{35D4F927-361D-4E76-9569-B5E4DC1F4880}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Yamed.Icons</RootNamespace>
+    <AssemblyName>Yamed.Icons</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\1472123981_preferences-system-time.png" />
+    <Resource Include="Icons\1472123993_office-calendar.png" />
+    <Resource Include="Icons\1472125103_ChronologicalReview.png" />
+    <Resource Include="Icons\1472125427_Application.png" />
+    <Resource Include="Icons\1472125990_Doctor_2.png" />
+    <Resource Include="Icons\1472126015_247_Medical_Services.png" />
+    <Resource Include="Icons\1472126132_Waiting_Room.png" />
+    <Resource Include="Icons\1472126511_people_contacts_group.png" />
+    <Resource Include="Icons\1472127383_46.png" />
+    <Resource Include="Icons\1472127856_Large_group_people_users.png" />
+    <Resource Include="Icons\1472127859_Patients_patient_patents_hospital.png" />
+    <Resource Include="Icons\1472128089_red_gear_settings.png" />
+    <Resource Include="Icons\1472128095_conference_presentation_visual_screen.png" />
+    <Resource Include="Icons\1472128961_07.Wallet.png" />
+    <Resource Include="Icons\1472129713_302.png" />
+    <Resource Include="Icons\1472130016_Searchicons-search-people2.png" />
+    <Resource Include="Icons\1472130348_134.png" />
+    <Resource Include="Icons\1472140029_2008.png" />
+    <Resource Include="Icons\1472140320_settings-24.png" />
+    <Resource Include="Icons\1474746884_Russia.png" />
+    <Resource Include="Icons\1474838473_Medical__Health_care-91.png" />
+    <Resource Include="Icons\1474844444_Symptom_Checker.png" />
+    <Resource Include="Icons\1474848281_EditDocument.png" />
+    <Resource Include="Icons\1474849969_Lightning.png" />
+    <Resource Include="Icons\1474854284_rotate_ccw_cw_button_ekmp.png" />
+    <Resource Include="Icons\1474854284_rotate_ccw_cw_button_mee.png" />
+    <Resource Include="Icons\1474854284_rotate_ccw_cw_button_mek.png" />
+    <Resource Include="Icons\1474854985_checked_approved_accepted_consider.png" />
+    <Resource Include="Icons\1474855117_free-27.png" />
+    <Resource Include="Icons\1474856834_184_ekmp.png" />
+    <Resource Include="Icons\1474856834_184_mee.png" />
+    <Resource Include="Icons\1474856834_184_mek.png" />
+    <Resource Include="Icons\1475229909_hardware-22.png" />
+    <Resource Include="Icons\1481287271_Medical_Report-2.png" />
+    <Resource Include="Icons\1481287340_Medical_Book.png" />
+    <Resource Include="Icons\1481287343_Flask.png" />
+    <Resource Include="Icons\1481599949_9.png" />
+    <Resource Include="Icons\1481747560_Libros_01_20.png" />
+    <Resource Include="Icons\1481911997_file_add.png" />
+    <Resource Include="Icons\1481912017_file_search.png" />
+    <Resource Include="Icons\1481912019_file_edit.png" />
+    <Resource Include="Icons\1481912020_file_delete.png" />
+    <Resource Include="Icons\3floppy_unmount_9290.png" />
+    <Resource Include="Icons\add.jpg" />
+    <Resource Include="Icons\addresscard_3397.png" />
+    <Resource Include="Icons\add_group_1303.png" />
+    <Resource Include="Icons\agt_business.png" />
+    <Resource Include="Icons\camera_test_3497.png" />
+    <Resource Include="Icons\catalogs.png" />
+    <Resource Include="Icons\copy.png" />
+    <Resource Include="Icons\default_document.png" />
+    <Resource Include="Icons\deletered.png" />
+    <Resource Include="Icons\deletered_3225.png" />
+    <Resource Include="Icons\document_2750.png" />
+    <Resource Include="Icons\document_3300.png" />
+    <Resource Include="Icons\document_3414.png" />
+    <Resource Include="Icons\document_graph_9550.png" />
+    <Resource Include="Icons\editcopy.png" />
+    <Resource Include="Icons\edit_find_replace.png" />
+    <Resource Include="Icons\electr-ediniy-polis2011.jpg" />
+    <Resource Include="Icons\error_9761.png" />
+    <Resource Include="Icons\excel_2003_01.png" />
+    <Resource Include="Icons\flash_disk.png" />
+    <Resource Include="Icons\floppy-disk-icon-by-anonymous-save-1418468.png" />
+    <Resource Include="Icons\folder_blue_open_2087.png" />
+    <Resource Include="Icons\folder_red_open_3235.png" />
+    <Resource Include="Icons\folder_web.png" />
+    <Resource Include="Icons\friendfinder_3418.png" />
+    <Resource Include="Icons\gtk-refresh_4788.png" />
+    <Resource Include="Icons\hospital_8851.png" />
+    <Resource Include="Icons\hospital_blue.png" />
+    <Resource Include="Icons\invoice.png" />
+    <Resource Include="Icons\kaddressbook_4879.png" />
+    <Resource Include="Icons\lock_closed.png" />
+    <Resource Include="Icons\lock_open.png" />
+    <Resource Include="Icons\money.png" />
+    <Resource Include="Icons\ok.png" />
+    <Resource Include="Icons\old_openofficeorg_calc.png" />
+    <Resource Include="Icons\online.png" />
+    <Resource Include="Icons\PacientCard.png" />
+    <Resource Include="Icons\pencil.png" />
+    <Resource Include="Icons\player_stop.png" />
+    <Resource Include="Icons\plus_orange.png" />
+    <Resource Include="Icons\print_printer_5788.png" />
+    <Resource Include="Icons\properties_4137.png" />
+    <Resource Include="Icons\refresh_3001.png" />
+    <Resource Include="Icons\Registratyra.PNG" />
+    <Resource Include="Icons\reload.png" />
+    <Resource Include="Icons\reload_5266.png" />
+    <Resource Include="Icons\report.png" />
+    <Resource Include="Icons\run.png" />
+    <Resource Include="Icons\run_copy.png" />
+    <Resource Include="Icons\save.png" />
+    <Resource Include="Icons\save_gr.png" />
+    <Resource Include="Icons\script_badge.png" />
+    <Resource Include="Icons\script_editor.png" />
+    <Resource Include="Icons\script_editor_m.png" />
+    <Resource Include="Icons\search_folder.png" />
+    <Resource Include="Icons\search_group.png" />
+    <Resource Include="Icons\Spravochnik.png" />
+    <Resource Include="Icons\statistics.png" />
+    <Resource Include="Icons\TransparentBackGround.png" />
+    <Resource Include="Icons\t_web1.png" />
+    <Resource Include="Icons\user-add_blue.png" />
+    <Resource Include="Icons\user-exclude_blue.png" />
+    <Resource Include="Icons\user-gear_blue.png" />
+    <Resource Include="Icons\user-pen_blue.png" />
+    <Resource Include="Icons\user-print_blue.png" />
+    <Resource Include="Icons\vcard_4042.png" />
+    <Resource Include="Icons\web.png" />
+    <Resource Include="Icons\АВТО-МЭК.png" />
+    <Resource Include="Icons\знак.png" />
+    <Resource Include="Icons\Мешки.png" />
+    <Resource Include="Icons\Мешок.png" />
+    <Resource Include="Icons\МЭК.png" />
+    <Resource Include="Icons\МЭЭ.png" />
+    <Resource Include="Icons\ЭКМП.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Doctor_2-512.png" />
+    <Resource Include="Icons\if_file-symlink-directory_298775.png" />
+    <Resource Include="Icons\if_home_298794.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\patient-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Device-67-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\_round_menu_one-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\svg-2-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\delete-512.png" />
+    <Resource Include="Icons\refresh-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\mobile-menu-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\menu-up-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Calendar-512.png" />
+    <Resource Include="Icons\ID_Card-512.png" />
+    <Resource Include="Icons\Leader-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Working_Schedule-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\49-512.png" />
+    <Resource Include="Icons\list-add-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\71_-_Add_Notes-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Add_black-512.png" />
+    <Resource Include="Icons\Edit_black-512.png" />
+    <Resource Include="Icons\Remove_black-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Refresh_black-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\storage_drive_disk_flash_usb_check-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\4259-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\2094-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\VCard-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Work_Desk-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\medical_test_stethoscope-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\527-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\investor_money-512.png" />
+    <Resource Include="Icons\My_Card-512.png" />
+    <Resource Include="Icons\Referals-512.png" />
+    <Resource Include="Icons\stethoscope-512.png" />
+    <Resource Include="Icons\tarifs_diagram_financial_business-512.png" />
+    <Resource Include="Icons\time_sheduled-512.png" />
+    <Resource Include="Icons\warranty_company-512.png" />
+    <Resource Include="Icons\Why_us_Team-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\delete-512_black.png" />
+    <Resource Include="Icons\refresh-512_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\add-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Copy_Printer-256.png" />
+    <Resource Include="Icons\Pin_Note-256.png" />
+    <Resource Include="Icons\Search_Ring_Binder-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\check_up-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\bug-report-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\certificate_diploma_folded_achievement_license_graduation_graduate-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\list-subtract-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\iconico-089-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\cloud__folder__download__upload-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\021_119_layout_wireframe_grid_sitemap_structure_list_thread-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\700048-icon-89-document-file-sql-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\698928-icon-95-folder-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\free-37-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\_80ui-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\eb94f4c188d8cd0047e51f685096fbd4-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\27-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\if_color_5985.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\if_application_32383.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\cloud_update-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\x-12-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\b505320b084d91f06e18509d1c95860d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\unload_new.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

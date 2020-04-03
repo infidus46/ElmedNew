@@ -1,0 +1,2155 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ElmedicineNew" Class="ElmedDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MED\SQLEXPRESS01;Initial Catalog=ElmedicineNew;Integrated Security=True" SettingsObjectName="Yamed.Entity.Properties.Settings" SettingsPropertyName="ElmedicineNewConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AKT_EKMP_TBL" Member="AKT_EKMP_TBL">
+    <Type Name="AKT_EKMP_TBL">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EKMP_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AKT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="USERID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CONTRACT" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="SMONAME" Type="System.String" DbType="NVarChar(75)" CanBeNull="true" />
+      <Column Name="MONAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="SCHET_NUM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="POLIS_NUM" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="CARD_NUM" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="DS1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DS_EXP" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="PERIOD1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PERIOD2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SUMV" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="BOL_DLIT" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="DOCT" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="DOC_CHECKED" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="ZAKL" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="RECOMEND" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="COD_PU" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SUMP" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SUMNP" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SUM_MULCT" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SLID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SANKID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AKT_NUMBER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SANK_AUTO_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUM_PR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUM_UM" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COD_PU_TS" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="EKMP_TYPE_DB_AKT_EKMP_TBL" Member="EKMP_TYPE_DB" ThisKey="EKMP_TYPE" OtherKey="Id" Type="EKMP_TYPE_DB" IsForeignKey="true" />
+      <Association Name="ExpertsDB_AKT_EKMP_TBL" Member="ExpertsDB" ThisKey="USERID" OtherKey="Id" Type="ExpertsDB" IsForeignKey="true" />
+      <Association Name="F014_AKT_EKMP_TBL" Member="F014" ThisKey="COD_PU" OtherKey="Osn" Type="F014" IsForeignKey="true" />
+      <Association Name="SANK_AKT_EKMP_TBL" Member="SANK" ThisKey="SANKID" OtherKey="ID" Type="SANK" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="SANK_AUTO_AKT_EKMP_TBL" Member="SANK_AUTO" ThisKey="SANK_AUTO_ID" OtherKey="ID" Type="SANK_AUTO" IsForeignKey="true" />
+      <Association Name="PACIENT_AKT_EKMP_TBL" Member="PACIENT" ThisKey="PID" OtherKey="ID" Type="PACIENT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AKT_MEE" Member="AKT_MEE">
+    <Type Name="AKT_MEE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AKT_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AKT_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AKT_COMENT" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="VarChar(83)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AKT_MEE_TBL" Member="AKT_MEE_TBL">
+    <Type Name="AKT_MEE_TBL">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AKT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="USERID" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="SMONAME" Type="System.String" DbType="NVarChar(75)" CanBeNull="true" />
+      <Column Name="MONAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="SCHET_NUM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="POLIS_NUM" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="CARD_NUM" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="DS1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DS2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PERIOD1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PERIOD2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SUMV" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="BOL_DLIT" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="DOCT" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="DOC_CHECKED" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="ZAKL" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="COD_PU" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SUMP" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SUMNP" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SLID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SANKID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AKT_NUMBER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SANK_AUTO_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUM_PR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUM_UM" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SUM_MULCT" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COD_PU_TS" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="F014_AKT_MEE_TBL" Member="F014" ThisKey="COD_PU" OtherKey="Osn" Type="F014" IsForeignKey="true" />
+      <Association Name="SANK_AKT_MEE_TBL" Member="SANK" ThisKey="SANKID" OtherKey="ID" Type="SANK" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="SANK_AUTO_AKT_MEE_TBL" Member="SANK_AUTO" ThisKey="SANK_AUTO_ID" OtherKey="ID" Type="SANK_AUTO" IsForeignKey="true" />
+      <Association Name="PACIENT_AKT_MEE_TBL" Member="PACIENT" ThisKey="PID" OtherKey="ID" Type="PACIENT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AmbulanceMKB" Member="AmbulanceMKB">
+    <Type Name="AmbulanceMKB">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DS" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SluchType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AttachedDoctorSpr" Member="AttachedDoctorSpr">
+    <Type Name="AttachedDoctorSpr">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FAM" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DR" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SNILS" Type="System.String" DbType="NVarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="PROFIL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(73)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="V002_AttachedDoctorSpr" Member="V002" ThisKey="PROFIL" OtherKey="Id" Type="V002" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AttachedJournalSpr" Member="AttachedJournalSpr">
+    <Type Name="AttachedJournalSpr">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FAM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DR" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AttachedPeopleSpr" Member="AttachedPeopleSpr">
+    <Type Name="AttachedPeopleSpr">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FAM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DR" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="W" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MR" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TUDL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NUDL" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="DUDL" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OUDL" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SNILS" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TempID" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CalcAmbTARIF" Member="CalcAmbTARIF">
+    <Type Name="CalcAmbTARIF">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TARIF1" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="TARIF2" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="TARIF3" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="TARIF4" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="TARIF5" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="TARIF6" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="TARIF7" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="TARIF8" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="TARIF9" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="TARIF10" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="TARIF11" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="TARIF12" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="PROFIL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OS_SLUCH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USL_OK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TBEG" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TEND" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="OsobSluchDb_CalcAmbTARIF" Member="OsobSluchDb" ThisKey="OS_SLUCH" OtherKey="Id" Type="OsobSluchDb" IsForeignKey="true" />
+      <Association Name="V002_CalcAmbTARIF" Member="V002" ThisKey="PROFIL" OtherKey="Id" Type="V002" IsForeignKey="true" />
+      <Association Name="V006_CalcAmbTARIF" Member="V006" ThisKey="USL_OK" OtherKey="id" Type="V006" IsForeignKey="true" />
+      <Association Name="V010_CalcAmbTARIF" Member="V010" ThisKey="IDSP" OtherKey="Id" Type="V010" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CalcMok" Member="CalcMok">
+    <Type Name="CalcMok">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KOD_LPU" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="KUS" Type="System.Decimal" DbType="Decimal(6,4)" CanBeNull="true" />
+      <Column Name="KZMP" Type="System.Decimal" DbType="Decimal(6,4)" CanBeNull="true" />
+      <Column Name="DATESTART" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CalcUprk" Member="CalcUprk">
+    <Type Name="CalcUprk">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDKSG" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UPR" Type="System.Decimal" DbType="Decimal(6,4) NOT NULL" CanBeNull="false" />
+      <Column Name="TBEG" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TEND" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="SprKsg_CalcUprk" Member="SprKsg" ThisKey="IDKSG" OtherKey="ID" Type="SprKsg" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CalcVmpTarif" Member="CalcVmpTarif">
+    <Type Name="CalcVmpTarif">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDGR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TARIF" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TBEG" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TEND" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CalNotKus" Member="CalNotKus">
+    <Type Name="CalNotKus">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDKSG" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TBEG" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TEND" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="SprKsg_CalNotKus" Member="SprKsg" ThisKey="IDKSG" OtherKey="ID" Type="SprKsg" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DbVersion" Member="DbVersion">
+    <Type Name="DbVersion">
+      <Column Name="Version" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dd_vd" Member="dd_vd">
+    <Type Name="dd_vd">
+      <Column Name="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Column2" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="s1" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="c2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="s2" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="c3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="s3" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="s4" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="c5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="s5" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="c6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="s6" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="c7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="c8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="c9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="c10" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="c11" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="c12" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DetProfilDb" Member="DetProfilDb">
+    <Type Name="DetProfilDb">
+      <Column Name="Id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NChar(15)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="DetProfilDb_SLUCH" Member="SLUCH" ThisKey="Id" OtherKey="DET" Type="SLUCH" />
+      <Association Name="DetProfilDb_USL" Member="USL" ThisKey="Id" OtherKey="DET" Type="USL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DISP_SPR" Member="DISP_SPR">
+    <Type Name="DISP_SPR">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="USL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDDISP" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME_K" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="VOZR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="POL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DoctorBd" Member="DoctorBd">
+    <Type Name="DoctorBd">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FIO" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="SpecID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SpecName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Room" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Otdelenie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Area" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FAM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Profil" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SNILS" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="FioWithId" Type="System.String" DbType="VarChar(62)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="DoctorBd_USL_ASSIST" Member="USL_ASSIST" ThisKey="id" OtherKey="IDDOCT" Type="USL_ASSIST" />
+      <Association Name="DoctorBd_SLUCH" Member="SLUCH" ThisKey="id" OtherKey="IDDOKTO" Type="SLUCH" />
+      <Association Name="DoctorBd_SLUCH1" Member="SLUCH1" ThisKey="id" OtherKey="IDDOKTP" Type="SLUCH" />
+      <Association Name="DoctorBd_USL" Member="USL" ThisKey="id" OtherKey="CODE_MDLPU" Type="USL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DoctorTbl" Member="DoctorTbl">
+    <Type Name="DoctorTbl">
+      <Column Name="SNILS" Type="System.String" DbType="NVarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FAM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dostav" Member="Dostav">
+    <Type Name="Dostav">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NameWithId" Type="System.String" DbType="VarChar(53)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Dostav_SLUCH" Member="SLUCH" ThisKey="ID" OtherKey="VR_DOST" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DST_NKD" Member="DST_NKD">
+    <Type Name="DST_NKD">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NORM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EKMP_TYPE_DB" Member="EKMP_TYPE_DB">
+    <Type Name="EKMP_TYPE_DB">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="VarChar(104)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="EKMP_TYPE_DB_AKT_EKMP_TBL" Member="AKT_EKMP_TBL" ThisKey="Id" OtherKey="EKMP_TYPE" Type="AKT_EKMP_TBL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.enp_update" Member="enp_update">
+    <Type Name="enp_update">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ch" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ExpertsDB" Member="ExpertsDB">
+    <Type Name="ExpertsDB">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FAM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KOD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="VarChar(203) NOT NULL" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="ExpertsDB_AKT_EKMP_TBL" Member="AKT_EKMP_TBL" ThisKey="Id" OtherKey="USERID" Type="AKT_EKMP_TBL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.F001" Member="F001">
+    <Type Name="F001">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tf_code" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="tf_okato" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="tf_ogrn" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="name_tfp" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="name_tfk" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="post_index" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="fam_dir" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="im_dir" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="ot_dir" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="fax" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="e_mail" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="kf_tf" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="www" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="d_edit" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="d_end" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.F002" Member="F002">
+    <Type Name="F002">
+      <Column Name="smocod" Type="System.String" DbType="NVarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tf_okato" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="nam_smop" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
+      <Column Name="nam_smok" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="inn" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="Ogrn" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="KPP" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="index_j" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="addr_j" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="index_f" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="addr_f" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="okopf" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="fam_ruk" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="im_ruk" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="ot_ruk" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="e_mail" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="www" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="org" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="d_begin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="d_end" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="name_e" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Nal_p" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="DUVED" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="kol_zl" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="d_edit" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="n_doc" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="d_start" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="data_e" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(257) NOT NULL" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="F002_PACIENT" Member="PACIENT" ThisKey="smocod" OtherKey="SMO" Type="PACIENT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.F003" Member="F003">
+    <Type Name="F003">
+      <Column Name="Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tf_okato" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="mcod" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nam_mop" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="nam_mok" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="inn" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="Ogrn" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="KPP" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="index_j" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="addr_j" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="okopf" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="vedpri" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="org" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="fam_ruk" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="im_ruk" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="ot_ruk" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="e_mail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="n_doc" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="d_start" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="data_e" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="mp" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="www" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="d_begin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="d_end" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="name_e" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DUVED" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="d_edit" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(260)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="F003_LicenseDb" Member="LicenseDb" ThisKey="mcod" OtherKey="MedOrg" Type="LicenseDb" />
+      <Association Name="F003_MEE_DB" Member="MEE_DB" ThisKey="mcod" OtherKey="LPU" Type="MEE_DB" />
+      <Association Name="F003_SCHET_OMS" Member="SCHET_OMS" ThisKey="mcod" OtherKey="CODE_MO" Type="SCHET_OMS" />
+      <Association Name="F003_SCHET_SMO" Member="SCHET_SMO" ThisKey="mcod" OtherKey="CODE_MO" Type="SCHET_SMO" />
+      <Association Name="F003_WORK_DAY" Member="WORK_DAY" ThisKey="mcod" OtherKey="LPU" Type="WORK_DAY" />
+      <Association Name="F003_SLUCH" Member="SLUCH" ThisKey="mcod" OtherKey="LPU" Type="SLUCH" />
+      <Association Name="F003_SLUCH1" Member="SLUCH1" ThisKey="mcod" OtherKey="NPR_MO" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.F003_59" Member="F003_59">
+    <Type Name="F003_59">
+      <Column Name="tf_okato" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="mcod" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="nam_mop" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="nam_mok" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="inn" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="Ogrn" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="KPP" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="index_j" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="addr_j" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="okopf" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="vedpri" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="org" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="fam_ruk" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="ot_ruk" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="e_mail" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="n_doc" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="d_start" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="data_e" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="mp" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="www" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="d_begin" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="d_end" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="name_e" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="DUVED" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="d_edit" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.F003_67" Member="F003_67">
+    <Type Name="F003_67">
+      <Column Name="tf_okato" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="mcod" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="nam_mop" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="nam_mok" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="inn" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="Ogrn" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="KPP" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="index_j" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="addr_j" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="okopf" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="vedpri" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="org" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="fam_ruk" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="ot_ruk" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="e_mail" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="n_doc" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="d_start" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="data_e" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="mp" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="www" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="d_begin" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="d_end" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="name_e" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="DUVED" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="d_edit" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.F003Local" Member="F003Local">
+    <Type Name="F003Local">
+      <Column Name="mcod" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nam_mok" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="fam_ruk" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="im_ruk" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ot_ruk" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="addr_j" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.F004" Member="F004">
+    <Type Name="F004">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fname" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="surname" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="patronymic" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="birth_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SNILS" Type="System.String" DbType="NVarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="phone1" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="phone2" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="organization_code" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="employment_place" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
+      <Column Name="position" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
+      <Column Name="date_begin" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_end" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="exclusion_reason" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.F005" Member="F005">
+    <Type Name="F005">
+      <Column Name="Id" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="STNAME" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NameWithId" Type="System.String" DbType="NVarChar(259)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="F005_SLUCH" Member="SLUCH" ThisKey="Id" OtherKey="OPLATA" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.F006" Member="F006">
+    <Type Name="F006">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDVID" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="VIDNAME" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NameWithId" Type="System.String" DbType="NVarChar(259)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="F006_SANK" Member="SANK" ThisKey="Id" OtherKey="S_TIP" Type="SANK" />
+      <Association Name="F006_SANK_RE" Member="SANK_RE" ThisKey="Id" OtherKey="S_TIP" Type="SANK_RE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.F007" Member="F007">
+    <Type Name="F007">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDVED" Type="System.Decimal" DbType="Decimal(2,0) NOT NULL" CanBeNull="false" />
+      <Column Name="VEDNAME" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.F008" Member="F008">
+    <Type Name="F008">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDDOC" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="DOCNAME" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NameWithId" Type="System.String" DbType="NVarChar(259)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="F008_PACIENT" Member="PACIENT" ThisKey="Id" OtherKey="VPOLIS" Type="PACIENT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.F009" Member="F009">
+    <Type Name="F009">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StatusName" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
+      <Column Name="DateBegin" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.F010" Member="F010">
+    <Type Name="F010">
+      <Column Name="KOD_TF" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="KOD_OKATO" Type="System.String" DbType="NVarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SUBNAME" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OKRUG" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="OKATO" Type="System.String" DbType="NVarChar(262)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="F010_PACIENT" Member="PACIENT" ThisKey="KOD_OKATO" OtherKey="SMO_OK" Type="PACIENT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.F011" Member="F011">
+    <Type Name="F011">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDDoc" Type="System.Decimal" DbType="Decimal(2,0) NOT NULL" CanBeNull="false" />
+      <Column Name="DocName" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
+      <Column Name="DocSer" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DocNum" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(259)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="F011_PACIENT" Member="PACIENT" ThisKey="Id" OtherKey="DOCTYPE" Type="PACIENT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.F012" Member="F012">
+    <Type Name="F012">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Kod" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Opis" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
+      <Column Name="DopInfo" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.F013" Member="F013">
+    <Type Name="F013">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="smocod" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="codpvp" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.F014" Member="F014">
+    <Type Name="F014">
+      <Column Name="Kod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDVID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Naim" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="Osn" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KodPG" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NameWithId" Type="System.String" DbType="NVarChar(1007)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="F014_AKT_EKMP_TBL" Member="AKT_EKMP_TBL" ThisKey="Osn" OtherKey="COD_PU" Type="AKT_EKMP_TBL" />
+      <Association Name="F014_AKT_MEE_TBL" Member="AKT_MEE_TBL" ThisKey="Osn" OtherKey="COD_PU" Type="AKT_MEE_TBL" />
+      <Association Name="F014_MekDb" Member="MekDb" ThisKey="Osn" OtherKey="Osn" Type="MekDb" />
+      <Association Name="F014_RMekDb" Member="RMekDb" ThisKey="Osn" OtherKey="Osn" Type="RMekDb" />
+      <Association Name="F014_SANK" Member="SANK" ThisKey="Osn" OtherKey="S_OSN" Type="SANK" />
+      <Association Name="F014_SANK_AUTO" Member="SANK_AUTO" ThisKey="Osn" OtherKey="S_OSN" Type="SANK_AUTO" />
+      <Association Name="F014_SANK_RE" Member="SANK_RE" ThisKey="Osn" OtherKey="S_OSN" Type="SANK_RE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.F015" Member="F015">
+    <Type Name="F015">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KOD_OK" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="OKRNAME" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FREP" Member="FREP">
+    <Type Name="FREP">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="RNUMBER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SCHET_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RTYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RBODY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="USERID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Users_FREP" Member="Users" ThisKey="USERID" OtherKey="id" Type="Users" IsForeignKey="true" />
+      <Association Name="SCHET_FREP" Member="SCHET" ThisKey="SCHET_ID" OtherKey="ID" Type="SCHET" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Gospit" Member="Gospit">
+    <Type Name="Gospit">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NameWithId" Type="System.String" DbType="VarChar(53)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Gospit_SLUCH" Member="SLUCH" ThisKey="ID" OtherKey="GOSP" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GrZdorovDb" Member="GrZdorovDb">
+    <Type Name="GrZdorovDb">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="VarChar(54)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="GrZdorovDb_SLUCH" Member="SLUCH" ThisKey="Id" OtherKey="GR_ZDOROV" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KatLgot" Member="KatLgot">
+    <Type Name="KatLgot">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NameWithId" Type="System.String" DbType="VarChar(53)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="KatLgot_PACIENT" Member="PACIENT" ThisKey="ID" OtherKey="KAT_LGOT" Type="PACIENT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KodTer" Member="KodTer">
+    <Type Name="KodTer">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NameWithId" Type="System.String" DbType="VarChar(53)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="KodTer_PACIENT" Member="PACIENT" ThisKey="ID" OtherKey="KOD_TER" Type="PACIENT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ksg_avg" Member="ksg_avg">
+    <Type Name="ksg_avg">
+      <Column Name="idksg" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="god" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="mes" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="usl_ok" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="norm" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KSG_GR" Member="KSG_GR">
+    <Type Name="KSG_GR">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DS" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="USL" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="VOZR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="POL" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="DLIT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KSG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KSG_GROUP" Member="KSG_GROUP">
+    <Type Name="KSG_GROUP">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KSG_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="KSG_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="IDS_MKB" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NORM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TARIF3" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TARIF4" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
+      <Column Name="K_TARIF" Type="System.Decimal" DbType="Decimal(15,4) NOT NULL" CanBeNull="false" />
+      <Column Name="ORDERID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TARIF1" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TARIF2" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
+      <Column Name="D_TARIF" Type="System.Decimal" DbType="Decimal(15,4) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KSG_K" Member="KSG_K">
+    <Type Name="KSG_K">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LPU" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="K_TARIF" Type="System.Decimal" DbType="Decimal(15,4) NOT NULL" CanBeNull="false" />
+      <Column Name="D_TARIF" Type="System.Decimal" DbType="Decimal(15,4) NOT NULL" CanBeNull="false" />
+      <Column Name="K_START" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="K_END" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KSG_OT" Member="KSG_OT">
+    <Type Name="KSG_OT">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="VarChar(54)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KSG_SOD" Member="KSG_SOD">
+    <Type Name="KSG_SOD">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="S_TARIF" Type="System.Decimal" DbType="Decimal(15,4) NOT NULL" CanBeNull="false" />
+      <Column Name="TarifDateStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TarifDateEnd" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KSG_SPR" Member="KSG_SPR">
+    <Type Name="KSG_SPR">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KSG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="KPG" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PROFIL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="KZ" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="TS" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="TDS" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UPR_K" Type="System.Decimal" DbType="Decimal(5,4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LIC_NUM_TBL" Member="LIC_NUM_TBL">
+    <Type Name="LIC_NUM_TBL">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LPU" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="DATE_1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATE_2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATE_3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LICN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="VID_MP" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="LIC_NUM_TBL_LIC_TBL" Member="LIC_TBL" ThisKey="ID" OtherKey="LIC_NUM_ID" Type="LIC_TBL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LIC_TBL" Member="LIC_TBL">
+    <Type Name="LIC_TBL">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LIC_NUM_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LPU" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="USL_MP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VID_MP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROFIL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LIC_NUM_TBL_LIC_TBL" Member="LIC_NUM_TBL" ThisKey="LIC_NUM_ID" OtherKey="ID" Type="LIC_NUM_TBL" IsForeignKey="true" />
+      <Association Name="V002_LIC_TBL" Member="V002" ThisKey="PROFIL" OtherKey="Id" Type="V002" IsForeignKey="true" />
+      <Association Name="V006_LIC_TBL" Member="V006" ThisKey="USL_MP" OtherKey="id" Type="V006" IsForeignKey="true" />
+      <Association Name="V008_LIC_TBL" Member="V008" ThisKey="VID_MP" OtherKey="Id" Type="V008" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LicenseDb" Member="LicenseDb">
+    <Type Name="LicenseDb">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Profil" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LicenseDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LicenseDateEnd" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TypeHelp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MedOrg" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="IsValid" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DetProf" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UslOk" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="F003_LicenseDb" Member="F003" ThisKey="MedOrg" OtherKey="mcod" Type="F003" IsForeignKey="true" />
+      <Association Name="V002_LicenseDb" Member="V002" ThisKey="Profil" OtherKey="Id" Type="V002" IsForeignKey="true" />
+      <Association Name="V006_LicenseDb" Member="V006" ThisKey="UslOk" OtherKey="id" Type="V006" IsForeignKey="true" />
+      <Association Name="V008_LicenseDb" Member="V008" ThisKey="TypeHelp" OtherKey="Id" Type="V008" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.localPayment" Member="localPayment">
+    <Type Name="localPayment">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="Inn" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="Ogrn" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="KPP" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="Account" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CorrespondentAccount" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BIK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BankName" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="AgreementNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AgreementDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Director" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="Accounter" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="DateBegin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LPU_K" Member="LPU_K">
+    <Type Name="LPU_K">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LPU" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="LPU_NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="KS" Type="System.Decimal" DbType="Decimal(15,4)" CanBeNull="true" />
+      <Column Name="TarifDateStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TarifDateEnd" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LPU_K_old" Member="LPU_K_old">
+    <Type Name="LPU_K_old">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LPU" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="LPU_NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="KS" Type="System.Decimal" DbType="Decimal(15,4)" CanBeNull="true" />
+      <Column Name="TarifDateStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TarifDateEnd" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M001_KSG" Member="M001_KSG">
+    <Type Name="M001_KSG">
+      <Column Name="IDDS" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DSNAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="KSG1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KSG2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KSG3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KSG4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KSG5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KSG6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ISKSG" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ISNEW" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ISDELETE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(265)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PAYABLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PAYABLE_OSN" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="M001_KSG_SLUCH_DS2" Member="SLUCH_DS2" ThisKey="IDDS" OtherKey="DS" Type="SLUCH_DS2" />
+      <Association Name="M001_KSG_SLUCH_DS3" Member="SLUCH_DS3" ThisKey="IDDS" OtherKey="DS" Type="SLUCH_DS3" />
+      <Association Name="M001_KSG_SLUCH" Member="SLUCH" ThisKey="IDDS" OtherKey="DSKZ" Type="SLUCH" />
+      <Association Name="M001_KSG_SLUCH1" Member="SLUCH1" ThisKey="IDDS" OtherKey="DSN" Type="SLUCH" />
+      <Association Name="M001_KSG_SLUCH2" Member="SLUCH2" ThisKey="IDDS" OtherKey="DSPA" Type="SLUCH" />
+      <Association Name="M001_KSG_SLUCH3" Member="SLUCH3" ThisKey="IDDS" OtherKey="DSS" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M001SPneotlog" Member="M001SPneotlog">
+    <Type Name="M001SPneotlog">
+      <Column Name="IDDS" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DateBeg" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MEE_DB" Member="MEE_DB">
+    <Type Name="MEE_DB">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SLID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="USERID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COMMENTS" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="LPU" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="AKT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MEE_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="F003_MEE_DB" Member="F003" ThisKey="LPU" OtherKey="mcod" Type="F003" IsForeignKey="true" />
+      <Association Name="Users_MEE_DB" Member="Users" ThisKey="USERID" OtherKey="id" Type="Users" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MEE_TYPE_DB" Member="MEE_TYPE_DB">
+    <Type Name="MEE_TYPE_DB">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="VarChar(104)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MeeAutoDb" Member="MeeAutoDb">
+    <Type Name="MeeAutoDb">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MeeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MeeSQL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MeeSQLParametr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MekDb" Member="MekDb">
+    <Type Name="MekDb">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Osn" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MekName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MekSQL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MekSQLParametr" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="F014_MekDb" Member="F014" ThisKey="Osn" OtherKey="Osn" Type="F014" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MSPCONV" Member="MSPCONV">
+    <Type Name="MSPCONV">
+      <Column Name="MSPOID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MSPNID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.neopred_ZL" Member="neopred_ZL">
+    <Type Name="neopred_ZL">
+      <Column Name="polis" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="ch" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Nomenclature" Member="Nomenclature">
+    <Type Name="Nomenclature">
+      <Column Name="Id" Type="System.String" DbType="NVarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NewCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KSG1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KSG2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KSG3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KSG4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="INKSG" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(273)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="KSG5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KSG6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KSG7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.O001" Member="O001">
+    <Type Name="O001">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KOD" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME11" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME12" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="ALFA2" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="ALFA3" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="NOMDESCR" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="NOMAKT" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="DATA_UPD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.O003" Member="O003">
+    <Type Name="O003">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RAZDEL" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="PRAZDEL" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="KOD" Type="System.String" DbType="NVarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME11" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME12" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMDESCR" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="NOMAKT" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="DATA_UPD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.O004" Member="O004">
+    <Type Name="O004">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KOD" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME1" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="ALG" Type="System.String" DbType="NVarChar(52)" CanBeNull="true" />
+      <Column Name="NOMAKT" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="DATA_UPD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.O005" Member="O005">
+    <Type Name="O005">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KOD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NAME1" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="ALG" Type="System.String" DbType="NVarChar(52)" CanBeNull="true" />
+      <Column Name="NOMAKT" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="DATA_UPD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OsobSluchDb" Member="OsobSluchDb">
+    <Type Name="OsobSluchDb">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="VarChar(154)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="OsobSluchDb_CalcAmbTARIF" Member="CalcAmbTARIF" ThisKey="Id" OtherKey="OS_SLUCH" Type="CalcAmbTARIF" />
+      <Association Name="OsobSluchDb_Tarif" Member="Tarif" ThisKey="Id" OtherKey="OsobSluchCheck" Type="Tarif" />
+      <Association Name="OsobSluchDb_TARIF_PN" Member="TARIF_PN" ThisKey="Id" OtherKey="T_OS_SLUCH" Type="TARIF_PN" />
+      <Association Name="OsobSluchDb_SLUCH" Member="SLUCH" ThisKey="Id" OtherKey="OS_SLUCH_REGION" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OtdelDb" Member="OtdelDb">
+    <Type Name="OtdelDb">
+      <Column Name="Id" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ConditionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PodrID" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="PROFIL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DTBEG" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DTEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OTDID_REGION_NOTEDIT" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(222)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="PodrDb_OtdelDb" Member="PodrDb" ThisKey="PodrID" OtherKey="Id" Type="PodrDb" IsForeignKey="true" />
+      <Association Name="V006_OtdelDb" Member="V006" ThisKey="ConditionID" OtherKey="id" Type="V006" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.people_update" Member="people_update">
+    <Type Name="people_update">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ch" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.perekrest" Member="perekrest">
+    <Type Name="perekrest">
+      <Column Name="slid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="zlid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="USL_OK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="god" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="oplata" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="opdoc" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="app30dn" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="st90dn" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="udl_ukor" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="prUmer" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.period_MEE_EKMP" Member="period_MEE_EKMP">
+    <Type Name="period_MEE_EKMP">
+      <Column Name="lpu" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="god" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="mee1" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="mee2" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="mee3" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="mee4" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ekmp1" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ekmp2" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ekmp3" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ekmp4" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PodrDb" Member="PodrDb">
+    <Type Name="PodrDb">
+      <Column Name="Id" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Condition" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="VarChar(156)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="PodrDb_OtdelDb" Member="OtdelDb" ThisKey="Id" OtherKey="PodrID" Type="OtdelDb" />
+      <Association Name="PodrDb_WORK_DAY" Member="WORK_DAY" ThisKey="Id" OtherKey="PODR_ID" Type="WORK_DAY" />
+    </Type>
+  </Table>
+  <Table Name="dbo.polis_update" Member="polis_update">
+    <Type Name="polis_update">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ch" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RMekDb" Member="RMekDb">
+    <Type Name="RMekDb">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Osn" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MekName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MekSQL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MekSQLParametr" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="F014_RMekDb" Member="F014" ThisKey="Osn" OtherKey="Osn" Type="F014" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.S_1664n" Member="S_1664n">
+    <Type Name="S_1664n">
+      <Column Name="Id" Type="System.String" DbType="NVarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(266)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SANK" Member="SANK">
+    <Type Name="SANK">
+      <Column Name="S_SUM" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="S_TIP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="S_OSN" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="S_COM" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="S_IST" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SLID_TEMP" Type="System.String" DbType="NVarChar(36)" CanBeNull="true" />
+      <Column Name="SCHET_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SLID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="S_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SCHET_SMO_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RESANK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="S_CODE" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SANK_IMPORT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SANK_AKT_EKMP_TBL" Member="AKT_EKMP_TBL" ThisKey="ID" OtherKey="SANKID" Type="AKT_EKMP_TBL" />
+      <Association Name="SANK_AKT_MEE_TBL" Member="AKT_MEE_TBL" ThisKey="ID" OtherKey="SANKID" Type="AKT_MEE_TBL" />
+      <Association Name="F006_SANK" Member="F006" ThisKey="S_TIP" OtherKey="Id" Type="F006" IsForeignKey="true" />
+      <Association Name="F014_SANK" Member="F014" ThisKey="S_OSN" OtherKey="Osn" Type="F014" IsForeignKey="true" />
+      <Association Name="SANK_IMPORT_TBL_SANK" Member="SANK_IMPORT_TBL" ThisKey="SANK_IMPORT_ID" OtherKey="ID" Type="SANK_IMPORT_TBL" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="SCHET_SMO_SANK" Member="SCHET_SMO" ThisKey="SCHET_SMO_ID" OtherKey="ID" Type="SCHET_SMO" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="SCHET_SANK" Member="SCHET" ThisKey="SCHET_ID" OtherKey="ID" Type="SCHET" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="SLUCH_SANK" Member="SLUCH" ThisKey="SLID" OtherKey="ID" Type="SLUCH" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SANK_AUTO" Member="SANK_AUTO">
+    <Type Name="SANK_AUTO">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="S_NAME" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="S_OSN" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="S_PROCENT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="S_STRAF" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
+      <Column Name="S_UMENS" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
+      <Column Name="S_ZAKL" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="S_OSN_TS" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="SANK_AUTO_AKT_EKMP_TBL" Member="AKT_EKMP_TBL" ThisKey="ID" OtherKey="SANK_AUTO_ID" Type="AKT_EKMP_TBL" />
+      <Association Name="SANK_AUTO_AKT_MEE_TBL" Member="AKT_MEE_TBL" ThisKey="ID" OtherKey="SANK_AUTO_ID" Type="AKT_MEE_TBL" />
+      <Association Name="F014_SANK_AUTO" Member="F014" ThisKey="S_OSN" OtherKey="Osn" Type="F014" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SANK_EXP_TT" Member="SANK_EXP_TT">
+    <Type Name="SANK_EXP_TT">
+      <Column Name="CODE_MO" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MONTH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NSCHET" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DSCHET" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PLAT" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="LPUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NPOLIS" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="USL_OK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROFIL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DS1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DATE_1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATE_2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SLUCH_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OS_SLUCH_REGION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NHISTORY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDSLG" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="S_CODE" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="S_EXP_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="S_SUM" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="S_TIP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="S_OSN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="S_OSN_TS" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="S_COM" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="S_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="S_ZAKL" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="S_IST" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SANK_IMPORT_TBL" Member="SANK_IMPORT_TBL">
+    <Type Name="SANK_IMPORT_TBL">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VERSION" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="DATA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FILENAME" Type="System.String" DbType="NVarChar(26)" CanBeNull="true" />
+      <Column Name="SANK_MEK" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SANK_MEE" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SANK_EKMP" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="COUNT_SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SCHET_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SANK_IMPORT_TBL_SANK" Member="SANK" ThisKey="ID" OtherKey="SANK_IMPORT_ID" Type="SANK" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SANK_RE" Member="SANK_RE">
+    <Type Name="SANK_RE">
+      <Column Name="S_SUM" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="S_TIP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="S_OSN" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="S_COM" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="S_IST" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SLID_TEMP" Type="System.String" DbType="NVarChar(36)" CanBeNull="true" />
+      <Column Name="SCHET_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SLID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="S_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="F006_SANK_RE" Member="F006" ThisKey="S_TIP" OtherKey="Id" Type="F006" IsForeignKey="true" />
+      <Association Name="F014_SANK_RE" Member="F014" ThisKey="S_OSN" OtherKey="Osn" Type="F014" IsForeignKey="true" />
+      <Association Name="SCHET_SANK_RE" Member="SCHET" ThisKey="SCHET_ID" OtherKey="ID" Type="SCHET" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SCHET_OMS" Member="SCHET_OMS">
+    <Type Name="SCHET_OMS">
+      <Column Name="CODE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SCHET_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CODE_MO" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="YEAR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MONTH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NSCHET" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="DSCHET" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PLAT" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="SUMMAV" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="COMENTS" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="SUMMAP" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SANK_MEK" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SANK_MEE" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SANK_EKMP" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="COUNT_SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SCHET_OMS_SLUCH" Member="SLUCH" ThisKey="CODE" OtherKey="SCHET_OMS_ID" Type="SLUCH" />
+      <Association Name="F003_SCHET_OMS" Member="F003" ThisKey="CODE_MO" OtherKey="mcod" Type="F003" IsForeignKey="true" />
+      <Association Name="SprPayment_SCHET_OMS" Member="SprPayment" ThisKey="PLAT" OtherKey="ID" Type="SprPayment" IsForeignKey="true" />
+      <Association Name="SCHET_SCHET_OMS" Member="SCHET" ThisKey="SCHET_ID" OtherKey="ID" Type="SCHET" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SCHET_SMO" Member="SCHET_SMO">
+    <Type Name="SCHET_SMO">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CODE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CODE_MO" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MONTH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NSCHET" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DSCHET" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PLAT" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="SUMMAV" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="COMENTS" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="SUMMAP" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SANK_MEK" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SANK_MEE" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SANK_EKMP" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="COUNT_SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SCHET_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SCHET_SMO_SANK" Member="SANK" ThisKey="ID" OtherKey="SCHET_SMO_ID" Type="SANK" />
+      <Association Name="F003_SCHET_SMO" Member="F003" ThisKey="CODE_MO" OtherKey="mcod" Type="F003" IsForeignKey="true" />
+      <Association Name="SCHET_SCHET_SMO" Member="SCHET" ThisKey="SCHET_ID" OtherKey="ID" Type="SCHET" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SchoolStatusDb" Member="SchoolStatusDb">
+    <Type Name="SchoolStatusDb">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="VarChar(204)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SchoolStatusDb_SLUCH" Member="SLUCH" ThisKey="Id" OtherKey="SCHOOL" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Settings" Member="Settings">
+    <Type Name="Settings">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Parametr" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Info" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(16,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SettingsTables" Member="SettingsTables">
+    <Type Name="SettingsTables">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TableName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="TableDisplayName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="TableLayout" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TableParent" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="FieldParent" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ReportLayout" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TableType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TableLock" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SprTableType_SettingsTables" Member="SprTableType" ThisKey="TableType" OtherKey="ID" Type="SprTableType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Shablon_Filter" Member="Shablon_Filter">
+    <Type Name="Shablon_Filter">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CodUslugi" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Profil" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SpecialityDoctor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Vozrm" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Vozr" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="W" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShablonType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DetProfil" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="UslCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SLUCH_DS2" Member="SLUCH_DS2">
+    <Type Name="SLUCH_DS2">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DS" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SLID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="M001_KSG_SLUCH_DS2" Member="M001_KSG" ThisKey="DS" OtherKey="IDDS" Type="M001_KSG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SLUCH_DS3" Member="SLUCH_DS3">
+    <Type Name="SLUCH_DS3">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DS" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SLID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="M001_KSG_SLUCH_DS3" Member="M001_KSG" ThisKey="DS" OtherKey="IDDS" Type="M001_KSG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SLUCH_TEMP" Member="SLUCH_TEMP">
+    <Type Name="SLUCH_TEMP">
+      <Column Name="FAM" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="IM" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="OT" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="W" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DR" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="USL_OK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROFIL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NHISTORY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DATE_1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATE_2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DS1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="OS_SLUCH_REGION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDSLG" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SocStat" Member="SocStat">
+    <Type Name="SocStat">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NameWithId" Type="System.String" DbType="VarChar(53)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SocStat_PACIENT" Member="PACIENT" ThisKey="ID" OtherKey="SOC_STAT" Type="PACIENT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SpecCodeDb" Member="SpecCodeDb">
+    <Type Name="SpecCodeDb">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PRMP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAMEPRMP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PRVS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAMEPRVS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NameWithId" Type="System.String" DbType="VarChar(56)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SprANEST" Member="SprANEST">
+    <Type Name="SprANEST">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(104)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SprANEST_USL" Member="USL" ThisKey="ID" OtherKey="ANEST" Type="USL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SprDEFGOSP" Member="SprDEFGOSP">
+    <Type Name="SprDEFGOSP">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(104)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SprDEFGOSP_SLUCH" Member="SLUCH" ThisKey="ID" OtherKey="DEFGOSP" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SprDSGR" Member="SprDSGR">
+    <Type Name="SprDSGR">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DS1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DS2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="USL" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="VOZR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="POL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DLIT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NKSG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SprExtr" Member="SprExtr">
+    <Type Name="SprExtr">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="VarChar(54)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SprExtr_SLUCH" Member="SLUCH" ThisKey="Id" OtherKey="EXTR" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SprKDOST" Member="SprKDOST">
+    <Type Name="SprKDOST">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(54)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SprKDOST_SLUCH" Member="SLUCH" ThisKey="ID" OtherKey="KDOST" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SprKSGOPLATA" Member="SprKSGOPLATA">
+    <Type Name="SprKSGOPLATA">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="VarChar(54)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SprKSGOPLATA_USL" Member="USL" ThisKey="ID" OtherKey="KSGOPLATA" Type="USL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SprKSGR" Member="SprKSGR">
+    <Type Name="SprKSGR">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DS1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DS2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="USL" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="VOZR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="POL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DLIT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NKSG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SprOSL" Member="SprOSL">
+    <Type Name="SprOSL">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(104)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SprOSL_USL" Member="USL" ThisKey="ID" OtherKey="OSL" Type="USL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SprPayment" Member="SprPayment">
+    <Type Name="SprPayment">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="Inn" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="Ogrn" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="KPP" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="Account" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CorrespondentAccount" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BIK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BankName" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="AgreementNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AgreementDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Director" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="Accounter" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="DateBegin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RSchet" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="KSchet" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Buhalter" Type="System.String" DbType="NVarChar(90)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(261)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SprPayment_SCHET_OMS" Member="SCHET_OMS" ThisKey="ID" OtherKey="PLAT" Type="SCHET_OMS" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SprStatictic" Member="SprStatictic">
+    <Type Name="SprStatictic">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StatName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="StatSQL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="StatSQLParametr" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SprTableType" Member="SprTableType">
+    <Type Name="SprTableType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="SprTableType_SettingsTables" Member="SettingsTables" ThisKey="ID" OtherKey="TableType" Type="SettingsTables" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SprVOPL" Member="SprVOPL">
+    <Type Name="SprVOPL">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(54)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SprVOPL_SLUCH" Member="SLUCH" ThisKey="ID" OtherKey="VOPL" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SprVozr" Member="SprVozr">
+    <Type Name="SprVozr">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="SprVozr_SLUCH" Member="SLUCH" ThisKey="ID" OtherKey="VOZR" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tarif" Member="Tarif">
+    <Type Name="Tarif">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TarifDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Tarif1" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Tarif2" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Tarif3" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="OsobSluchCheck" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConditionHelp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TarifDateEnd" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Stomat" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tarif4" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Association Name="OsobSluchDb_Tarif" Member="OsobSluchDb" ThisKey="OsobSluchCheck" OtherKey="Id" Type="OsobSluchDb" IsForeignKey="true" />
+      <Association Name="V006_Tarif" Member="V006" ThisKey="ConditionHelp" OtherKey="id" Type="V006" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TARIF_PN" Member="TARIF_PN">
+    <Type Name="TARIF_PN">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="T_START" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TARIF1" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="TARIF2" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="TARIF3" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="T_PROFIL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T_OS_SLUCH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T_USL_OK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T_END" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="OsobSluchDb_TARIF_PN" Member="OsobSluchDb" ThisKey="T_OS_SLUCH" OtherKey="Id" Type="OsobSluchDb" IsForeignKey="true" />
+      <Association Name="V002_TARIF_PN" Member="V002" ThisKey="T_PROFIL" OtherKey="Id" Type="V002" IsForeignKey="true" />
+      <Association Name="V006_TARIF_PN" Member="V006" ThisKey="T_USL_OK" OtherKey="id" Type="V006" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TipBoleznDb" Member="TipBoleznDb">
+    <Type Name="TipBoleznDb">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NameWithId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TravmaTbl" Member="TravmaTbl">
+    <Type Name="TravmaTbl">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NameWithId" Type="System.String" DbType="VarChar(53)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="TravmaTbl_SLUCH" Member="SLUCH" ThisKey="ID" OtherKey="TRAVMA" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TypeSluchDb" Member="TypeSluchDb">
+    <Type Name="TypeSluchDb">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NameWithId" Type="System.String" DbType="VarChar(53)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="TypeSluchDb_SLUCH" Member="SLUCH" ThisKey="id" OtherKey="SLUCH_TYPE" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="Users">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="LayRTable" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FAM" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IM" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DOLJ" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Users_FREP" Member="FREP" ThisKey="id" OtherKey="USERID" Type="FREP" />
+      <Association Name="Users_MEE_DB" Member="MEE_DB" ThisKey="id" OtherKey="USERID" Type="MEE_DB" />
+      <Association Name="Users_SLUCH" Member="SLUCH" ThisKey="id" OtherKey="USERID" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USL_ASSIST" Member="USL_ASSIST">
+    <Type Name="USL_ASSIST">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDDOCT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DoctorBd_USL_ASSIST" Member="DoctorBd" ThisKey="IDDOCT" OtherKey="id" Type="DoctorBd" IsForeignKey="true" />
+      <Association Name="USL_USL_ASSIST" Member="USL" ThisKey="UID" OtherKey="ID" Type="USL" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V001" Member="V001">
+    <Type Name="V001">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDRB" Type="System.Decimal" DbType="Decimal(12,0)" CanBeNull="true" />
+      <Column Name="RBNAME" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V002" Member="V002">
+    <Type Name="V002">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDPR" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="PRNAME" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(260)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="V002_AttachedDoctorSpr" Member="AttachedDoctorSpr" ThisKey="Id" OtherKey="PROFIL" Type="AttachedDoctorSpr" />
+      <Association Name="V002_CalcAmbTARIF" Member="CalcAmbTARIF" ThisKey="Id" OtherKey="PROFIL" Type="CalcAmbTARIF" />
+      <Association Name="V002_LIC_TBL" Member="LIC_TBL" ThisKey="Id" OtherKey="PROFIL" Type="LIC_TBL" />
+      <Association Name="V002_LicenseDb" Member="LicenseDb" ThisKey="Id" OtherKey="Profil" Type="LicenseDb" />
+      <Association Name="V002_TARIF_PN" Member="TARIF_PN" ThisKey="Id" OtherKey="T_PROFIL" Type="TARIF_PN" />
+      <Association Name="V002_SLUCH" Member="SLUCH" ThisKey="Id" OtherKey="PROFIL" Type="SLUCH" />
+      <Association Name="V002_USL" Member="USL" ThisKey="Id" OtherKey="PROFIL" Type="USL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V003" Member="V003">
+    <Type Name="V003">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDLIC" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="LICNAME" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IERARH" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="PRIM" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V004" Member="V004">
+    <Type Name="V004">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MSPNAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(109)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="V004_SLUCH" Member="SLUCH" ThisKey="id" OtherKey="PRVS" Type="SLUCH" />
+      <Association Name="V004_USL" Member="USL" ThisKey="id" OtherKey="PRVS" Type="USL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V005" Member="V005">
+    <Type Name="V005">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="POLNAME" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(12)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="V005_PACIENT" Member="PACIENT" ThisKey="Id" OtherKey="W" Type="PACIENT" />
+      <Association Name="V005_PACIENT1" Member="PACIENT1" ThisKey="Id" OtherKey="W_P" Type="PACIENT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V006" Member="V006">
+    <Type Name="V006">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDUMP" Type="System.Decimal" DbType="Decimal(2,0)" CanBeNull="true" />
+      <Column Name="UMPNAME" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(259)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="V006_CalcAmbTARIF" Member="CalcAmbTARIF" ThisKey="id" OtherKey="USL_OK" Type="CalcAmbTARIF" />
+      <Association Name="V006_LIC_TBL" Member="LIC_TBL" ThisKey="id" OtherKey="USL_MP" Type="LIC_TBL" />
+      <Association Name="V006_LicenseDb" Member="LicenseDb" ThisKey="id" OtherKey="UslOk" Type="LicenseDb" />
+      <Association Name="V006_OtdelDb" Member="OtdelDb" ThisKey="id" OtherKey="ConditionID" Type="OtdelDb" />
+      <Association Name="V006_Tarif" Member="Tarif" ThisKey="id" OtherKey="ConditionHelp" Type="Tarif" />
+      <Association Name="V006_TARIF_PN" Member="TARIF_PN" ThisKey="id" OtherKey="T_USL_OK" Type="TARIF_PN" />
+      <Association Name="V006_SLUCH" Member="SLUCH" ThisKey="id" OtherKey="USL_OK" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V007" Member="V007">
+    <Type Name="V007">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDNMO" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="NMONAME" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V008" Member="V008">
+    <Type Name="V008">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDVMP" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="VMPNAME" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(259)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="V008_LIC_TBL" Member="LIC_TBL" ThisKey="Id" OtherKey="VID_MP" Type="LIC_TBL" />
+      <Association Name="V008_LicenseDb" Member="LicenseDb" ThisKey="Id" OtherKey="TypeHelp" Type="LicenseDb" />
+      <Association Name="V008_SLUCH" Member="SLUCH" ThisKey="Id" OtherKey="VIDPOM" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V009" Member="V009">
+    <Type Name="V009">
+      <Column Name="IDRMP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RMPNAME" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="DL_USLOV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(259)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="V009_SLUCH" Member="SLUCH" ThisKey="IDRMP" OtherKey="RSLT" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V010" Member="V010">
+    <Type Name="V010">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDSP" Type="System.Decimal" DbType="Decimal(2,0)" CanBeNull="true" />
+      <Column Name="SPNAME" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(259)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="V010_CalcAmbTARIF" Member="CalcAmbTARIF" ThisKey="Id" OtherKey="IDSP" Type="CalcAmbTARIF" />
+      <Association Name="V010_SLUCH" Member="SLUCH" ThisKey="Id" OtherKey="IDSP" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V012" Member="V012">
+    <Type Name="V012">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IZNAME" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DL_USLOV" Type="System.Decimal" DbType="Decimal(2,0)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(259)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="V012_SLUCH" Member="SLUCH" ThisKey="id" OtherKey="ISHOD" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V015" Member="V015">
+    <Type Name="V015">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HIGH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OKSO" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(261)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="V015_SLUCH" Member="SLUCH" ThisKey="ID" OtherKey="MSPID" Type="SLUCH" />
+      <Association Name="V015_USL" Member="USL" ThisKey="ID" OtherKey="MSPUID" Type="USL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V015_V002" Member="V015_V002">
+    <Type Name="V015_V002">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CodSpec" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Spec" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CodProf" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Prof" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V018" Member="V018">
+    <Type Name="V018">
+      <Column Name="IDHVID" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="HVIDNAME" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(1016)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V019" Member="V019">
+    <Type Name="V019">
+      <Column Name="IDHM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HMNAME" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="DIAG" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="HVID" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="DATEBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATEEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(1005)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HGR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HMODP" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VeteranDb" Member="VeteranDb">
+    <Type Name="VeteranDb">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="VarChar(54)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="VeteranDb_SLUCH" Member="SLUCH" ThisKey="Id" OtherKey="VETERAN" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VMP_TARIF" Member="VMP_TARIF">
+    <Type Name="VMP_TARIF">
+      <Column Name="IDHM" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HMGR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HM_TARIF" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WORK_DAY" Member="WORK_DAY">
+    <Type Name="WORK_DAY">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LPU" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="H_DATE" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PODR_ID" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Association Name="F003_WORK_DAY" Member="F003" ThisKey="LPU" OtherKey="mcod" Type="F003" IsForeignKey="true" />
+      <Association Name="PodrDb_WORK_DAY" Member="PodrDb" ThisKey="PODR_ID" OtherKey="Id" Type="PodrDb" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkStatDb" Member="WorkStatDb">
+    <Type Name="WorkStatDb">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="VarChar(54)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="WorkStatDb_SLUCH" Member="SLUCH" ThisKey="Id" OtherKey="WORK_STAT" Type="SLUCH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.YesNoTbl" Member="YesNoTbl">
+    <Type Name="YesNoTbl">
+      <Column Name="ID" Type="System.Boolean" DbType="Bit NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(23)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="YesNoTbl_USL" Member="USL" ThisKey="ID" OtherKey="OTKL" Type="USL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.YamedRegistry" Member="YamedRegistry">
+    <Type Name="YamedRegistry">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BeginTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SLID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SANK_IMP_TT" Member="SANK_IMP_TT">
+    <Type Name="SANK_IMP_TT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CODE_MO" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="YEAR" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="MONTH" Type="System.Decimal" DbType="Decimal(2,0)" CanBeNull="true" />
+      <Column Name="NSCHET" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DSCHET" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PLAT" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="LPU_ID" Type="System.Decimal" DbType="Decimal(16,0)" CanBeNull="true" />
+      <Column Name="NPOLIS" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="USL_OK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROFIL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DS1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DATE_1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATE_2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SLUCH_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OS_SLUCH_REGION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NHISTORY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDSLG" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="S_CODE" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="S_EXP_CODE" Type="System.Decimal" DbType="Decimal(7,0)" CanBeNull="true" />
+      <Column Name="S_SUM" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="S_TIP" Type="System.Decimal" DbType="Decimal(2,0)" CanBeNull="true" />
+      <Column Name="S_OSN" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="S_OSN_TS" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="S_COM" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="S_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="S_ZAKL" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="S_IST" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="SLID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SCHET_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COMENT" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="isUpdate" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CalcKsgTarif" Member="CalcKsgTarif">
+    <Type Name="CalcKsgTarif">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDKSG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SSL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KZ" Type="System.Decimal" DbType="Decimal(6,4)" CanBeNull="true" />
+      <Column Name="TARIF" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="DBEG" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DEND" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SprKsg" Member="SprKsg">
+    <Type Name="SprKsg">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KSGNUM" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="KSGNAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="STYPE" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="DBEG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DEND" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(272)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SprKsg_CalcUprk" Member="CalcUprk" ThisKey="ID" OtherKey="IDKSG" Type="CalcUprk" />
+      <Association Name="SprKsg_CalNotKus" Member="CalNotKus" ThisKey="ID" OtherKey="IDKSG" Type="CalNotKus" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PACIENT" Member="PACIENT">
+    <Type Name="PACIENT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_PAC" Type="System.String" DbType="NVarChar(36)" CanBeNull="true" />
+      <Column Name="FAM" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="IM" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="OT" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="W" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DR" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DOST" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FAM_P" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="IM_P" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="OT_P" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="W_P" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DR_P" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MR" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DOCTYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOCSER" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DOCNUM" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SNILS" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Column Name="OKATOG" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="OKATOP" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="COMENTP" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="VPOLIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SPOLIS" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="NPOLIS" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SMO" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="SMO_OGRN" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="SMO_OK" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="SMO_NAM" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NOVOR" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="SCHET_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KOD_TER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOC_STAT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KAT_LGOT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Region" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Rn" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="City" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CityRn" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="NasPun" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Ul" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DopUl" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="House" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CustomHouse" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="N_ZAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PR_NOV" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="DOST_P" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PACIENT_AKT_EKMP_TBL" Member="AKT_EKMP_TBL" ThisKey="ID" OtherKey="PID" Type="AKT_EKMP_TBL" />
+      <Association Name="PACIENT_AKT_MEE_TBL" Member="AKT_MEE_TBL" ThisKey="ID" OtherKey="PID" Type="AKT_MEE_TBL" />
+      <Association Name="PACIENT_SLUCH" Member="SLUCH" ThisKey="ID" OtherKey="PID" Type="SLUCH" />
+      <Association Name="F002_PACIENT" Member="F002" ThisKey="SMO" OtherKey="smocod" Type="F002" IsForeignKey="true" />
+      <Association Name="F008_PACIENT" Member="F008" ThisKey="VPOLIS" OtherKey="Id" Type="F008" IsForeignKey="true" />
+      <Association Name="F010_PACIENT" Member="F010" ThisKey="SMO_OK" OtherKey="KOD_OKATO" Type="F010" IsForeignKey="true" />
+      <Association Name="F011_PACIENT" Member="F011" ThisKey="DOCTYPE" OtherKey="Id" Type="F011" IsForeignKey="true" />
+      <Association Name="KatLgot_PACIENT" Member="KatLgot" ThisKey="KAT_LGOT" OtherKey="ID" Type="KatLgot" IsForeignKey="true" />
+      <Association Name="KodTer_PACIENT" Member="KodTer" ThisKey="KOD_TER" OtherKey="ID" Type="KodTer" IsForeignKey="true" />
+      <Association Name="SocStat_PACIENT" Member="SocStat" ThisKey="SOC_STAT" OtherKey="ID" Type="SocStat" IsForeignKey="true" />
+      <Association Name="V005_PACIENT" Member="V005" ThisKey="W" OtherKey="Id" Type="V005" IsForeignKey="true" />
+      <Association Name="V005_PACIENT1" Member="V0051" ThisKey="W_P" OtherKey="Id" Type="V005" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USL_KSLP" Member="USL_KSLP">
+    <Type Name="USL_KSLP">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDSL" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Z_SL" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="SLID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SCHET" Member="SCHET">
+    <Type Name="SCHET">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CODE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CODE_MO" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MONTH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NSCHET" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DSCHET" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PLAT" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="SUMMAV" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="COMENTS" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="SUMMAP" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SANK_MEK" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SANK_MEE" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SANK_EKMP" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="COUNT_SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NameWithID" Type="System.String" DbType="NVarChar(273)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DISP" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="ZAPFILENAME" Type="System.String" DbType="NVarChar(26)" CanBeNull="true" />
+      <Column Name="PERSFILENAME" Type="System.String" DbType="NVarChar(26)" CanBeNull="true" />
+      <Column Name="ZAPXMLFILE" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PERSXMLFILE" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SD_Z" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OmsFileName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="SCHET_FREP" Member="FREP" ThisKey="ID" OtherKey="SCHET_ID" Type="FREP" />
+      <Association Name="SCHET_SANK" Member="SANK" ThisKey="ID" OtherKey="SCHET_ID" Type="SANK" />
+      <Association Name="SCHET_SANK_RE" Member="SANK_RE" ThisKey="ID" OtherKey="SCHET_ID" Type="SANK_RE" />
+      <Association Name="SCHET_SCHET_OMS" Member="SCHET_OMS" ThisKey="ID" OtherKey="SCHET_ID" Type="SCHET_OMS" />
+      <Association Name="SCHET_SCHET_SMO" Member="SCHET_SMO" ThisKey="ID" OtherKey="SCHET_ID" Type="SCHET_SMO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SLUCH" Member="SLUCH">
+    <Type Name="SLUCH">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDCASE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USL_OK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VIDPOM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NPR_MO" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="EXTR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LPU" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="LPU_1" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="PODR" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PROFIL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DET" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="NHISTORY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DATE_1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATE_2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DS0" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DS1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DS2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CODE_MES1" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="CODE_MES2" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="SLUCH_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RSLT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ISHOD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRVS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDDOKT" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="OS_SLUCH" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="OS_SLUCH_REGION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDSP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ED_COL" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="TARIF" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SUMV" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="OPLATA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="SUMP" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SANK_IT" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="COMENTSL" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="SCHET_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GR_ZDOROV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VETERAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SCHOOL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WORK_STAT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_TEMP" Type="System.String" DbType="NVarChar(36)" CanBeNull="true" />
+      <Column Name="PID_TEMP" Type="System.String" DbType="NVarChar(36)" CanBeNull="true" />
+      <Column Name="IDKSG" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MEK_COMENT" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="MEE_COMENT" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="EKMP_COMENT" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="MEE_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KSG_OPLATA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KDAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQUEST_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="USERID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MSPID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LPUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DIFF_K" Type="System.Decimal" DbType="Decimal(5,4)" CanBeNull="true" />
+      <Column Name="VID_HMP" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="METOD_HMP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDSLG" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ISIDSLG" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="REMEK_COM" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="MEK_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MEE_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EKMP_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RMEK_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RMEE_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REKMP_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GOSP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VR_DOST" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRAVMA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NNAPR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DNAPR" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="KDOST" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NDOST" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VOPL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NNAR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DSN" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DOSTP" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DSKZ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PRS" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="DSS" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DSPA" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="IDDOKTP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDDOKTO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEFGOSP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SCHET_OMS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KSG_COM" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="KDAY_COM" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DIFF_COM" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="RSLT_D" Type="System.Decimal" DbType="Decimal(2,0)" CanBeNull="true" />
+      <Column Name="VOZR" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+      <Column Name="TER_ID" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="FOR_POM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KSG_DKK" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PROFIL_K" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRVS21" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SLUCH_SANK" Member="SANK" ThisKey="ID" OtherKey="SLID" Type="SANK" />
+      <Association Name="SLUCH_USL" Member="USL" ThisKey="ID" OtherKey="SLID" Type="USL" />
+      <Association Name="SprDEFGOSP_SLUCH" Member="SprDEFGOSP" ThisKey="DEFGOSP" OtherKey="ID" Type="SprDEFGOSP" IsForeignKey="true" />
+      <Association Name="DetProfilDb_SLUCH" Member="DetProfilDb" ThisKey="DET" OtherKey="Id" Type="DetProfilDb" IsForeignKey="true" />
+      <Association Name="Dostav_SLUCH" Member="Dostav" ThisKey="VR_DOST" OtherKey="ID" Type="Dostav" IsForeignKey="true" />
+      <Association Name="M001_KSG_SLUCH" Member="M001_KSG" ThisKey="DSKZ" OtherKey="IDDS" Type="M001_KSG" IsForeignKey="true" />
+      <Association Name="M001_KSG_SLUCH1" Member="M001_KSG1" ThisKey="DSN" OtherKey="IDDS" Type="M001_KSG" IsForeignKey="true" />
+      <Association Name="M001_KSG_SLUCH2" Member="M001_KSG2" ThisKey="DSPA" OtherKey="IDDS" Type="M001_KSG" IsForeignKey="true" />
+      <Association Name="M001_KSG_SLUCH3" Member="M001_KSG3" ThisKey="DSS" OtherKey="IDDS" Type="M001_KSG" IsForeignKey="true" />
+      <Association Name="F005_SLUCH" Member="F005" ThisKey="OPLATA" OtherKey="Id" Type="F005" IsForeignKey="true" />
+      <Association Name="Gospit_SLUCH" Member="Gospit" ThisKey="GOSP" OtherKey="ID" Type="Gospit" IsForeignKey="true" />
+      <Association Name="GrZdorovDb_SLUCH" Member="GrZdorovDb" ThisKey="GR_ZDOROV" OtherKey="Id" Type="GrZdorovDb" IsForeignKey="true" />
+      <Association Name="DoctorBd_SLUCH" Member="DoctorBd" ThisKey="IDDOKTO" OtherKey="id" Type="DoctorBd" IsForeignKey="true" />
+      <Association Name="DoctorBd_SLUCH1" Member="DoctorBd1" ThisKey="IDDOKTP" OtherKey="id" Type="DoctorBd" IsForeignKey="true" />
+      <Association Name="F003_SLUCH" Member="F003" ThisKey="LPU" OtherKey="mcod" Type="F003" IsForeignKey="true" />
+      <Association Name="F003_SLUCH1" Member="F0031" ThisKey="NPR_MO" OtherKey="mcod" Type="F003" IsForeignKey="true" />
+      <Association Name="OsobSluchDb_SLUCH" Member="OsobSluchDb" ThisKey="OS_SLUCH_REGION" OtherKey="Id" Type="OsobSluchDb" IsForeignKey="true" />
+      <Association Name="PACIENT_SLUCH" Member="PACIENT" ThisKey="PID" OtherKey="ID" Type="PACIENT" IsForeignKey="true" />
+      <Association Name="SCHET_OMS_SLUCH" Member="SCHET_OMS" ThisKey="SCHET_OMS_ID" OtherKey="CODE" Type="SCHET_OMS" IsForeignKey="true" />
+      <Association Name="SchoolStatusDb_SLUCH" Member="SchoolStatusDb" ThisKey="SCHOOL" OtherKey="Id" Type="SchoolStatusDb" IsForeignKey="true" />
+      <Association Name="SprExtr_SLUCH" Member="SprExtr" ThisKey="EXTR" OtherKey="Id" Type="SprExtr" IsForeignKey="true" />
+      <Association Name="SprKDOST_SLUCH" Member="SprKDOST" ThisKey="KDOST" OtherKey="ID" Type="SprKDOST" IsForeignKey="true" />
+      <Association Name="SprVOPL_SLUCH" Member="SprVOPL" ThisKey="VOPL" OtherKey="ID" Type="SprVOPL" IsForeignKey="true" />
+      <Association Name="TravmaTbl_SLUCH" Member="TravmaTbl" ThisKey="TRAVMA" OtherKey="ID" Type="TravmaTbl" IsForeignKey="true" />
+      <Association Name="TypeSluchDb_SLUCH" Member="TypeSluchDb" ThisKey="SLUCH_TYPE" OtherKey="id" Type="TypeSluchDb" IsForeignKey="true" />
+      <Association Name="Users_SLUCH" Member="Users" ThisKey="USERID" OtherKey="id" Type="Users" IsForeignKey="true" />
+      <Association Name="V002_SLUCH" Member="V002" ThisKey="PROFIL" OtherKey="Id" Type="V002" IsForeignKey="true" />
+      <Association Name="V004_SLUCH" Member="V004" ThisKey="PRVS" OtherKey="id" Type="V004" IsForeignKey="true" />
+      <Association Name="V006_SLUCH" Member="V006" ThisKey="USL_OK" OtherKey="id" Type="V006" IsForeignKey="true" />
+      <Association Name="V008_SLUCH" Member="V008" ThisKey="VIDPOM" OtherKey="Id" Type="V008" IsForeignKey="true" />
+      <Association Name="V009_SLUCH" Member="V009" ThisKey="RSLT" OtherKey="IDRMP" Type="V009" IsForeignKey="true" />
+      <Association Name="V010_SLUCH" Member="V010" ThisKey="IDSP" OtherKey="Id" Type="V010" IsForeignKey="true" />
+      <Association Name="V012_SLUCH" Member="V012" ThisKey="ISHOD" OtherKey="id" Type="V012" IsForeignKey="true" />
+      <Association Name="V015_SLUCH" Member="V015" ThisKey="MSPID" OtherKey="ID" Type="V015" IsForeignKey="true" />
+      <Association Name="VeteranDb_SLUCH" Member="VeteranDb" ThisKey="VETERAN" OtherKey="Id" Type="VeteranDb" IsForeignKey="true" />
+      <Association Name="SprVozr_SLUCH" Member="SprVozr" ThisKey="VOZR" OtherKey="ID" Type="SprVozr" IsForeignKey="true" />
+      <Association Name="WorkStatDb_SLUCH" Member="WorkStatDb" ThisKey="WORK_STAT" OtherKey="Id" Type="WorkStatDb" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USL" Member="USL">
+    <Type Name="USL">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SLID_TEMP" Type="System.String" DbType="NVarChar(36)" CanBeNull="true" />
+      <Column Name="IDSERV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LPU" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="LPU_1" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="PODR" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PROFIL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DET" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="DATE_IN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATE_OUT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DS" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CODE_USL" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="KOL_USL" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="TARIF" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="SUMV_USL" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="PRVS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CODE_MD" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="COMENTU" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="SCHET_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USL_PRR" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="USL_OTK" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SLID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MSPUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VID_VME" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="CODE_MDLPU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OSL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ANEST" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OTKL" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsImplemented" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IDKSG" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="KDAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DIFF_K" Type="System.Decimal" DbType="Decimal(6,4)" CanBeNull="true" />
+      <Column Name="UPR_K" Type="System.Decimal" DbType="Decimal(6,4)" CanBeNull="true" />
+      <Column Name="KSGOPLATA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DIFF_N" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROFIL_K" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRVS21" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="USL_USL_ASSIST" Member="USL_ASSIST" ThisKey="ID" OtherKey="UID" Type="USL_ASSIST" />
+      <Association Name="SprANEST_USL" Member="SprANEST" ThisKey="ANEST" OtherKey="ID" Type="SprANEST" IsForeignKey="true" />
+      <Association Name="DoctorBd_USL" Member="DoctorBd" ThisKey="CODE_MDLPU" OtherKey="id" Type="DoctorBd" IsForeignKey="true" />
+      <Association Name="DetProfilDb_USL" Member="DetProfilDb" ThisKey="DET" OtherKey="Id" Type="DetProfilDb" IsForeignKey="true" />
+      <Association Name="SprKSGOPLATA_USL" Member="SprKSGOPLATA" ThisKey="KSGOPLATA" OtherKey="ID" Type="SprKSGOPLATA" IsForeignKey="true" />
+      <Association Name="SprOSL_USL" Member="SprOSL" ThisKey="OSL" OtherKey="ID" Type="SprOSL" IsForeignKey="true" />
+      <Association Name="YesNoTbl_USL" Member="YesNoTbl" ThisKey="OTKL" OtherKey="ID" Type="YesNoTbl" IsForeignKey="true" />
+      <Association Name="SLUCH_USL" Member="SLUCH" ThisKey="SLID" OtherKey="ID" Type="SLUCH" IsForeignKey="true" />
+      <Association Name="V002_USL" Member="V002" ThisKey="PROFIL" OtherKey="Id" Type="V002" IsForeignKey="true" />
+      <Association Name="V004_USL" Member="V004" ThisKey="PRVS" OtherKey="id" Type="V004" IsForeignKey="true" />
+      <Association Name="V015_USL" Member="V015" ThisKey="MSPUID" OtherKey="ID" Type="V015" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Mek_Calc" Method="Mek_Calc">
+    <Parameter Name="schet_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Mek_Del" Method="Mek_Del">
+    <Parameter Name="schet_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sank_Calc" Method="Sank_Calc">
+    <Parameter Name="schet_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sank_Calc_" Method="Sank_Calc_">
+    <Parameter Name="schet_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sank_Del" Method="Sank_Del">
+    <Parameter Name="schet_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Schet_Calc" Method="Schet_Calc">
+    <Parameter Name="schet_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.schet_delete" Method="schet_delete">
+    <Parameter Name="schet_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sluch_Calc" Method="Sluch_Calc">
+    <Parameter Name="schet_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sluch_Calc_" Method="Sluch_Calc_">
+    <Parameter Name="schet_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.count_update" Method="count_update">
+    <Parameter Name="s" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

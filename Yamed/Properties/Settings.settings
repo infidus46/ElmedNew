@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Yamed.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="temp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=77.241.17.98,1416;Initial Catalog=elmedicinenewfond;User ID=Vasilenko;Password=LtdPfrByl</Value>
+    </Setting>
+    <Setting Name="temp2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=91.240.209.20,1432;Initial Catalog=elmed;User ID=sa;Password=Otuds[key</Value>
+    </Setting>
+    <Setting Name="temp3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=77.241.17.98,1612\Tf16_12;Initial Catalog=ElmedKokod;User ID=Vasilenko;Password=WfgRecUjv</Value>
+    </Setting>
+    <Setting Name="ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=.;Initial Catalog=ElmedicineSV_Onko;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=.;Initial Catalog=ElmedicineSV_Onko;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="SrzConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.0.101;Initial Catalog=srz_mini;User ID=sa;Password=Gbljh:100&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.0.101;Initial Catalog=srz_mini;User ID=sa;Password=Gbljh:100</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

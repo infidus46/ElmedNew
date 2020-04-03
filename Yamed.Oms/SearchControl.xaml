@@ -1,0 +1,168 @@
+﻿<UserControl x:Class="Yamed.Oms.SearchControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+             mc:Ignorable="d"  MinWidth="300"
+             d:DesignHeight="500" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <dx:DXTabControl >
+            <dx:DXTabItem Header="Поиск" Name="TabItem1">
+                <StackPanel>
+                    <TextBlock Text="Медицинская организация" Margin="30,0,0,0"/>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Name="CheckBox1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <dxe:ComboBoxEdit Name="LpuComboBoxEdit" ItemsSource="{Binding}" ValueMember="mcod" DisplayMember="NameWithID" IsEnabled="{Binding IsChecked, ElementName=CheckBox1}" Grid.Column="1"/>
+                    </Grid>
+                    <TextBlock Text="Период" Margin="30,0,0,0"/>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="15"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1.5*"/>
+                            <ColumnDefinition Width="27"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Name="CheckBox2" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <TextBlock Grid.Column="1" Text="С" Margin="2,0,0,0"/>
+                        <dxe:ComboBoxEdit Name="StartMonthComboBoxEdit" Grid.Column="2"  Margin="0,0,4,0" IsEnabled="{Binding IsChecked, ElementName=CheckBox2}"/>
+                        <dxe:ComboBoxEdit Name="StartYearComboBoxEdit" Grid.Column="3" IsEnabled="{Binding IsChecked, ElementName=CheckBox2}"/>
+                        <TextBlock Grid.Column="4" Text="ПО" Margin="4,0,0,0"/>
+                        <dxe:ComboBoxEdit Name="EndMonthComboBoxEdit" Grid.Column="5" Margin="0,0,4,0" IsEnabled="{Binding IsChecked, ElementName=CheckBox2}"/>
+                        <dxe:ComboBoxEdit Name="EndYearComboBoxEdit" Grid.Column="6" IsEnabled="{Binding IsChecked, ElementName=CheckBox2}"/>
+                    </Grid>
+                    <TextBlock Text="Профиль" Margin="30,0,0,0"/>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Name="CheckBox3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <dxe:ComboBoxEdit ValueMember="Id" DisplayMember="NameWithID" Name="ProfilComboBoxEdit" ItemsSource="{Binding}" Grid.Column="1" IsEnabled="{Binding IsChecked, ElementName=CheckBox3}"/>
+                    </Grid>
+                    <TextBlock Text="Диагноз" Margin="30,0,0,0"/>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Name="CheckBox4" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <dxe:ComboBoxEdit Name="DsComboBoxEdit" DisplayMember="NameWithID" ImmediatePopup="True" IncrementalFiltering="True" AutoComplete="True" ItemsSource="{Binding}" NullValueButtonPlacement="EditBox" ValueMember="IDDS" FilterCondition="Contains" Grid.Column="1" IsEnabled="{Binding IsChecked, ElementName=CheckBox4}"/>
+                    </Grid>
+                    <TextBlock Text="Тип случая" Margin="30,0,0,0"/>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Name="CheckBox5" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <dxe:ComboBoxEdit Name="PCelEdit" ItemsSource="{Binding}" DisplayMember="NameWithID" ValueMember="ID"  Grid.Column="1" IsEnabled="{Binding IsChecked, ElementName=CheckBox5}"/>
+                    </Grid>
+                    <TextBlock Text="Условие оказание помощи" Margin="30,0,0,0"/>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Name="CheckBox6" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <dxe:ComboBoxEdit ItemsSource="{Binding}" DisplayMember="NameWithID" ValueMember="id" Name="UslOkEdit" Grid.Column="1" IsEnabled="{Binding IsChecked, ElementName=CheckBox6}"/>
+                    </Grid>
+                    <TextBlock Text="Региональный признак" Margin="30,0,0,0"/>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Name="CheckBox7" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <dxe:ComboBoxEdit ItemsSource="{Binding}" DisplayMember="NameWithID" ValueMember="Id" Name="OsSluchEdit"  Grid.Column="1" IsEnabled="{Binding IsChecked, ElementName=CheckBox7}"/>
+                    </Grid>
+                    <TextBlock Text="Тип счета" Margin="30,0,0,0"/>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Name="CheckBox8" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <dxe:ComboBoxEdit ItemsSource="{Binding}" DisplayMember="NameWithID" ValueMember="ID" Name="TypeSchetEdit"  Grid.Column="1" IsEnabled="{Binding IsChecked, ElementName=CheckBox8}"/>
+
+                    </Grid>
+                </StackPanel>
+            </dx:DXTabItem>
+            <dx:DXTabItem Header="Поиск по ПД" Name="TabItem2">
+                <StackPanel>
+                    <TextBlock Text="Фамилия" Margin="30,0,0,0"/>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Name="CheckBox21" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <dxe:TextEdit Name="FamBoxEdit" IsEnabled="{Binding IsChecked, ElementName=CheckBox21}" Grid.Column="1"/>
+                    </Grid>
+                    <TextBlock Text="Имя" Margin="30,0,0,0"/>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Name="CheckBox22" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <dxe:TextEdit Name="ImBoxEdit" IsEnabled="{Binding IsChecked, ElementName=CheckBox22}" Grid.Column="1"/>
+                    </Grid>
+                    <TextBlock Text="Отчество" Margin="30,0,0,0"/>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Name="CheckBox23" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <dxe:TextEdit Name="OtBoxEdit" IsEnabled="{Binding IsChecked, ElementName=CheckBox23}" Grid.Column="1"/>
+                    </Grid>
+                    <TextBlock Text="Дата рождения" Margin="30,0,0,0"/>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Name="CheckBox24" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <dxe:DateEdit Name="DrBoxEdit" IsEnabled="{Binding IsChecked, ElementName=CheckBox24}" Grid.Column="1"/>
+                    </Grid>
+                    <TextBlock Text="Номер полиса" Margin="30,0,0,0"/>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="17*"/>
+                            <ColumnDefinition Width="227*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Name="CheckBox25" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1,0" />
+                        <dxe:TextEdit Name="PolisBoxEdit" IsEnabled="{Binding IsChecked, ElementName=CheckBox25}" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    </Grid>
+
+                </StackPanel>
+            </dx:DXTabItem>
+        </dx:DXTabControl>
+        <dxb:BarContainerControl Grid.Row="1">
+            <dxb:StatusBarControl AllowCustomizationMenu="False" AllowHide="False">
+                <dxb:BarButtonItem Name="SearchItem"
+                                           BarItemDisplayMode="ContentAndGlyph" Alignment="Far"
+                                           ToolTip="Начать поиск" Content="Поиск" GlyphAlignment="Left" 
+                                           LargeGlyph="/Yamed.Icons;component/Icons/search_group.png"
+                                           ItemClick="SearchItem_OnItemClick" />
+            </dxb:StatusBarControl>
+        </dxb:BarContainerControl>
+
+
+    </Grid>
+</UserControl>

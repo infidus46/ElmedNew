@@ -1,0 +1,208 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+             xmlns:emr="clr-namespace:Yamed.Emr"
+             x:Class="Yamed.Emr.ClinicEmrPacient"
+             mc:Ignorable="d" Unloaded="ClinicEmrPacient_OnUnloaded"
+             d:DesignHeight="600" d:DesignWidth="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Пациенты"/>
+                <emr:EmrPacient Grid.Row="1" x:Name="PacientGridControl" SelectedItemChanged="PacientGridControl_OnSelectedItemChanged"></emr:EmrPacient>
+                <!--<dxg:GridControl x:Name="PacientGridControl" SelectedItemChanged="PacientGridControl_OnSelectedItemChanged" AutoExpandAllGroups="True" AutoGenerateColumns="None" SelectionMode="Row" ItemsSource="{Binding Data, Source={StaticResource LinqInstantFeedbackDataSourcePacient}}" Grid.Row="1" >
+                    <dxg:GridControl.View>
+                        <dxg:TableView x:Name="view" RowDoubleClick="View_OnRowDoubleClick" ShowGroupPanel="False" ShowCriteriaInAutoFilterRow="True" WaitIndicatorType="Panel" AllowConditionalFormattingMenu="True" RetainSelectionOnClickOutsideCheckBoxSelector="False" ShowCheckBoxSelectorColumn="True" ShowCheckBoxSelectorInGroupRow="True" AllowEditing="True" ShowAutoFilterRow="True" ShowGroupedColumns="True" AllowFixedColumnMenu="True" FilterRowDelay="500" />
+                    </dxg:GridControl.View>
+                    <dxg:GridColumn x:Name="Column_FAM" FieldName="FAM" Header="Фамилия" />
+                    <dxg:GridColumn x:Name="Column_IM" FieldName="IM" Header="Имя" />
+                    <dxg:GridColumn x:Name="Column_OT" FieldName="OT" Header="Очество" />
+                    <dxg:GridColumn x:Name="Column_W" FieldName="W" Header="Пол" />
+                    <dxg:GridColumn x:Name="Column_DR" FieldName="DR" Header="Дата рождеия" />
+                    <dxg:GridColumn x:Name="Column_FAM_P" FieldName="FAM_P" Header="Фамилия представителя" />
+                    <dxg:GridColumn x:Name="Column_IM_P" FieldName="IM_P" Header="Имя представителя" />
+                    <dxg:GridColumn x:Name="Column_OT_P" FieldName="OT_P" Header="Отчество представителя" />
+                    <dxg:GridColumn x:Name="Column_DR_P" FieldName="DR_P" Header="Дата рожд. предст-ля" />
+                    <dxg:GridColumn x:Name="Column_W_P" FieldName="W_P" Header="Пол представителя" />
+                    <dxg:GridColumn x:Name="Column_MR" FieldName="MR" Header="Место рождения" />
+                    <dxg:GridColumn x:Name="Column_DOCTYPE" FieldName="DOCTYPE" Header="Тип УДЛ" />
+                    <dxg:GridColumn x:Name="Column_DOCSER" FieldName="DOCSER" Header="Серия" />
+                    <dxg:GridColumn x:Name="Column_DOCNUM" FieldName="DOCNUM" Header="Номер" />
+                    <dxg:GridColumn x:Name="Column_SNILS" FieldName="SNILS" Header="СНИЛС" />
+                    <dxg:GridColumn x:Name="Column_COMENTP" FieldName="COMENTP" Header="Коментарий" />
+
+                    <dxg:GridColumn x:Name="Column_KAT_LGOT" FieldName="KAT_LGOT" Header="Льгота" />
+                    <dxg:GridColumn x:Name="Column_SOC_STAT" FieldName="SOC_STAT" Header="Статус" />
+
+
+                    <dxg:GridColumn x:Name="Column_VPOLIS" FieldName="VPOLIS" Header="Тип полиса" />
+                    <dxg:GridColumn x:Name="Column_SPOLIS" FieldName="SPOLIS" Header="Серия полиса" />
+                    <dxg:GridColumn x:Name="Column_NPOLIS" FieldName="NPOLIS" Header="Номер полиса" />
+                    <dxg:GridColumn x:Name="Column_SMO" FieldName="SMO" Header="СМО" >
+                        <dxg:GridColumn.EditSettings>
+                            <dxe:ComboBoxEditSettings x:Name="SmoEdit" DisplayMember="NameWithID" ValueMember="smocod" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                        </dxg:GridColumn.EditSettings>
+                    </dxg:GridColumn>
+                </dxg:GridControl>-->
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Документы"/>
+                <dxe:ListBoxEdit Grid.Row="1"  DisplayMember="TableDisplayName" x:Name="PacientDocumentList" ValueMember="ID" ItemsSource="{Binding}" >
+                    <dxe:ListBoxEdit.StyleSettings>
+                        <dxe:RadioListBoxEditStyleSettings />
+                    </dxe:ListBoxEdit.StyleSettings>
+                </dxe:ListBoxEdit>
+            </Grid>
+        </Grid>
+        <GridSplitter Grid.Row="1" Margin="5,1"  Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <Grid Grid.Row="2">
+            <dx:DXTabControl>
+                <dx:DXTabItem Header="Обращения/случаи госпитализации">
+                    <Grid Background="Transparent">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <dxb:BarContainerControl Grid.Column="0" >
+                                <dxb:ToolBarControl AllowCustomizationMenu="False" AllowHide="False" AllowQuickCustomization="False" IsCollapsed="False" ShowDragWidget="False" UseWholeRow="False" HorizontalAlignment="Stretch" Orientation="Vertical">
+                                    <dxb:BarButtonItem Content="Добавить" Glyph="/Yamed.Icons;component/Icons/user-add_blue.png" LargeGlyph="/Yamed.Icons;component/Icons/user-add_blue.png" BarItemDisplayMode="Default"/>
+                                    <dxb:BarButtonItem Content="Просмотр" Glyph="/Yamed.Icons;component/Icons/user-pen_blue.png" LargeGlyph="/Yamed.Icons;component/Icons/user-pen_blue.png" BarItemDisplayMode="Default"/>
+                                    <dxb:BarButtonItem Content="Удалить"  Glyph="/Yamed.Icons;component/Icons/user-exclude_blue.png" LargeGlyph="/Yamed.Icons;component/Icons/user-exclude_blue.png" BarItemDisplayMode="Default"/>
+                                </dxb:ToolBarControl>
+                            </dxb:BarContainerControl>
+                            <dxg:GridControl Name="SluchGridControl"  Grid.Column="1" AutoGenerateColumns="AddNew" SelectionMode="Row" ItemsSource="{Binding}" SelectedItemChanged="SluchGridControl_OnSelectedItemChanged">
+                                <dxg:GridControl.View>
+                                    <dxg:TableView ShowGroupPanel="False" ShowCriteriaInAutoFilterRow="True" WaitIndicatorType="Panel" AllowConditionalFormattingMenu="True" RetainSelectionOnClickOutsideCheckBoxSelector="False" ShowCheckBoxSelectorColumn="True" ShowCheckBoxSelectorInGroupRow="True" AllowEditing="True" ShowAutoFilterRow="True" ShowGroupedColumns="True" AllowFixedColumnMenu="True" FilterRowDelay="500" />
+                                </dxg:GridControl.View>
+                            </dxg:GridControl>
+                        </Grid>
+                        <GridSplitter Grid.Row="1" Margin="5,1"  Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                        <Grid Grid.Row="2" Grid.Column="0" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="Услуги"/>
+                                <dxb:BarContainerControl Grid.Row="1">
+                                    <dxb:ToolBarControl AllowCustomizationMenu="False" AllowHide="False" AllowQuickCustomization="False" IsCollapsed="False" ShowDragWidget="False" UseWholeRow="False" HorizontalAlignment="Stretch">
+                                        <dxb:BarButtonItem Content="Добавить" Glyph="/Yamed.Icons;component/Icons/user-add_blue.png" LargeGlyph="/Yamed.Icons;component/Icons/user-add_blue.png" BarItemDisplayMode="ContentAndGlyph"/>
+                                        <dxb:BarButtonItem Content="Просмотр" Glyph="/Yamed.Icons;component/Icons/user-pen_blue.png" LargeGlyph="/Yamed.Icons;component/Icons/user-pen_blue.png" BarItemDisplayMode="ContentAndGlyph"/>
+                                        <dxb:BarButtonItem Content="Удалить"  Glyph="/Yamed.Icons;component/Icons/user-exclude_blue.png" LargeGlyph="/Yamed.Icons;component/Icons/user-exclude_blue.png" BarItemDisplayMode="ContentAndGlyph"/>
+                                    </dxb:ToolBarControl>
+                                </dxb:BarContainerControl>
+                                <dxg:GridControl Name="UslGridControl" Grid.Row="2" AutoGenerateColumns="AddNew" SelectionMode="Row" ItemsSource="{Binding}" Margin="10,0,-10,0" >
+                                    <dxg:GridControl.View>
+                                        <dxg:TableView ShowGroupPanel="False" ShowCriteriaInAutoFilterRow="True" WaitIndicatorType="Panel" AllowConditionalFormattingMenu="True" RetainSelectionOnClickOutsideCheckBoxSelector="False" ShowCheckBoxSelectorColumn="True" ShowCheckBoxSelectorInGroupRow="True" AllowEditing="True" ShowAutoFilterRow="True" ShowGroupedColumns="True" AllowFixedColumnMenu="True" FilterRowDelay="500" />
+                                    </dxg:GridControl.View>
+                                </dxg:GridControl>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="Исследования"/>
+                                <dxb:BarContainerControl Grid.Row="1">
+                                    <dxb:ToolBarControl AllowCustomizationMenu="False" AllowHide="False" AllowQuickCustomization="False" IsCollapsed="False" ShowDragWidget="False" UseWholeRow="False" HorizontalAlignment="Stretch">
+                                        <dxb:BarButtonItem Content="Добавить" Glyph="/Yamed.Icons;component/Icons/user-add_blue.png" LargeGlyph="/Yamed.Icons;component/Icons/user-add_blue.png" BarItemDisplayMode="ContentAndGlyph"/>
+                                        <dxb:BarButtonItem Content="Просмотр" Glyph="/Yamed.Icons;component/Icons/user-pen_blue.png" LargeGlyph="/Yamed.Icons;component/Icons/user-pen_blue.png" BarItemDisplayMode="ContentAndGlyph"/>
+                                        <dxb:BarButtonItem Content="Удалить"  Glyph="/Yamed.Icons;component/Icons/user-exclude_blue.png" LargeGlyph="/Yamed.Icons;component/Icons/user-exclude_blue.png" BarItemDisplayMode="ContentAndGlyph"/>
+                                    </dxb:ToolBarControl>
+                                </dxb:BarContainerControl>
+
+                                <dxe:ListBoxEdit Grid.Row="2"  DisplayMember="TableDisplayName" x:Name="AnalysisFormList" ValueMember="ID" ItemsSource="{Binding}" >
+                                    <dxe:ListBoxEdit.StyleSettings>
+                                        <dxe:CheckedListBoxEditStyleSettings />
+                                    </dxe:ListBoxEdit.StyleSettings>
+                                </dxe:ListBoxEdit>
+                            </Grid>
+
+                        </Grid>
+
+                    </Grid>
+                </dx:DXTabItem>
+                <dx:DXTabItem Header="Направления">
+                    <Grid Background="Transparent">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Направление к врачу"/>
+                        <dxb:BarContainerControl Grid.Row="1" Grid.Column="0">
+                            <dxb:ToolBarControl AllowCustomizationMenu="False" AllowHide="False" AllowQuickCustomization="False" IsCollapsed="False" ShowDragWidget="False" UseWholeRow="False" HorizontalAlignment="Stretch">
+                                <dxb:BarButtonItem Content="Добавить" Glyph="/Yamed.Icons;component/Icons/user-add_blue.png" LargeGlyph="/Yamed.Icons;component/Icons/user-add_blue.png" BarItemDisplayMode="ContentAndGlyph"/>
+                                <dxb:BarButtonItem Content="Просмотр" Glyph="/Yamed.Icons;component/Icons/user-pen_blue.png" LargeGlyph="/Yamed.Icons;component/Icons/user-pen_blue.png" BarItemDisplayMode="ContentAndGlyph"/>
+                                <dxb:BarButtonItem Content="Удалить"  Glyph="/Yamed.Icons;component/Icons/user-exclude_blue.png" LargeGlyph="/Yamed.Icons;component/Icons/user-exclude_blue.png" BarItemDisplayMode="ContentAndGlyph"/>
+                            </dxb:ToolBarControl>
+                        </dxb:BarContainerControl>
+                        <dxg:GridControl Grid.Row="2" Grid.Column="0"/>
+
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="Напрвление на исследование"/>
+                        <dxb:BarContainerControl Grid.Row="1" Grid.Column="1">
+                            <dxb:ToolBarControl AllowCustomizationMenu="False" AllowHide="False" AllowQuickCustomization="False" IsCollapsed="False" ShowDragWidget="False" UseWholeRow="False" HorizontalAlignment="Stretch">
+                                <dxb:BarButtonItem Content="Добавить" Glyph="/Yamed.Icons;component/Icons/user-add_blue.png" LargeGlyph="/Yamed.Icons;component/Icons/user-add_blue.png" BarItemDisplayMode="ContentAndGlyph"/>
+                                <dxb:BarButtonItem Content="Просмотр" Glyph="/Yamed.Icons;component/Icons/user-pen_blue.png" LargeGlyph="/Yamed.Icons;component/Icons/user-pen_blue.png" BarItemDisplayMode="ContentAndGlyph"/>
+                                <dxb:BarButtonItem Content="Удалить"  Glyph="/Yamed.Icons;component/Icons/user-exclude_blue.png" LargeGlyph="/Yamed.Icons;component/Icons/user-exclude_blue.png" BarItemDisplayMode="ContentAndGlyph"/>
+                            </dxb:ToolBarControl>
+                        </dxb:BarContainerControl>
+                        <dxg:GridControl Grid.Row="2" Grid.Column="1"/>
+
+                        <TextBlock Grid.Row="0" Grid.Column="2" Text="Направление на госпитализацию"/>
+                        <dxb:BarContainerControl Grid.Row="1" Grid.Column="2">
+                            <dxb:ToolBarControl AllowCustomizationMenu="False" AllowHide="False" AllowQuickCustomization="False" IsCollapsed="False" ShowDragWidget="False" UseWholeRow="False" HorizontalAlignment="Stretch">
+                                <dxb:BarButtonItem Content="Добавить" Glyph="/Yamed.Icons;component/Icons/user-add_blue.png" LargeGlyph="/Yamed.Icons;component/Icons/user-add_blue.png" BarItemDisplayMode="ContentAndGlyph"/>
+                                <dxb:BarButtonItem Content="Просмотр" Glyph="/Yamed.Icons;component/Icons/user-pen_blue.png" LargeGlyph="/Yamed.Icons;component/Icons/user-pen_blue.png" BarItemDisplayMode="ContentAndGlyph"/>
+                                <dxb:BarButtonItem Content="Удалить"  Glyph="/Yamed.Icons;component/Icons/user-exclude_blue.png" LargeGlyph="/Yamed.Icons;component/Icons/user-exclude_blue.png" BarItemDisplayMode="ContentAndGlyph"/>
+                            </dxb:ToolBarControl>
+                        </dxb:BarContainerControl>
+                        <dxg:GridControl Grid.Row="2" Grid.Column="2"/>
+                    </Grid>
+                </dx:DXTabItem>
+            </dx:DXTabControl>
+
+        </Grid>
+    </Grid>
+
+</UserControl>

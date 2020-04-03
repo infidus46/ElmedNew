@@ -1,0 +1,200 @@
+﻿<UserControl x:Class="Yamed.Oms.AktRegisterGrid"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" 
+             xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+             xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+             xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                  Loaded="Control_OnLoaded"
+                  Unloaded="Control_OnUnloaded"
+                  mc:Ignorable="d">
+
+
+    <dx:LoadingDecorator Name="LoadingDecorator1" OwnerLock="None" >
+        <Grid Name="Grid0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <dxb:BarContainerControl >
+                        <dxb:ToolBarControl AllowCustomizationMenu="False" AllowHide="False" AllowQuickCustomization="False" IsCollapsed="False" ShowDragWidget="False" UseWholeRow="True" >
+                            <dxb:BarButtonItem Name="ScRefreshItem"
+                                           BarItemDisplayMode="ContentAndGlyph" 
+                                           ToolTip="Обновить" GlyphAlignment="Top"
+                                           Content="Обновить"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/reload.png"
+                                           ItemClick="RefreshItem_OnItemClick" />
+                            <dxb:BarItemSeparator BarItemDisplayMode="ContentAndGlyph" />
+
+                            <dxb:BarButtonItem Name="ScRegisterItem"
+                                           BarItemDisplayMode="ContentAndGlyph"
+                                           AllowGlyphTheming="True"
+                                           ToolTip="Просмотр акта" GlyphAlignment="Top"
+                                           Content="Просмотр"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/1481287271_Medical_Report-2.png"
+                                           ItemClick="ScRegisterItem_OnItemClick"/>
+                            <!--<dxb:BarButtonItem Name="ScExportItem"
+                                           BarItemDisplayMode="ContentAndGlyph"
+                                           ToolTip="" GlyphAlignment="Top"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/700048-icon-89-document-file-sql-512.png"
+                                           IsEnabled="False"/>-->
+                            <dxb:BarButtonItem Name="ScAddItem" Alignment="Far"
+                                           BarItemDisplayMode="ContentAndGlyph"
+                                           ToolTip="Добавить" GlyphAlignment="Top"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/plus_orange.png"
+                                           ItemClick="AddItem_OnItemClick" />
+                            <dxb:BarButtonItem Name="ScEditItem" Alignment="Far"
+                                           BarItemDisplayMode="ContentAndGlyph"
+                                           ToolTip="Редактировать" GlyphAlignment="Top"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/pencil.png"
+                                           ItemClick="EditItem_OnItemClick" />
+                            <dxb:BarButtonItem Name="ScDelItem" Alignment="Far"
+                                           BarItemDisplayMode="ContentAndGlyph"
+                                           ToolTip="Удалить" GlyphAlignment="Top"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/deletered.png"
+                                           ItemClick="DelItem_OnItemClick" />
+                            <dxb:BarItemSeparator BarItemDisplayMode="ContentAndGlyph" />
+
+                            <dxb:BarButtonItem Name="GrItem" Alignment="Near"
+                                           BarItemDisplayMode="ContentAndGlyph"
+                                           ToolTip="Изменить вид группировки" GlyphAlignment="Top"
+                                           LargeGlyph="/Yamed.Icons;component/Icons/021_119_layout_wireframe_grid_sitemap_structure_list_thread-512.png"
+                                           ItemClick="GrItem_OnItemClick" />
+                        </dxb:ToolBarControl>
+                    </dxb:BarContainerControl>
+
+
+                    <dxg:GridControl Name="gridControl1" AutoGenerateColumns="None" SelectionMode="Row" Grid.Row="1" ItemsSource="{Binding Data}" x:FieldModifier="public"
+                                     SelectionChanged="GridControl1_OnSelectionChanged">
+                        <dxg:GridControl.Columns>
+                            <dxg:GridColumn Name="Column_ID" Width="45" FieldName="ID" Header="ИД" ReadOnly="True" />
+                            <dxg:GridColumn Name="Column_LOCK" Width="45" FieldName="LOCK" Header="Блок" ReadOnly="True"  />
+                            <dxg:GridColumn Name="Column_LPU" FieldName="LPU" Header="Медицинская организация" ReadOnly="True" >
+                                <dxg:GridColumn.EditSettings>
+                                    <dxe:ComboBoxEditSettings Name="LpuEdit" DisplayMember="NameWithID" ValueMember="mcod" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                                </dxg:GridColumn.EditSettings>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn Name="Column_PERIOD_EXP_NOTEDIT" Width="55" FieldName="PERIOD_EXP_NOTEDIT" GroupIndex="0" Header="Период" ReadOnly="True" SortOrder="Descending" />
+                            <dxg:GridColumn Name="Column_TYPE_MP" FieldName="TYPE_MP" Header="Тип ПМ" ReadOnly="True" >
+                                <dxg:GridColumn.EditSettings>
+                                    <dxe:ComboBoxEditSettings Name="TypeMpEdit" DisplayMember="NameWithID" ValueMember="ID" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                                </dxg:GridColumn.EditSettings>
+                            </dxg:GridColumn>
+                        <dxg:GridColumn Name="Column_KOLZAP" FieldName="ID" Header="Кол-во записей"  ReadOnly="True" >
+                        <dxg:GridColumn.EditSettings>
+                            <dxe:ComboBoxEditSettings Name="kolzap" DisplayMember="kol_zap" ValueMember="D3_ARID" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                        </dxg:GridColumn.EditSettings>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn Name="Column_KOLEXP" FieldName="ID" Header="Кол-во экспертиз"  ReadOnly="True" >
+                            <dxg:GridColumn.EditSettings>
+                                <dxe:ComboBoxEditSettings Name="kolexp" DisplayMember="kol_exp" ValueMember="D3_ARID" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                            </dxg:GridColumn.EditSettings>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn Name="Column_S_TIP2" FieldName="S_TIP2" Header="Тип санкции" ReadOnly="True" >
+                                <dxg:GridColumn.EditSettings>
+                                    <dxe:ComboBoxEditSettings Name="SType2Edit" DisplayMember="NameWithID" ValueMember="IDVID" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                                </dxg:GridColumn.EditSettings>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn Name="Column_COMMENT" FieldName="COMMENT" Header="Коментарий" ReadOnly="True" />
+                            <dxg:GridColumn Name="Column_DATE_ACT" FieldName="DATE_ACT" Header="Номер акта" ReadOnly="True" />
+                            <dxg:GridColumn Name="Column_NUM_ACT" FieldName="NUM_ACT" Header="Номер акта" ReadOnly="True" />
+                            <dxg:GridColumn Name="Column_DBEG" FieldName="DBEG" Header="Дата запроса" ReadOnly="True" />
+                            <dxg:GridColumn Name="Column_DEND" FieldName="DEND" Header="Дата закрытия акта" ReadOnly="True" />
+                            <dxg:GridColumn Name="Column_DATE_PMD" FieldName="DATE_PMD" Header="Дата предоставления документа" ReadOnly="True" />
+                            <dxg:GridColumn Name="Column_DATE_PODPIS_SMO" FieldName="DATE_PODPIS_SMO" Header="Дата подписания" ReadOnly="True" />
+                            <dxg:GridColumn Name="Column_DATE_TO_MO" FieldName="DATE_TO_MO" Header="Дата отправки" ReadOnly="True" />
+                            <dxg:GridColumn Name="Column_DATE_PODPIS_MO" FieldName="DATE_PODPIS_MO" Header="Дата подписания МО" ReadOnly="True" />
+                            <dxg:GridColumn Name="Column_DATE_MO_TO_SMO" FieldName="DATE_MO_TO_SMO" Header="Дата оплаты штрафа" ReadOnly="True" />
+                            <dxg:GridColumn Name="Column_DATE_OPL_SHTRAF" FieldName="DATE_OPL_SHTRAF" Header="Дата оплаты штрафа" ReadOnly="True" />
+                            <dxg:GridColumn Name="Column_USERID_NOTEDIT" FieldName="USERID_NOTEDIT" Header="Пользователь" ReadOnly="True" >
+                                <dxg:GridColumn.EditSettings>
+                                    <dxe:ComboBoxEditSettings Name="UserEdit" DisplayMember="UserName" ValueMember="ID" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                                </dxg:GridColumn.EditSettings>
+                            </dxg:GridColumn>
+                        </dxg:GridControl.Columns>
+                        <dxg:GridControl.View>
+                            <dxg:TableView x:Name="view"  WaitIndicatorType="Panel" ShowSearchPanelMode="Always" ShowCriteriaInAutoFilterRow="True" AllowConditionalFormattingMenu="True" RetainSelectionOnClickOutsideCheckBoxSelector="False" ShowCheckBoxSelectorColumn="True" ShowCheckBoxSelectorInGroupRow="True" AllowEditing="True" ShowAutoFilterRow="True" ShowGroupedColumns="True" ShowTotalSummary="True" AllowFixedColumnMenu="True"  >
+                                <dxg:TableView.RowCellMenuCustomizations>
+                                </dxg:TableView.RowCellMenuCustomizations>
+                            </dxg:TableView>
+                        </dxg:GridControl.View>
+                    </dxg:GridControl>
+
+                </Grid>
+            <GridSplitter Grid.Row="1" Margin="5,2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Grid Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <dxb:BarContainerControl >
+                    <dxb:ToolBarControl AllowCustomizationMenu="False" AllowHide="False" AllowQuickCustomization="False" IsCollapsed="False" ShowDragWidget="False" UseWholeRow="False" IsEnabled="False">
+                        <dxb:BarButtonItem Name="OmsAddItem"
+                                           BarItemDisplayMode="ContentAndGlyph"
+                                           Content="Добавить"
+                                           Glyph="/Yamed.Icons;component/Icons/plus_orange.png"
+                                           />
+                        <dxb:BarButtonItem Name="OmsEditItem"
+                                           BarItemDisplayMode="ContentAndGlyph"
+                                           Content="Редактировать"
+                                           Glyph="/Yamed.Icons;component/Icons/pencil.png"
+                                           />
+                        <dxb:BarButtonItem Name="OmsDelItem"
+                                           BarItemDisplayMode="ContentAndGlyph"
+                                           Content="Удалить"
+                                           Glyph="/Yamed.Icons;component/Icons/deletered.png"
+                                           />
+                        <dxb:BarItemSeparator ></dxb:BarItemSeparator>
+
+                        <dxb:BarButtonItem Name="DocumentItem"
+                                           BarItemDisplayMode="ContentAndGlyph"
+                                           Content="Документы"
+                                           Glyph="/Yamed.Icons;component/Icons/script_badge.png" 
+                                           />
+
+                    </dxb:ToolBarControl>
+                </dxb:BarContainerControl>
+                <dxg:GridControl Grid.Row="1" Name="sankGridControl" SelectionMode="Row" ItemsSource="{Binding UpdateSourceTrigger=PropertyChanged}" >
+                    <dxg:GridControl.Resources>
+
+                    </dxg:GridControl.Resources>
+                    <dxg:GridControl.Columns>
+                        <dxg:GridColumn x:Name="Column_FAM" FieldName="FAM" Header="Фамилия" Width="90" />
+                        <dxg:GridColumn x:Name="Column_IM" FieldName="IM" Header="Имя" Width="70" />
+                        <dxg:GridColumn x:Name="Column_OT" FieldName="OT" Header="Очество" Width="120" />
+                        <dxg:GridColumn x:Name="Column_DR" FieldName="DR" Header="ДР" Width="50" />
+                        <dxg:GridColumn x:Name="Column_NPOLIS" FieldName="NPOLIS" Header="Полис" Width="120" />
+                        <dxg:GridColumn x:Name="Column_SUMV" FieldName="SUMV" Header="Сумма выставленная" Width="80"/>
+                        <dxg:GridColumn x:Name="Column_OPLATA" FieldName="OPLATA" Header="Оплата" Width="80"/>
+                        <dxg:GridColumn x:Name="Column_SUMP" FieldName="SUMP" Header="Сумма принятая" Width="80"/>
+
+                        <dxg:GridColumn x:Name="Column_S_SUM" FieldName="S_SUM" Header="Сумма удержанная" Width="80"/>
+                        <dxg:GridColumn x:Name="Column_S_SUM2" FieldName="S_SUM2" Header="Сумма штрафа" Width="80"/>
+                        <dxg:GridColumn x:Name="Column_S_OSN" FieldName="S_OSN" Header="Пункт удержания" Width="80"/>
+                        <dxg:GridColumn x:Name="Column_S_COM" FieldName="S_COM" Header="Комментарий" Width="80"/>
+                        <dxg:GridColumn x:Name="Column_S_DATE" FieldName="S_DATE" Header="Дата" Width="80"/>
+
+                    </dxg:GridControl.Columns>
+                    <dxg:GridControl.TotalSummary>
+                        <dxg:GridSummaryItem FieldName="AktMee.SUMNP" SummaryType="Sum" />
+                        <dxg:GridSummaryItem FieldName="AktMee.SUMP" SummaryType="Sum" />
+                    </dxg:GridControl.TotalSummary>
+
+                    <dxg:GridControl.View>
+                        <dxg:TableView ShowTotalSummary="True" ShowGroupPanel="False" x:Name="view1" RetainSelectionOnClickOutsideCheckBoxSelector="False" ShowCheckBoxSelectorColumn="True" ShowCheckBoxSelectorInGroupRow="True"/>
+                    </dxg:GridControl.View>
+                </dxg:GridControl>
+            </Grid>
+        </Grid>
+
+    </dx:LoadingDecorator>
+</UserControl>

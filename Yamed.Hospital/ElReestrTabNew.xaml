@@ -1,0 +1,274 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" 
+        xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        x:Class="Yamed.Hospital.ElReestrTabNew" mc:Ignorable="d"  Unloaded="UserControl_Unloaded" Loaded="UserControl_Loaded">
+
+    <UserControl.Resources>
+        <dx:LinqInstantFeedbackDataSource x:Key="LinqInstantFeedbackDataSource" AreSourceRowsThreadSafe="False" KeyExpression="ID"/>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!--<StackPanel Orientation="Horizontal" Grid.Row="0" Margin="10,3,5,2">
+            <TextBlock Text="Фамилия:"></TextBlock>
+            <dxe:TextEdit Width="100" Name="FamSearchEdit" Margin="5,0,10,0"></dxe:TextEdit>
+            <TextBlock Text="Имя:"></TextBlock>
+            <dxe:TextEdit Width="100" Name="ImSearchEdit" Margin="5,0,10,0"></dxe:TextEdit>
+            <TextBlock Text="Отчество:"></TextBlock>
+            <dxe:TextEdit Width="100" Name="OtSearchEdit" Margin="5,0,10,0"></dxe:TextEdit>
+            <TextBlock Text="Полис:"></TextBlock>
+            <dxe:TextEdit HorizontalScrollBarVisibility="Disabled" Width="100" Name="PolisSearchEdit" Margin="5,0,10,0"></dxe:TextEdit>
+            <TextBlock Text="Усл. МП:"></TextBlock>
+            <dxe:ComboBoxEdit HorizontalScrollBarVisibility="Disabled" Width="110" Name="UslOkSearchEdit" Margin="5,0,10,0" ItemsSource="{Binding}" NullValueButtonPlacement="EditBox" AutoComplete="True" ValidateOnTextInput="False" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True" IsSynchronizedWithCurrentItem="True" InvalidValueBehavior="AllowLeaveEditor" DisplayMember="NameWithID" ValueMember="NameWithID" />
+            <TextBlock Text="Особый случай:"></TextBlock>
+            <dxe:ComboBoxEdit PopupOpening="OsSluchSearchEdit_OnPopupOpening" HorizontalScrollBarVisibility="Disabled" Width="110" x:Name="OsSluchSearchEdit" Margin="5,0,10,0" NullValueButtonPlacement="EditBox" AutoComplete="True" ValidateOnTextInput="False" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True" IsSynchronizedWithCurrentItem="True" InvalidValueBehavior="AllowLeaveEditor" >
+                --><!--<dxe:ComboBoxEdit.StyleSettings>
+                        <dxe:CheckedComboBoxStyleSettings/>
+                    </dxe:ComboBoxEdit.StyleSettings>--><!--
+            </dxe:ComboBoxEdit>
+            <TextBlock Text="Комм. МЭК:"></TextBlock>
+            <dxe:ComboBoxEdit HorizontalScrollBarVisibility="Disabled" Width="110" Name="MekCommSearchEdit" Margin="5,0,10,0" NullValueButtonPlacement="EditBox" AutoComplete="True" ValidateOnTextInput="False" IncrementalFiltering="True" FilterCondition="Contains" ImmediatePopup="True" IsSynchronizedWithCurrentItem="True" InvalidValueBehavior="AllowLeaveEditor" />
+
+        </StackPanel>-->
+        <dxg:GridControl x:Name="gridControl1" AutoExpandAllGroups="True" AutoGenerateColumns="AddNew" SelectionMode="Row" Grid.Row="1" ItemsSource="{Binding Data, Source={StaticResource LinqInstantFeedbackDataSource}}">
+            <dxg:GridControl.GroupSummary>
+                <dxg:GridSummaryItem DisplayFormat="Кол-во случаев {0}" FieldName="ID" SummaryType="Count" />
+            </dxg:GridControl.GroupSummary>
+            <dxg:GridControl.Columns>
+
+
+                <dxg:GridColumn x:Name="Column_IDCASE" FieldName="IDCASE" Header="Номер" />
+                <!--<dxg:GridColumn x:Name="Column_FIODR" FieldName="FIODR" Header="Пациент" GroupIndex="0" Visible="False" AllowGrouping="False" ShowInColumnChooser="False">-->
+
+                <!--</dxg:GridColumn>-->
+                <dxg:GridColumn x:Name="Column_YEAR" FieldName="YEAR" Header="Год" FilterPopupMode="CheckedList"/>
+                <dxg:GridColumn x:Name="Column_MONTH" FieldName="MONTH" Header="Месяц" FilterPopupMode="CheckedList"/>
+                <dxg:GridColumn x:Name="Column_FAM" FieldName="FAM" Header="Фамилия" AutoFilterValue="{Binding ElementName=FamSearchEdit, Path=EditValue, Mode=TwoWay}" />
+                <dxg:GridColumn x:Name="Column_IM" FieldName="IM" Header="Имя" AutoFilterValue="{Binding ElementName=ImSearchEdit, Path=EditValue, Mode=TwoWay}" />
+                <dxg:GridColumn x:Name="Column_OT" FieldName="OT" Header="Очество" AutoFilterValue="{Binding ElementName=OtSearchEdit, Path=EditValue, Mode=TwoWay}" />
+                <dxg:GridColumn x:Name="Column_W" FieldName="W" Header="Пол" />
+                <dxg:GridColumn x:Name="Column_DR" FieldName="DR" Header="Дата рождеия" />
+                <dxg:GridColumn x:Name="Column_DOST" FieldName="DOST" Header="Код надежности" />
+                <dxg:GridColumn x:Name="Column_FAM_P" FieldName="FAM_P" Header="Фамилия представителя" />
+                <dxg:GridColumn x:Name="Column_IM_P" FieldName="IM_P" Header="Имя представителя" />
+                <dxg:GridColumn x:Name="Column_OT_P" FieldName="OT_P" Header="Отчество представителя" />
+                <dxg:GridColumn x:Name="Column_DR_P" FieldName="DR_P" Header="Дата рожд. предст-ля" />
+                <dxg:GridColumn x:Name="Column_W_P" FieldName="W_P" Header="Пол представителя" />
+                <dxg:GridColumn x:Name="Column_MR" FieldName="MR" Header="Место рождения" />
+                <dxg:GridColumn x:Name="Column_DOCTYPE" FieldName="DOCTYPE" Header="Тип УДЛ" />
+                <dxg:GridColumn x:Name="Column_DOCSER" FieldName="DOCSER" Header="Серия" />
+                <dxg:GridColumn x:Name="Column_DOCNUM" FieldName="DOCNUM" Header="Номер" />
+                <dxg:GridColumn x:Name="Column_SNILS" FieldName="SNILS" Header="СНИЛС" />
+                <dxg:GridColumn x:Name="Column_OKATOG" FieldName="OKATOG" Header="ОКАТО места жительства" />
+                <dxg:GridColumn x:Name="Column_OKATOP" FieldName="OKATOP" Header="ОКАТО маста прибвания" />
+                <dxg:GridColumn x:Name="Column_COMENTP" FieldName="COMENTP" Header="Служ. поле ПД" />
+
+                <dxg:GridColumn x:Name="Column_VPOLIS" FieldName="VPOLIS" Header="Тип полиса" />
+                <dxg:GridColumn x:Name="Column_SPOLIS" FieldName="SPOLIS" Header="Серия полиса" />
+                <dxg:GridColumn x:Name="Column_NPOLIS" FieldName="NPOLIS" Header="Номер полиса" AutoFilterValue="{Binding ElementName=PolisSearchEdit, Path=EditValue, Mode=TwoWay}" />
+                <dxg:GridColumn x:Name="Column_SMO" FieldName="SMO" Header="СМО" >
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="SmoEdit" DisplayMember="NameWithID" ValueMember="smocod" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_SMO_OGRN" FieldName="SMO_OGRN" Header="ОГРН СМО" />
+                <dxg:GridColumn x:Name="Column_SMO_OK" FieldName="SMO_OK" Header="ОКАТО тер. страх." />
+                <dxg:GridColumn x:Name="Column_SMO_NAM" FieldName="SMO_NAM" Header="Наименование СМО" />
+                <dxg:GridColumn x:Name="Column_NOVOR" FieldName="NOVOR" Header="Признак новорожденного" />
+
+                <dxg:GridColumn x:Name="Column_USL_OK" FilterPopupMode="CheckedList" FieldName="USL_OK" Header="Усл. оказ. пом." AutoFilterValue="{Binding ElementName=UslOkSearchEdit, Path=EditValue, Mode=TwoWay}" AutoFilterCondition="Equals">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="UslOkEdit" DisplayMember="NameWithID" ValueMember="id" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_VIDPOM" FilterPopupMode="CheckedList" FieldName="VIDPOM" Header="Вид помощи">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="VidPomEdit" DisplayMember="NameWithID" ValueMember="Id" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+
+                <dxg:GridColumn x:Name="Column_zsl_TYPE" FilterPopupMode="CheckedList" FieldName="SLUCH_TYPE" Header="Тип случая" />
+                <dxg:GridColumn x:Name="Column_NPR_MO" FieldName="NPR_MO" Header="МО напр. на лечение" >
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="NprMoEdit" DisplayMember="NameWithID" ValueMember="mcod" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_EXTR" FieldName="EXTR" Header="Направление" />
+                <dxg:GridColumn x:Name="Column_LPU" FieldName="LPU" Header="МО">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="MoEdit" DisplayMember="NameWithID" ValueMember="mcod" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_LPU_1" FieldName="LPU_1" Header="Подразделение МО" >
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="Lpu1Edit" DisplayMember="NameWithID" ValueMember="Id" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_PODR" FieldName="PODR" Header="Отделение МО">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="PodrEdit" DisplayMember="NameWithID" ValueMember="Id" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_PROFIL" FilterPopupMode="CheckedList" FieldName="PROFIL" Header="Профиль">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="ProfilEdit" DisplayMember="NameWithID" ValueMember="Id" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_VID_HMP" FilterPopupMode="CheckedList" FieldName="VID_HMP" Header="Вид ВМП">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="VidHmpEdit" DisplayMember="NameWithID" ValueMember="IDHVID" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_METOD_HMP" FilterPopupMode="CheckedList" FieldName="METOD_HMP" Header="Метод ВМП">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="MetodHmpEdit" DisplayMember="NameWithID" ValueMember="IDHM" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_IDKSG" FilterPopupMode="CheckedList" FieldName="IDKSG" Header="КСГ">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="KsgEdit" DisplayMember="NAME" ValueMember="ID" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_DET" FieldName="DET" Header="Признак дет. профиля" />
+                <dxg:GridColumn x:Name="Column_NHISTORY" FieldName="NHISTORY" Header="№ истории бол." />
+                <dxg:GridColumn x:Name="Column_DATE_1" FieldName="DATE_1" Header="Дата начала лечения" />
+                <dxg:GridColumn x:Name="Column_DATE_2" FieldName="DATE_2" Header="Дата окончания лечения" />
+                <dxg:GridColumn x:Name="Column_DS0" FilterPopupMode="CheckedList" FieldName="DS0" Header="Диагноз первичный">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="Ds0Edit" DisplayMember="NameWithID" ValueMember="IDDS" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_DS1" FilterPopupMode="CheckedList" FieldName="DS1" Header="Диагноз основной">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="Ds1Edit" DisplayMember="NameWithID" ValueMember="IDDS" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_DS2" FilterPopupMode="CheckedList" FieldName="DS2" Header="Диагноз сопут. забол.">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="Ds2Edit" DisplayMember="NameWithID" ValueMember="IDDS" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_CODE_MES1" FieldName="CODE_MES1" Header="Код МЭС" />
+                <dxg:GridColumn x:Name="Column_CODE_MES2" FieldName="CODE_MES2" Header="Код МЭС сопут забол." />
+                <dxg:GridColumn x:Name="Column_RSLT" FilterPopupMode="CheckedList" FieldName="RSLT" Header="Результат обращения">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="RsltEdit" DisplayMember="NameWithID" ValueMember="IDRMP" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_ISHOD" FilterPopupMode="CheckedList" FieldName="ISHOD" Header="Исход заболевания">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="IshodEdit" DisplayMember="NameWithID" ValueMember="id" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_PRVS" FilterPopupMode="CheckedList" FieldName="PRVS" Header="Специальность врача (V004)">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="PrvsEdit" DisplayMember="NameWithID" ValueMember="id" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_MSPID" FilterPopupMode="CheckedList" FieldName="MSPID" Header="Специальность врача (V015)">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="MspEdit" DisplayMember="NameWithID" ValueMember="ID" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_IDDOKT" FieldName="IDDOKT" Header="Код врача" />
+                <dxg:GridColumn x:Name="Column_OS_SLUCH" FieldName="OS_SLUCH" Header="Особый случай" />
+                <dxg:GridColumn x:Name="Column_OS_SLUCH_REGION" FilterPopupMode="CheckedList" FieldName="OS_SLUCH_REGION" ShowAllTableValuesInCheckedFilterPopup="True"  Header="Особый случай регион." AutoFilterValue="{Binding ElementName=OsSluchSearchEdit, Path=EditValue, Mode=TwoWay}" AutoFilterCondition="Equals">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="OsSlRegEdit" DisplayMember="NameWithID" ValueMember="Id" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_GR_ZDOROV" FilterPopupMode="CheckedList" FieldName="GR_ZDOROV" Header="Группа здоровья">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="GrZdEdit" DisplayMember="NameWithID" ValueMember="Id" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_VETERAN" FilterPopupMode="CheckedList" FieldName="VETERAN" Header="Статус ветерана">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="VeteranEdit" DisplayMember="NameWithID" ValueMember="Id" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_SCHOOL" FilterPopupMode="CheckedList" FieldName="SCHOOL" Header="Статус учеб. учреж.">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="SchoolEdit" DisplayMember="NameWithID" ValueMember="Id" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_WORK_STAT" FilterPopupMode="CheckedList" FieldName="WORK_STAT" Header="Статус занятости">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="WorkStatEdit" DisplayMember="NameWithID" ValueMember="Id" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_IDSP" FilterPopupMode="CheckedList" FieldName="IDSP" Header="Способ оплаты">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="IdspEdit" DisplayMember="NameWithID" ValueMember="Id" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_ED_COL" FieldName="ED_COL" Header="Кол-во ед. оплаты МП" />
+                <dxg:GridColumn x:Name="Column_TARIF" FieldName="TARIF" Header="Тариф" />
+                <dxg:GridColumn x:Name="Column_DIFF_K" FieldName="DIFF_K" Header="Коэф. сложности" />
+                <dxg:GridColumn x:Name="Column_SUMV" FieldName="SUMV" Header="Сумма выставленная" />
+                <dxg:GridColumn x:Name="Column_OPLATA" FilterPopupMode="CheckedList" FieldName="OPLATA" Header="Тип оплаты">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="OplataEdit" DisplayMember="NameWithId" ValueMember="Id" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_SUMP" FieldName="SUMP" Header="Сумма принятая" />
+                <dxg:GridColumn x:Name="Column_SANK_IT" FieldName="SANK_IT" Header="Сумма санкций" />
+                <dxg:GridColumn x:Name="Column_COMENTSL" FieldName="COMENTSL" Header="Служебное поле случая" />
+                <dxg:GridColumn x:Name="Column_MEK_COMENT" FilterPopupMode="CheckedList" FieldName="MEK_COMENT" Header="Комментарий МЭК" />
+                <dxg:GridColumn x:Name="Column_MEE_COMENT" FilterPopupMode="CheckedList" FieldName="MEE_COMENT" Header="Комментарий МЭЭ" />
+                <dxg:GridColumn x:Name="Column_EKMP_COMENT" FilterPopupMode="CheckedList" FieldName="EKMP_COMENT" Header="Комментарий ЭКМП" />
+                <dxg:GridColumn x:Name="Column_REMEK_COM" FilterPopupMode="CheckedList" FieldName="REMEK_COM" Header="Комментарий реэкспертизы МЭК" />
+                <dxg:GridColumn x:Name="Column_MEE_TYPE" FilterPopupMode="CheckedList" FieldName="MEE_TYPE" Header="Тип МЭЭ">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="MeeTypeEdit" DisplayMember="NameWithID" ValueMember="Id" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_KSG_OPLATA" FieldName="KSG_OPLATA" Header="Тип КСГ">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="KsgOplataEdit" DisplayMember="NameWithID" ValueMember="Id" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_KDAY" FieldName="KDAY" Header="Койко-дни" />
+                <dxg:GridColumn x:Name="Column_REQUEST_DATE" FilterPopupMode="CheckedList" FieldName="REQUEST_DATE" Header="Дата запроса" />
+                <dxg:GridColumn x:Name="Column_USERID" FieldName="USERID" Header="Пользователь">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="UserEdit" DisplayMember="UserName" ValueMember="ID" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="Column_MEK" FieldName="MEK_COUNT" Header="МЭК" />
+                <dxg:GridColumn x:Name="Column_MEE" FieldName="MEE_COUNT" Header="МЭЭ" />
+                <dxg:GridColumn x:Name="Column_EKMP" FieldName="EKMP_COUNT" Header="ЭКМП" />
+                <dxg:GridColumn x:Name="Column_RE_MEK" FieldName="RMEK_COUNT" Header="РМЭК" />
+                <dxg:GridColumn x:Name="Column_RE_MEE" FieldName="RMEE_COUNT" Header="РМЭЭ" />
+                <dxg:GridColumn x:Name="Column_RE_EKMP" FieldName="REKMP_COUNT" Header="РЭКМП" />
+                <dxg:GridColumn x:Name="Column_KSG_COM" FieldName="KSG_COM" Header="Коды КСГ (услуга)" />
+                <dxg:GridColumn x:Name="Column_KDAY_COM" FieldName="KDAY_COM" Header="Койко-дни  (услуга)" />
+                <dxg:GridColumn x:Name="Column_DIFF_COM" FieldName="DIFF_COM" Header="Коэффициенты сложности (услуга)" />
+                <dxg:GridColumn x:Name="Column_IDSLG" FieldName="IDSLG" Header="ИД Случая" />
+                <dxg:GridColumn x:Name="Column_VOZR" FieldName="VOZR" Header="Возраст" >
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings Name="VozrEdit" DisplayMember="NAME" ValueMember="ID" ItemsSource="{Binding}" AllowDefaultButton="False"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+
+
+            </dxg:GridControl.Columns>
+
+            <dxg:GridControl.View>
+                <dxg:TableView x:Name="view" WaitIndicatorType="Panel" ShowCriteriaInAutoFilterRow="True" AllowConditionalFormattingMenu="True" RetainSelectionOnClickOutsideCheckBoxSelector="False" ShowCheckBoxSelectorColumn="True" ShowCheckBoxSelectorInGroupRow="True" CellValueChanging="View_OnCellValueChanging" AllowEditing="True" ShowAutoFilterRow="True" ShowGroupedColumns="True" ShowTotalSummary="True" AllowFixedColumnMenu="True" MouseMove="view_MouseMove" />
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+    </Grid>
+
+
+</UserControl>

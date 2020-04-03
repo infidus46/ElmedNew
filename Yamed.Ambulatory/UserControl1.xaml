@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Yamed.Ambulatory.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Yamed.Ambulatory"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="2"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="45"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="2,0,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding FAM}" FontWeight="Bold" FontSize="16" Foreground="Blue"></TextBlock>
+                    <TextBlock Text=" " FontWeight="Bold" FontSize="16" Foreground="Blue"></TextBlock>
+                    <TextBlock Text="{Binding IM}" FontWeight="Bold" FontSize="16" Foreground="Blue"></TextBlock>
+                </StackPanel>
+                <TextBlock Text="{Binding OT}" FontWeight="Bold" FontSize="16" Foreground="Blue"></TextBlock>
+                <TextBlock Text="Первичный прием" Foreground="Brown"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="{Binding DR_V}" ></TextBlock>
+                <TextBlock Text=" Лет"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,7">
+                <TextBlock Text="{Binding BeginTime, StringFormat='dd MMMM yyyy'}" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Text="{Binding BeginTime, StringFormat='dddd'}" HorizontalAlignment="Center"></TextBlock>
+            </StackPanel>
+
+            <TextBlock Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding BeginTime, StringFormat='hh:mm'}" FontWeight="Bold" FontSize="20" Foreground="Brown" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        </Grid>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,75 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+             x:Class="Yamed.Registry.ScheduleGen"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="800" Loaded="UserControl_Loaded">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="dxe:ComboBoxEdit">
+                <Setter Property="AutoComplete" Value="True" />
+                <Setter Property="ImmediatePopup" Value="True" />
+                <Setter Property="ValidateOnTextInput" Value="False" />
+                <Setter Property="ShowSizeGrip" Value="True" />
+                <Setter Property="IncrementalFiltering" Value="True" />
+                <Setter Property="FilterCondition" Value="Contains" />
+                <Setter Property="NullValueButtonPlacement" Value="EditBox" />
+            </Style>
+        </Grid.Resources>
+        <dxlc:LayoutControl >
+            <dxlc:LayoutGroup Orientation="Vertical" View="Group">
+                <dxlc:LayoutGroup Orientation="Vertical" View="GroupBox" Header="Параметры сетки расписания">
+                    <dxlc:LayoutItem Label="Сотрудник" LabelPosition="Top">
+                        <dxe:ComboBoxEdit 
+                                ItemsSource="{Binding}" 
+                                DisplayMember="NameWithID"
+                                ValueMember="ID" PopupMaxWidth="1024"
+                                x:Name="DoctorComboBoxEdit"/>
+                    </dxlc:LayoutItem >
+                    <dxlc:LayoutGroup>
+                        <dxlc:LayoutItem Label="Дата начала" LabelPosition="Top">
+                            <dxe:DateEdit Name="Date1Edit"/>
+                        </dxlc:LayoutItem>
+
+                        <dxlc:LayoutItem Label="Дата Окончания" LabelPosition="Top">
+                            <dxe:DateEdit Name="Date2Edit"/>
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+
+                </dxlc:LayoutGroup>
+                <dxlc:LayoutGroup View="Tabs">
+                        <dxlc:LayoutGroup Header="Генерация сетки расписания&#xA;по модели"  Orientation="Vertical">
+                            <dxlc:LayoutItem Label="Модель расписания"  LabelPosition="Top">
+                                <dxe:ComboBoxEdit Name="ModelEdit" DisplayMember="Name" ValueMember="ID" ItemsSource="{Binding}"/>
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutGroup>
+                                <Button x:Name="CreateModelButton" Height="30" Width="150" HorizontalAlignment="Right" Margin="5" Content="Сформироать" Click="CreateModelButton_OnClick"/>
+                            </dxlc:LayoutGroup>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Header="Генерация сетки расписания&#xA;по заданным параметрам"  Orientation="Vertical">
+                            <dxlc:LayoutGroup>
+                                <dxlc:LayoutItem Label="Время начала приема" LabelPosition="Top">
+                                    <dxe:TextEdit x:Name="Time1Edit" Mask="(0?\d|1\d|2[0-3])\:[0-5]\d" MaskType="RegEx" MaskUseAsDisplayFormat="True"/>
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem Label="Время окончания приема" LabelPosition="Top">
+                                    <dxe:TextEdit x:Name="Time2Edit" MaskUseAsDisplayFormat="True" Mask="(0?\d|1\d|2[0-3])\:[0-5]\d" MaskType="RegEx"/>
+                                </dxlc:LayoutItem>
+                            </dxlc:LayoutGroup>
+                            <dxlc:LayoutItem Label="Время одного приема (мин)" LabelPosition="Top">
+                                <dxe:TextEdit x:Name="Time3Edit" Mask="\d{0,3}" MaskType="RegEx" MaskUseAsDisplayFormat="True"/>
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutGroup>
+                                <Button x:Name="CreateButton" Height="30" Width="150" HorizontalAlignment="Right" Margin="5" Content="Сформироать" Click="CreateButton_Click"/>
+                            </dxlc:LayoutGroup>
+                        </dxlc:LayoutGroup>
+
+                    </dxlc:LayoutGroup>
+
+            </dxlc:LayoutGroup>
+        </dxlc:LayoutControl>
+
+    </Grid>
+</UserControl>

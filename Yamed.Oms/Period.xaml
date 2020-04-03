@@ -1,0 +1,93 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="Yamed.Control.Editors.Period"
+             mc:Ignorable="d" 
+             Height="295.38" Width="654.28" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <Style x:Key="myButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="{Binding Width}" />
+            <Setter Property="Height" Value="{Binding Height}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle x:Name="myrec1" />
+                            <Label Content="{TemplateBinding Content}" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Fill" TargetName="myrec1">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="#FFA8B2AE" Opacity="0.5" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Fill" TargetName="myrec1" Value="#FF69C3D6" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+    </UserControl.Resources>
+    <Grid >
+        <dx:LoadingDecorator OwnerLock="None" Name="Decorator">
+            <dx:LoadingDecorator.SplashScreenTemplate>
+                <DataTemplate>
+                    <dx:WaitIndicator DeferedVisibility="True" Content="Загрузка данных...&#13;&#10;пожалуйста подождите"/>
+                </DataTemplate>
+            </dx:LoadingDecorator.SplashScreenTemplate>
+        </dx:LoadingDecorator>
+        <dxe:DateEdit x:Name="Per1" HorizontalAlignment="Left" Margin="272,139,0,0" VerticalAlignment="Top" Width="150" Mask="y"
+                                  MaskUseAsDisplayFormat="True"
+                                  AllowRoundOutOfRangeValue="true" />
+            <dxe:DateEdit x:Name="Per2" HorizontalAlignment="Left" Margin="447,139,0,0" VerticalAlignment="Top" Width="150" Mask="y"
+                                  MaskUseAsDisplayFormat="True"
+                                  AllowRoundOutOfRangeValue="true" />
+        <dxe:ComboBoxEdit x:Name="Prikaz" ItemsSource="{Binding}" FilterCondition="Contains" IncrementalFiltering="True" ValidateOnTextInput="False" ImmediatePopup="True" AutoComplete="True" ValueMember="ID" DisplayMember="Name" HorizontalAlignment="Left" Margin="124,93,0,0" VerticalAlignment="Top" Width="281" NullValueButtonPlacement="EditBox" Height="22"  EditValueChanged="Prikaz_EditValueChanged" />
+            <Label x:Name="s" Content="С" HorizontalAlignment="Left" Margin="253,139,0,0" VerticalAlignment="Top" FontWeight="Bold" />
+            <Label x:Name="po" Content="По" HorizontalAlignment="Left" Margin="427,139,0,0" VerticalAlignment="Top" FontWeight="Bold" />
+            <Label x:Name="vibor" Content="Выберите период подготовки данных" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" Width="236" FontWeight="Bold" Height="22" />
+            <Button x:Name="Pod" HorizontalAlignment="Left" Margin="193,16,0,0" VerticalAlignment="Top" Width="143" Height="58" Click="Pod_Click" Style="{StaticResource myButtonStyle1}">
+                <StackPanel Orientation="Vertical" Width="149">
+                    <Image Source="/Yamed.Icons;component/Icons/1481912019_file_edit.png" Width="30" Height="30" Focusable="True" HorizontalAlignment="Center">
+                        <Image.OpacityMask>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0" />
+                                <GradientStop Color="White" Offset="1" />
+                            </LinearGradientBrush>
+                        </Image.OpacityMask>
+                    </Image>
+                    <TextBlock Text="Подготовка данных" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="16,0" Foreground="Black" FontWeight="Bold" FontSize="12" />
+                </StackPanel>
+
+            </Button>
+            <Button x:Name="Export"  HorizontalAlignment="Left" Margin="341,16,0,0" VerticalAlignment="Top" Width="143" Height="58" Style="{StaticResource myButtonStyle1}" Click="Export_Click">
+                <StackPanel Orientation="Vertical" Width="149">
+                    <Image Source="/Yamed.Icons;component/Icons/properties_4137.png" Width="30" Height="30" Focusable="True" HorizontalAlignment="Center">
+                        <Image.OpacityMask>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0" />
+                                <GradientStop Color="White" Offset="1" />
+                            </LinearGradientBrush>
+                        </Image.OpacityMask>
+                    </Image>
+                    <TextBlock Text="Экспорт данных" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="27,0,26,0" Foreground="Black" FontWeight="Bold" FontSize="12" />
+                </StackPanel>
+            </Button>
+            <Label x:Name="vibor_Copy" Content="Выберите приказ" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Width="160" FontWeight="Bold" />
+            <Label x:Name="vibor_exp" Content="Год и месяц отчетного периода" HorizontalAlignment="Left" Margin="10,223,0,0" VerticalAlignment="Top" Width="194" FontWeight="Bold" />
+            <dxe:DateEdit x:Name="date_exp" HorizontalAlignment="Left" Margin="209,223,0,0" VerticalAlignment="Top" Width="150" Mask="y"
+            MaskUseAsDisplayFormat="True"
+            AllowRoundOutOfRangeValue="true" />
+            <TextBox x:Name="npp" HorizontalAlignment="Left" Height="23" Margin="209,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+            <Label Content="Номер версии для имени файла" HorizontalAlignment="Left" Margin="10,183,0,0" VerticalAlignment="Top" Width="194" FontWeight="Bold"/>
+            <Label x:Name="vibor_slekmp" Content="Выберите тип выгрузки (случаи, ЭКМП)" HorizontalAlignment="Left" VerticalAlignment="Top" Width="236" FontWeight="Bold" Margin="10,263,0,0" />
+            <dxe:ComboBoxEdit x:Name="sluch_ekmp" ItemsSource="{Binding}" FilterCondition="Contains" IncrementalFiltering="True" ValidateOnTextInput="False" ImmediatePopup="True" AutoComplete="True" ValueMember="ID" DisplayMember="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Width="148" NullValueButtonPlacement="EditBox" Height="22" Margin="257,263,0,0" />
+    </Grid>
+</UserControl>

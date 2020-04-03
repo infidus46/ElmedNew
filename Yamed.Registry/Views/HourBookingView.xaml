@@ -1,0 +1,77 @@
+﻿<UserControl xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"  xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar"  x:Class="Yamed.Registry.Views.HourBookingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:views="clr-namespace:Yamed.Registry.Views"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <Grid>
+        <!-- In the expanded state -->
+        <!--<Expander IsExpanded="{Binding Path=isExpanded, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+            <Expander.Header>
+                <TextBlock Foreground="DarkRed"  Margin="5,0,0,0" FontSize="12" Text="{Binding StartTime, StringFormat=HH.mm}" 
+                       FontFamily="Arial"  VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            </Expander.Header>
+            <dxlc:FlowLayoutControl x:Name="schedule1" ItemsSource="{Binding Bookings}" Orientation="Vertical" StretchContent="True" Padding="0">
+                -->
+        <!--<ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>-->
+        <!--
+                <dxlc:FlowLayoutControl.ItemTemplate>
+                    <DataTemplate>
+                        <views:BookingView />
+                    </DataTemplate>
+                </dxlc:FlowLayoutControl.ItemTemplate>
+            </dxlc:FlowLayoutControl>
+
+        </Expander>-->
+
+        <ItemsControl Name="schedule" ScrollViewer.CanContentScroll="True" VirtualizingStackPanel.IsVirtualizing="True" 
+                     ItemsSource="{Binding Bookings}" >
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.Template>
+                <ControlTemplate>
+                    <Expander IsExpanded="{Binding Path=IsExpanded, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="0,1">
+                        <Expander.Header>
+                            <Grid Height="30">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock FontSize="12"  VerticalAlignment="Bottom">
+                                        <Run Text="{Binding StartTime, StringFormat=HH.mm}" Foreground="DarkRed" FontWeight="Bold"></Run>
+                                        <Run Text="   "></Run>
+                                        <Run Text="Доступно  "  Foreground="{Binding Path=BookingColor, UpdateSourceTrigger=PropertyChanged}" FontStyle="Italic" ></Run>
+                                        <Run Text="{Binding Path=PacientCnt, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding Path=BookingColor, UpdateSourceTrigger=PropertyChanged}" ></Run>
+                                        <Run Text="  из" Foreground="{Binding Path=BookingColor, UpdateSourceTrigger=PropertyChanged}" FontStyle="Italic"></Run>
+                                        <Run Text="{Binding Path=AllCnt, UpdateSourceTrigger=PropertyChanged}" ></Run>
+                                </TextBlock>
+                                <Rectangle Grid.Row="1" Height="1.2" Fill="DarkBlue" VerticalAlignment="Center" Width="220" >
+                                    <Rectangle.Effect>
+                                        <DropShadowEffect Opacity="0.2"/>
+                                    </Rectangle.Effect>
+                                </Rectangle>
+                            </Grid>
+                        </Expander.Header>
+                        <ItemsPresenter SnapsToDevicePixels="True"/>
+                    </Expander>
+                </ControlTemplate>
+            </ItemsControl.Template>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <views:BookingView />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</UserControl>

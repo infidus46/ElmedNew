@@ -1,0 +1,1680 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 77.5, 134.25" name="ElmedDataClasses">
+  <DataContextMoniker Name="/ElmedDataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2f1f19e0-2830-473f-93c2-02b789f87231" absoluteBounds="12, 11.875, 2, 6.9630354817708326">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/AKT_EKMP_TBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1043788-39c6-4f36-98ca-a51c2be62be2" absoluteBounds="12.015, 12.335, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cd905fc8-60ca-496e-a091-4bb246d05742" absoluteBounds="0.75, 0.75, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/AKT_MEE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ca8fbeba-ada0-4665-b0be-ef542f068394" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8190109f-1cb9-46f9-af3c-b58f9e28ee96" absoluteBounds="15, 17.125, 2, 6.3861311848958309">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/AKT_MEE_TBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d95bb2f8-01ad-4eaf-95ce-e82ab903523d" absoluteBounds="15.015, 17.585, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="25b56363-86fc-40eb-9226-ee89cca988be" absoluteBounds="3.75, 0.75, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/AmbulanceMKB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5195fa21-e6d6-4744-8583-3bf845f6fe2a" absoluteBounds="3.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ca4da032-bc55-4089-bf58-6ac51c73d57f" absoluteBounds="6.5, 68.25, 2, 2.3478011067708451">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/AttachedDoctorSpr" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d79fa492-be1c-4776-891d-19cc05f76134" absoluteBounds="6.515, 68.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fd027c60-00f7-4354-9fac-c5da904d92a9" absoluteBounds="0.75, 3.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/AttachedJournalSpr" />
+      <nestedChildShapes>
+        <elementListCompartment Id="03f8f270-1997-44bf-9f64-011bc7adf8c2" absoluteBounds="0.765, 4.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="880a8a31-ad0a-457a-8e72-0365c4bd30be" absoluteBounds="0.75, 6.75, 2, 3.3093082682291657">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/AttachedPeopleSpr" />
+      <nestedChildShapes>
+        <elementListCompartment Id="044e4159-ca95-46b2-8150-0c1ca77891c0" absoluteBounds="0.765, 7.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4f16cf70-c8e4-44ab-a3d2-fd22e6fc551c" absoluteBounds="6.5, 56.5, 2, 4.4631168619791595">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/CalcAmbTARIF" />
+      <nestedChildShapes>
+        <elementListCompartment Id="923777f4-4224-4c92-999f-e107ff073e66" absoluteBounds="6.515, 56.96, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0883051e-2eb7-42a0-85b6-da84e57f7284" absoluteBounds="0.75, 14.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/CalcMok" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2bfc900b-1c9c-4c2d-b14d-719762e15f85" absoluteBounds="0.765, 15.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ba312177-76ce-4369-b8ea-430d302dd933" absoluteBounds="14.5, 3.375, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/CalcUprk" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d35154a3-4fa3-4801-af6c-28b5bf180811" absoluteBounds="14.515, 3.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d8fe6033-156a-4006-8a95-eaae9f4381cb" absoluteBounds="14.75, 10.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/CalcVmpTarif" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4304e512-d16d-42d1-8028-bc8b1f367ca6" absoluteBounds="14.765, 11.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="701b1110-c244-4c74-bf60-759ebcf18af5" absoluteBounds="14.5, 1, 2, 1.5785953776041668">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/CalNotKus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a80ec1c9-66ec-492c-9024-b39d456004bf" absoluteBounds="14.515, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="51e28027-bb82-4c3c-a3b8-c3cac62bad75" absoluteBounds="14.75, 13.75, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/DbVersion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6a33da4-c827-40a2-b774-416e9070086b" absoluteBounds="14.765, 14.21, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1f612e88-40dc-4be4-b0b0-c6dd51f796a1" absoluteBounds="17.75, 0.75, 2, 4.2708154296875">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/dd_vd" />
+      <nestedChildShapes>
+        <elementListCompartment Id="17ec9417-f5e9-4e32-8027-5631f4abbadb" absoluteBounds="17.765, 1.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="88ca5055-45db-4fa5-bd34-248d132d3742" absoluteBounds="3.75, 28.375, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/DetProfilDb" />
+      <nestedChildShapes>
+        <elementListCompartment Id="211185a9-7ee6-41f3-ad8d-61450ed91d13" absoluteBounds="3.765, 28.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3a60e7bc-c8a8-459d-a15c-d8d3d3f252ba" absoluteBounds="17.75, 6.75, 2, 2.5401025390624987">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/DISP_SPR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="73b2bb30-710d-45a5-b4ce-c91e6dee9c6a" absoluteBounds="17.765, 7.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6e542005-f29a-4856-96c2-7c27225f1908" absoluteBounds="3.75, 88.125, 2, 3.3093082682291595">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/DoctorBd" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b470dc68-21cf-4fb1-86b3-0d10cc3febaa" absoluteBounds="3.765, 88.585, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e3a0f7e4-6ce2-41fe-95fe-c7f82d10e993" absoluteBounds="17.75, 10.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/DoctorTbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db26f8c4-0144-4980-bf24-216059cfcbdd" absoluteBounds="17.765, 11.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fae63947-6d41-4a57-ab31-c1ae49aadb38" absoluteBounds="3.75, 30.5, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/Dostav" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da82fbdf-81f2-45ed-b4f0-5ad3ed23c8c3" absoluteBounds="3.765, 30.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="15723a43-916b-4935-a018-661e6bab3f51" absoluteBounds="17.75, 13.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/DST_NKD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="10672962-0905-4dc5-bcb7-bd424f79195c" absoluteBounds="17.765, 14.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="93c90a18-5c1e-4c76-8d3c-7dc974005306" absoluteBounds="9.25, 4.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/EKMP_TYPE_DB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="269ddef4-4102-44c7-bfe3-e873f570e926" absoluteBounds="9.265, 5.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="921d5d42-874e-4151-9812-28849b18af44" absoluteBounds="17.75, 15.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/enp_update" />
+      <nestedChildShapes>
+        <elementListCompartment Id="364fa2ae-4eda-4d56-8304-099583fb42cb" absoluteBounds="17.765, 16.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1b2d0e4a-1dac-4c50-804e-74ccb41bc882" absoluteBounds="9.25, 7, 2, 1.9631982421874996">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/ExpertsDB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bf5593e3-ab11-43a2-8fc6-05fd50cd64cc" absoluteBounds="9.265, 7.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="44836331-0695-42da-8226-0b7e450d86cb" absoluteBounds="17.75, 17.75, 2, 4.2708154296875023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/F001" />
+      <nestedChildShapes>
+        <elementListCompartment Id="90027380-40f6-4b29-9c3e-814c6e9a4f5a" absoluteBounds="17.765, 18.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d4768300-6221-4575-96e9-0da2afe65c6d" absoluteBounds="1, 127, 2, 6.9630354817708309">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/F002" />
+      <nestedChildShapes>
+        <elementListCompartment Id="978271db-fc1a-46c2-b905-d968c81a76df" absoluteBounds="1.0150000000000001, 127.46, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b709177a-fd89-46eb-a8ee-426000b6bffd" absoluteBounds="3.75, 97.75, 2, 6.5784326171875023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/F003" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d186dce-5415-45b2-8622-dfcb617091f4" absoluteBounds="3.765, 98.21, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c1343c86-14af-4aaf-be09-9e00dfd017c7" absoluteBounds="20.75, 0.75, 2, 6.0015283203125">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/F003_59" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ee346847-dfb9-4fd3-9841-9c2cf969d9e2" absoluteBounds="20.765, 1.21, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="778904b3-f38e-4b68-ae18-5af46271fd6c" absoluteBounds="20.75, 7.75, 2, 6.0015283203124978">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/F003_67" />
+      <nestedChildShapes>
+        <elementListCompartment Id="591a20cd-5cdf-4050-8621-92c257adda6b" absoluteBounds="20.765, 8.21, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eedd7f7c-6053-46cb-a864-c3554ce0e53f" absoluteBounds="20.75, 14.75, 2, 2.1554996744791683">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/F003Local" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a0075428-aa51-43a5-b694-0ea3af2545c7" absoluteBounds="20.765, 15.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d04cae4e-1c0c-491f-abb7-cb9c113aff1f" absoluteBounds="20.75, 17.75, 2, 3.6939111328125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/F004" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bea19290-d7ca-4be2-bb4e-2d7f697847ac" absoluteBounds="20.765, 18.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c59f27e5-c606-4dd9-a1c7-5d7097f60eac" absoluteBounds="3.75, 60.625, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/F005" />
+      <nestedChildShapes>
+        <elementListCompartment Id="50c1020b-4f7e-4f0e-b262-106b4f6f66fd" absoluteBounds="3.765, 61.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c4f8e6a1-fcc2-4010-865e-8869f937543c" absoluteBounds="6.5, 7.5, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/F006" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6484daee-d641-4bdb-ba14-b167c7ebd7ca" absoluteBounds="6.515, 7.9600000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f9ffc4f6-ebad-48bf-9f9f-8e426b9294de" absoluteBounds="20.75, 22.75, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/F007" />
+      <nestedChildShapes>
+        <elementListCompartment Id="228e9829-c138-4bd4-bddb-b071ee6db068" absoluteBounds="20.765, 23.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9f3a0430-2949-42e5-8f29-42bd170cb11e" absoluteBounds="1, 113.625, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/F008" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4d6648d9-b435-4987-8a3a-28af2cc1377e" absoluteBounds="1.0150000000000001, 114.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fa71a962-ed93-4e88-86d3-4cae976fd752" absoluteBounds="23.75, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/F009" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d00b96d-813a-43fb-a1f3-94413b455cd6" absoluteBounds="23.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2b98e446-070f-4440-ae76-9cfa1dd3ced7" absoluteBounds="1, 116.375, 2, 2.1554996744791595">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/F010" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fe183e67-d8a0-4d7d-b767-0c17efaef753" absoluteBounds="1.0150000000000001, 116.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dae44dd1-9579-4853-b550-b1e20f9de921" absoluteBounds="1, 119.25, 2, 2.3478011067708451">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/F011" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74ef655f-7f99-4263-910e-e8c4ba5db56a" absoluteBounds="1.0150000000000001, 119.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f45909ed-c178-44be-a7d4-4ff49ab63bce" absoluteBounds="23.75, 3.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/F012" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f14a6999-adeb-4cf0-a6df-28ee4fed2a58" absoluteBounds="23.765, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b60f347f-d3e3-4b8e-9121-85184776cec7" absoluteBounds="23.75, 6.75, 2, 2.1554996744791657">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/F013" />
+      <nestedChildShapes>
+        <elementListCompartment Id="005da94a-ae90-4cdc-9bae-de698f5ea725" absoluteBounds="23.765, 7.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="89a00695-ef52-4ff5-83da-b8f933afaf6e" absoluteBounds="9.25, 0.75, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/F014" />
+      <nestedChildShapes>
+        <elementListCompartment Id="91703c83-bcb4-47b9-a954-b93289189ae9" absoluteBounds="9.265, 1.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f5261bf5-293a-427e-88ff-b5ffccb711c6" absoluteBounds="23.75, 9.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/F015" />
+      <nestedChildShapes>
+        <elementListCompartment Id="11d3cb0d-d0d7-4f6b-b703-de0d0cc55abb" absoluteBounds="23.765, 10.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7d22a65f-446e-4f2a-a2f7-da0ab2e1cc03" absoluteBounds="6.5, 104.375, 2, 2.3478011067708451">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/FREP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20116b8a-0fa3-4f07-9183-40cbebebf6ed" absoluteBounds="6.515, 104.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4214ea3-c957-4079-9632-55c94aad7ce0" absoluteBounds="3.75, 32.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/Gospit" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e65f2453-625a-4d0c-8948-21b2845540c2" absoluteBounds="3.765, 33.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3426f9b6-a428-4726-b3b5-a10edbf45f5f" absoluteBounds="3.75, 34.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/GrZdorovDb" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d115bcdb-adb8-471c-81fc-1229198f8a8d" absoluteBounds="3.765, 35.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a6770167-9c6f-4723-b38c-b6c2fa8b770d" absoluteBounds="1, 105.125, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/KatLgot" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6f582394-75df-48c3-974a-a439ba65632d" absoluteBounds="1.0150000000000001, 105.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="89c83f4b-b9d3-458a-b3c7-e8ab893ae087" absoluteBounds="1, 107.25, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/KodTer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a835d3e6-44cc-4bb4-82dc-35d7aae9caf5" absoluteBounds="1.0150000000000001, 107.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3c6770a4-419f-461b-90c8-0a2405d8adcd" absoluteBounds="23.75, 12.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/ksg_avg" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7cfca2c1-ef42-404b-b67f-f747015a7063" absoluteBounds="23.765, 13.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0385f46a-e2eb-4eac-800f-a9afdd60b8fc" absoluteBounds="23.75, 15.75, 2, 2.1554996744791683">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/KSG_GR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="772b6777-c8b6-4f54-89db-d877303c15b0" absoluteBounds="23.765, 16.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c7fe9786-04cf-4da2-956d-cc7d577c91d2" absoluteBounds="23.75, 18.75, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/KSG_GROUP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c5485a09-3414-44f6-8d8d-ef7ed6da3642" absoluteBounds="23.765, 19.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bdf10f46-599d-40be-8a0e-cf5457b0effb" absoluteBounds="23.75, 22.75, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/KSG_K" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ec2c616-80a4-4cb9-b15e-47e7eb554372" absoluteBounds="23.765, 23.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4a195ae0-34d6-4a2f-af57-59dc19c163ee" absoluteBounds="14.75, 24.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/KSG_OT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b2002b24-1671-4522-b81f-c2f1fb0b2c3b" absoluteBounds="14.765, 25.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2e0a24d7-3e17-4006-b2f6-cc7573b6c67e" absoluteBounds="17.75, 25.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/KSG_SOD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c19458cb-b33b-4953-b45e-1a45d78b4201" absoluteBounds="17.765, 26.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="431944a9-0b9b-4bd8-8966-c38fb2e33c08" absoluteBounds="20.75, 25.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/KSG_SPR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eb12fae4-f27c-4333-9af7-452c2a1f213e" absoluteBounds="20.765, 26.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3280523b-c216-459f-889a-e94f91d587db" absoluteBounds="3.75, 105.25, 2, 2.1554996744791595">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/LIC_NUM_TBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dcf95acc-2ccc-41c2-9ea7-916487245c33" absoluteBounds="3.765, 105.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="514fae93-5580-469e-8b0a-8d174ab9bf02" absoluteBounds="6.5, 65.375, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/LIC_TBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c6ab699c-3736-4316-b7fb-eace5672be92" absoluteBounds="6.515, 65.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9a56ea7d-6751-4034-81b5-9cc2256db475" absoluteBounds="6.5, 83.75, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/LicenseDb" />
+      <nestedChildShapes>
+        <elementListCompartment Id="332c4f09-6ca0-469f-8e66-e132a29a30f5" absoluteBounds="6.515, 84.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="900580cc-35fc-4a67-a798-8cbdaab47776" absoluteBounds="23.75, 25.75, 2, 4.0785139973958309">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/localPayment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1c8c7417-ea08-4a96-ad28-7f667a83a6af" absoluteBounds="23.765, 26.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ab722647-afd5-487e-bb13-5fdebe8caa01" absoluteBounds="26.75, 0.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/LPU_K" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00a1b594-da1a-43e6-9ace-abd85f998606" absoluteBounds="26.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ab9a0079-61e1-460b-b9d1-81005c3b0d00" absoluteBounds="26.75, 3.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/LPU_K_old" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a696d243-0956-46a7-9e49-2e1f212468c8" absoluteBounds="26.765, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="df07c3de-afd5-43b0-b06b-f6f0cd65c2fa" absoluteBounds="0.75, 19.625, 2, 3.5016097005208309">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/M001_KSG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b119240b-df1f-4d12-a4a8-4bf7e1d63a44" absoluteBounds="0.765, 20.085, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9378fc9b-0b32-4ab4-ab74-438c2ca018c8" absoluteBounds="26.75, 6.75, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/M001SPneotlog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2baab81e-c4ff-4ef9-aaa2-a4479245faca" absoluteBounds="26.765, 7.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3b34d6b4-5aa1-4459-9429-fae8fdc38c3e" absoluteBounds="9.25, 20.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/MEE_DB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="699134cf-efd9-461c-a837-c1b98c640c6e" absoluteBounds="9.265, 20.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4d7e97f-7a2e-4fa0-81e9-1885cf689090" absoluteBounds="3.75, 26.25, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/MEE_TYPE_DB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="38aa10da-53c1-4c9d-a7a0-cb4ef5576d4a" absoluteBounds="3.765, 26.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1ca555c6-a451-4a47-90e9-9df625c37175" absoluteBounds="26.75, 9.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/MeeAutoDb" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd3347b7-0ad2-4d8d-ba1e-7e411a4dfb1b" absoluteBounds="26.765, 10.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b10b622f-4b71-4d0c-a3aa-397a477b4cbf" absoluteBounds="12, 23.75, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/MekDb" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d09681cf-39f1-4e12-9ff1-df9d37012189" absoluteBounds="12.015, 24.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef4cecc0-5cfe-4de0-9319-d1a607ad46d2" absoluteBounds="26.75, 12.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/MSPCONV" />
+      <nestedChildShapes>
+        <elementListCompartment Id="37999859-0380-4af2-9dd3-6aa5a973e2c5" absoluteBounds="26.765, 13.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f6207dd9-ef3b-4d3d-888c-4579328b1a5b" absoluteBounds="26.75, 14.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/neopred_ZL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3012b2c0-d306-4eea-858a-aeb0308ab640" absoluteBounds="26.765, 15.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e537fbf9-d173-400c-899e-5d9b38967370" absoluteBounds="6.5, 44, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/Nomenclature" />
+      <nestedChildShapes>
+        <elementListCompartment Id="29f198b0-dfe5-47e7-ab70-27bad902cdad" absoluteBounds="6.515, 44.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fafaaa78-4308-4cd1-aea8-eb8b9ec8204d" absoluteBounds="26.75, 16.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/O001" />
+      <nestedChildShapes>
+        <elementListCompartment Id="02785ef6-daf0-4168-9dc8-7d291c322dfc" absoluteBounds="26.765, 17.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e63f00db-426e-47df-b9fc-81e5ee0a4037" absoluteBounds="26.75, 20.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/O003" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c8297c9-6fea-4e47-a8b4-c27e93862a78" absoluteBounds="26.765, 21.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5707a729-f220-4d73-9864-e13a1a28b0cb" absoluteBounds="26.75, 24.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/O004" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc7ef2ca-f4c1-49d9-96e5-b5b192cb9a18" absoluteBounds="26.765, 25.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="afd3cb46-6e98-489c-8197-ecd0bdd5def8" absoluteBounds="26.75, 27.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/O005" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9e6f4b5d-b486-4eeb-a6ff-b9a9b0027141" absoluteBounds="26.765, 28.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="79bb2841-a9fc-4db8-a9a6-9dc0342ca0f7" absoluteBounds="3.75, 36.875, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/OsobSluchDb" />
+      <nestedChildShapes>
+        <elementListCompartment Id="85f22d95-1464-4aa4-8fd5-cc70746dfce1" absoluteBounds="3.765, 37.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b937bc27-6c73-4716-9a81-d2c789d60c8f" absoluteBounds="6.5, 62, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/OtdelDb" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cc32383c-6c86-4aed-a8a7-15e2a088559a" absoluteBounds="6.515, 62.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9071f8e8-e057-48e1-9d46-5dc9a92463d9" absoluteBounds="14.75, 28.75, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/people_update" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f25dbc2d-98ce-457a-b424-4f1ac94bccf0" absoluteBounds="14.765, 29.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="84001844-b4aa-42ca-bbd4-dfb1f78f902b" absoluteBounds="29.75, 0.75, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/perekrest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b274996f-e94a-42c5-9cc8-e729d6d6c815" absoluteBounds="29.765, 1.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ba0fc65e-29dc-4074-af26-2b67b36861c6" absoluteBounds="29.75, 4.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/period_MEE_EKMP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d62379bb-7649-4520-9642-90ff16c01e47" absoluteBounds="29.765, 5.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="01b6ccc6-f508-4106-902b-bc584919928b" absoluteBounds="3.75, 58.25, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/PodrDb" />
+      <nestedChildShapes>
+        <elementListCompartment Id="51b821ec-ed32-4c30-a2e2-a0e61ca7a6fc" absoluteBounds="3.765, 58.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7f3b062a-d50f-4814-a84c-6e0ebb4cab96" absoluteBounds="29.75, 8.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/polis_update" />
+      <nestedChildShapes>
+        <elementListCompartment Id="86f2b120-7747-4c75-9acd-e9a98d49e9c4" absoluteBounds="29.765, 9.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="065d1a1c-36f7-4bca-a922-9a9e7bf3dcc6" absoluteBounds="12, 29.5, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/RMekDb" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9daa0f90-d58e-4d97-b5b3-a1cd852192b7" absoluteBounds="12.015, 29.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="807db74a-27b4-4613-b29c-37a6d6765962" absoluteBounds="29.75, 10.75, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/S_1664n" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c325f5b4-b312-4028-822a-91e44c68d25c" absoluteBounds="29.765, 11.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5d71621f-0c9d-4dec-aed1-5b6f5fbdbe57" absoluteBounds="9.25, 15.625, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SANK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="45df9b2e-09ee-4271-9348-edc8df285e2e" absoluteBounds="9.265, 16.085, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0984c1d9-d58f-4a9c-9953-74ee7ff397dd" absoluteBounds="9.25, 9.625, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SANK_AUTO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="128e1df9-fef3-46f3-86ae-5b8e36c87f18" absoluteBounds="9.265, 10.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f009be67-aaf4-4bf1-86cf-d2fbf630dc13" absoluteBounds="29.75, 13.75, 2, 6.0015283203125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SANK_EXP_TT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="99562147-2902-438b-a640-e02096c196a4" absoluteBounds="29.765, 14.21, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f6cb5724-ac8d-43f8-bcea-cb3982e8173e" absoluteBounds="6.5, 4.125, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SANK_IMPORT_TBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="66fc773f-6707-48ef-ad0e-f3685f85a0a9" absoluteBounds="6.515, 4.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0a273297-116b-4606-acb6-c63bdca770dc" absoluteBounds="12.25, 20, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SANK_RE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5bbc4ec0-6c6f-4b8b-8d99-830f10082e78" absoluteBounds="12.265, 20.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4939ca0-9899-43d2-bf6e-ad12ef05e44f" absoluteBounds="3.75, 92.75, 2, 3.6939111328125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SCHET_OMS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ae14762d-9182-4b25-9898-e57f4a78594a" absoluteBounds="3.765, 93.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f44a6612-16c1-4dac-96b0-72b2b7cbe80f" absoluteBounds="6.5, 32.375, 2, 3.8862125651041595">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SCHET_SMO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eff56b88-24df-4ce0-8ec7-031566d3a1e8" absoluteBounds="6.515, 32.835, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="af9b2bb0-8c45-4c9b-bbe3-faa1cae88eb0" absoluteBounds="3.75, 39.125, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SchoolStatusDb" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f0f529a0-c769-4dc4-9cd3-65c3b4cf4d92" absoluteBounds="3.765, 39.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cc3a5058-8f34-46f8-ac51-59534ec48162" absoluteBounds="17.75, 29.75, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/Settings" />
+      <nestedChildShapes>
+        <elementListCompartment Id="78e86a67-a044-4f1c-be6b-42c880505761" absoluteBounds="17.765, 30.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7f49c577-dccb-4213-8f4c-0c663685fa0e" absoluteBounds="14.5, 7, 2, 2.7324039713541657">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SettingsTables" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a22ef357-38c5-4dd5-9d91-c98b7f67eae8" absoluteBounds="14.515, 7.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ed84a03-65ae-4b35-814c-c8dcdead5708" absoluteBounds="29.75, 20.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/Shablon_Filter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49e43a7b-b131-4931-a20a-6407abc3ca65" absoluteBounds="29.765, 21.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="85fc38be-4a1b-46be-80f9-f3b782db806c" absoluteBounds="3.5, 19.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SLUCH_DS2" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5ec6d091-84f0-4405-b8e2-df0386a68ae7" absoluteBounds="3.515, 20.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b4c45bcf-7d37-4fad-bf3e-4a18e1118f41" absoluteBounds="3.5, 21.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SLUCH_DS3" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c0f4deb6-2502-47c1-aa1f-62480cdb6a29" absoluteBounds="3.515, 22.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="553cd59d-0181-40ad-abe3-a439f95c1f0e" absoluteBounds="29.75, 24.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SLUCH_TEMP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="98931253-58bc-469d-9966-8996a9eafe04" absoluteBounds="29.765, 25.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0fe9c3c5-d2a7-488c-bbdf-5c1abbd139b8" absoluteBounds="1, 109.375, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SocStat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db0e9fb9-caad-470a-b73b-1c6880633c9f" absoluteBounds="1.0150000000000001, 109.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c3aa21a2-d6f8-4a6a-8b85-14f1e56cc78c" absoluteBounds="29.75, 29.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SpecCodeDb" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d2801961-7525-4694-90f3-e61ee531f77b" absoluteBounds="29.765, 30.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="26bb2337-3a35-4739-92e2-7f63fc1add99" absoluteBounds="6.5, 37.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SprANEST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff0a908a-99e7-4737-97fd-27a24788832a" absoluteBounds="6.515, 38.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2dc01076-8e0b-4602-acb7-a0a8420a12fa" absoluteBounds="3.75, 41.25, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SprDEFGOSP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d4fcd8e1-22f8-450f-ac7d-3c9ff68379ae" absoluteBounds="3.765, 41.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bd0b1dbc-2d2b-4383-b5b6-0e6d4de429cb" absoluteBounds="20.75, 30.75, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SprDSGR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7fa3d7fb-038f-4b92-999e-e1b0ca024f48" absoluteBounds="20.765, 31.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ce28b24f-22ed-4136-95c9-23b608f843fb" absoluteBounds="3.75, 43.375, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SprExtr" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a35e6728-bcb2-4991-832c-c623f15ad74a" absoluteBounds="3.765, 43.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8777dab8-14d6-4c42-a6a4-a849aedc39db" absoluteBounds="3.75, 45.5, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SprKDOST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0d450743-17fd-4cf2-9d65-edc05722c815" absoluteBounds="3.765, 45.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fd2b03b3-10c3-48cb-bdf7-e1ee1cb58e16" absoluteBounds="6.5, 39.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SprKSGOPLATA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="850737ae-ec2e-43d7-b888-11d571f1dfcd" absoluteBounds="6.515, 40.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e05c9678-f3d9-4299-96b7-1ed13358cce1" absoluteBounds="23.75, 30.75, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SprKSGR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="96aea055-ff97-410a-ade3-5cab73fcaef4" absoluteBounds="23.765, 31.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4c5b20a2-7eb9-4d0c-99a7-f3c05f28608c" absoluteBounds="6.5, 41.875, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SprOSL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f93194ba-4cf4-4210-90e4-a8dc9b44d29f" absoluteBounds="6.515, 42.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="87d8112d-be0a-48e5-9efd-3c00408aba2b" absoluteBounds="1, 92.25, 2, 4.8477197265625023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SprPayment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b394493e-c9f5-4751-92b3-860d52645e53" absoluteBounds="1.0150000000000001, 92.71, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a272b2d6-37d2-436d-a8da-b3992a5bcaf4" absoluteBounds="32.75, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SprStatictic" />
+      <nestedChildShapes>
+        <elementListCompartment Id="abf71dc1-0349-45fb-a765-2587a4517c95" absoluteBounds="32.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="52cb752a-5fbc-4fac-91bc-81cf6822393f" absoluteBounds="11.75, 7.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SprTableType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d45b032b-72cd-4918-ae8f-05d2cd0199e8" absoluteBounds="11.765, 8.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="57f52a12-2675-481c-bbae-5d4aa25af86d" absoluteBounds="3.75, 47.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SprVOPL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="92f1f6bc-3b9b-4867-8593-a3fb327e3bae" absoluteBounds="3.765, 48.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f483ec2a-4870-4279-b60a-0d79ce61607b" absoluteBounds="3.75, 24.25, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SprVozr" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f4ff4087-99f3-40e1-82f5-eacfe4e1e039" absoluteBounds="3.765, 24.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8178ede0-1766-474d-9e05-a19a827b1076" absoluteBounds="9.5, 52.25, 2, 2.7324039713541595">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/Tarif" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2a174851-8278-4397-b73d-c0d289ab3639" absoluteBounds="9.515, 52.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e931590d-50dd-43b3-a9ad-0e12642fcb3b" absoluteBounds="6.5, 52.375, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/TARIF_PN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c174adf-b31b-4ee0-b17c-51908a5bf6e6" absoluteBounds="6.515, 52.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3fd764da-46ed-4020-a3fc-a57391f4c248" absoluteBounds="32.75, 3.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/TipBoleznDb" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3166acc2-b27d-4cd5-bf62-9da1fd1b2251" absoluteBounds="32.765, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="67f1107e-0f44-4f98-b89e-f32d2450b7cd" absoluteBounds="3.75, 49.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/TravmaTbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1452e518-3dcf-449f-9074-fcb7976a78f5" absoluteBounds="3.765, 50.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fa71b543-d5e1-4c3e-8747-459c870cbba8" absoluteBounds="3.75, 51.875, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/TypeSluchDb" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f7d700bb-6e64-47a0-91e4-22d8844d9273" absoluteBounds="3.765, 52.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ebfe15c2-c91a-4121-8651-3616618d0b2e" absoluteBounds="3.75, 84.875, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/Users" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d05e8564-e799-495c-a981-4d2b7b0ad8d1" absoluteBounds="3.765, 85.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="052571c7-1f4c-4ccf-aa82-16041edafbe0" absoluteBounds="12, 26.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/USL_ASSIST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ffc4398a-166a-4277-ba0e-81c7ce93915d" absoluteBounds="12.015, 27.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f54a2c9c-dc84-4231-b97c-cf8e4e69867f" absoluteBounds="32.75, 6.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/V001" />
+      <nestedChildShapes>
+        <elementListCompartment Id="442efda0-c7c4-4b4b-8b19-686001afcc15" absoluteBounds="32.765, 7.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56147c75-ad33-48fc-89dd-1d7bffd7fadb" absoluteBounds="3.75, 65.625, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/V002" />
+      <nestedChildShapes>
+        <elementListCompartment Id="406750ce-4de9-44ff-9f60-14bfc9e16887" absoluteBounds="3.765, 66.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e92d7e41-32bb-45aa-900d-e4ba9b2c85dc" absoluteBounds="32.75, 9.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/V003" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fb003166-e133-4895-98e4-0554997c4c74" absoluteBounds="32.765, 10.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e454f556-f103-4ef4-ad78-47d9bcc52936" absoluteBounds="3.75, 63.125, 2, 1.770896809895838">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/V004" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5a5a571d-b30e-4af1-809e-b060b5acdfd2" absoluteBounds="3.765, 63.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1f40280f-9ec5-49a5-9830-137b4840fc23" absoluteBounds="1, 111.5, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/V005" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1d45c4f2-6539-467a-b389-38db0ee67b96" absoluteBounds="1.0150000000000001, 111.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c2c31774-f65a-408d-935a-e8c3d5c5f7f6" absoluteBounds="3.75, 68.375, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/V006" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4bef628a-22d5-4c8e-8943-e8f666f7d6d1" absoluteBounds="3.765, 68.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6284f926-a340-491f-b852-f7dd8b0f6b0a" absoluteBounds="9.75, 32.75, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/V007" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43ffd454-0d65-4dcc-8c7c-2833f003a503" absoluteBounds="9.765, 33.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1bee114-e6bc-43a8-94a2-da79c54fc093" absoluteBounds="3.75, 71.125, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/V008" />
+      <nestedChildShapes>
+        <elementListCompartment Id="711bba1c-b221-4c10-a29a-8419196eae17" absoluteBounds="3.765, 71.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c8244c33-8867-4bf3-b3c5-827666e6234b" absoluteBounds="3.75, 73.75, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/V009" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b399b95-1322-4313-9a24-f8ab2adca166" absoluteBounds="3.765, 74.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fd51a2cd-3a2a-43d4-a796-27a4f710a605" absoluteBounds="3.75, 76.5, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/V010" />
+      <nestedChildShapes>
+        <elementListCompartment Id="907571f1-fe3e-4a5e-a562-9ed09c0e41b6" absoluteBounds="3.765, 76.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="73abcb63-ed19-4eb4-bcbb-2c4e45220bb3" absoluteBounds="3.75, 79.25, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/V012" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d4930064-bcec-430f-bffd-4081039763f3" absoluteBounds="3.765, 79.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d027e5b7-5c49-495e-a09c-49b3c28f3e8b" absoluteBounds="3.75, 82, 2, 2.1554996744791595">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/V015" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4087c6f4-82ab-401d-a51f-367e8eba66f9" absoluteBounds="3.765, 82.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b4a9ae65-c307-438d-8443-ae3ef55270b5" absoluteBounds="32.75, 12.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/V015_V002" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bfc52a81-7e97-488f-afe3-14046d9a4697" absoluteBounds="32.765, 13.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="258e073e-7262-4b8d-9668-29741abf01d5" absoluteBounds="12.75, 32.75, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/V018" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9ac4009f-dcaf-4b18-a813-cd14aa791a65" absoluteBounds="12.765, 33.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="325f0db3-120c-4669-9ebc-13a9da0a3f4f" absoluteBounds="32.75, 15.75, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/V019" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1b75c57-6701-4338-8267-4b0e5b5d1e5c" absoluteBounds="32.765, 16.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="68e521ce-f0ea-413a-b4a7-9c5227692bb6" absoluteBounds="3.75, 54, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/VeteranDb" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bb60afd7-298e-4e00-99e7-e7171b98c247" absoluteBounds="3.765, 54.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e98c7e57-d118-438b-bab0-e7b8e29e639c" absoluteBounds="15.75, 32.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/VMP_TARIF" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c87e295d-0e36-4728-86b8-727bed8ed0df" absoluteBounds="15.765, 33.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9a2be1d8-0552-48fa-95b6-c3c44e0d7f3f" absoluteBounds="6.5, 80.5, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/WORK_DAY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="edd43eac-2c59-4ef8-b1c2-7bb39b157f78" absoluteBounds="6.515, 80.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="94c8c1a2-d1ce-4d61-a7a2-9b6ef38b6eb7" absoluteBounds="3.75, 56.125, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/WorkStatDb" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dfe8983b-5342-4b1b-afc1-143f38d8ff31" absoluteBounds="3.765, 56.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7863fc9c-c9f1-4e52-b9d4-4f4307650df1" absoluteBounds="32.75, 19.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/YesNoTbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="020203e5-f4f9-43cb-a7a0-6dc27dac63dd" absoluteBounds="32.765, 20.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.25 : 5.44314697265625); (11.2916666666667 : 5.44314697265625 : JumpStart); (11.7083333333333 : 5.44314697265625 : JumpEnd); (11.7916666666667 : 5.44314697265625 : JumpStart); (11.9583333333333 : 5.44314697265625 : JumpEnd); (13.9062495 : 5.44314697265625); (13.9062495 : 11.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/EKMP_TYPE_DB/EKMP_TYPE_DB_AKT_EKMP_TBL" />
+      <nodes>
+        <classShapeMoniker Id="93c90a18-5c1e-4c76-8d3c-7dc974005306" />
+        <classShapeMoniker Id="2f1f19e0-2830-473f-93c2-02b789f87231" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 7.34375); (11.2916666666667 : 7.34375 : JumpStart); (11.4583333333333 : 7.34375 : JumpEnd); (11.5416666666667 : 7.34375 : JumpStart); (11.7083333333333 : 7.34375 : JumpEnd); (11.7916666666667 : 7.34375 : JumpStart); (11.9583333333333 : 7.34375 : JumpEnd); (13.9062495 : 7.34375); (13.9062495 : 11.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/ExpertsDB/ExpertsDB_AKT_EKMP_TBL" />
+      <nodes>
+        <classShapeMoniker Id="1b2d0e4a-1dac-4c50-804e-74ccb41bc882" />
+        <classShapeMoniker Id="2f1f19e0-2830-473f-93c2-02b789f87231" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 2.02005126953125); (11.875 : 2.02005126953125); (11.875 : 7.5); (14.375 : 7.5); (14.375 : 11.5); (13 : 11.5); (13 : 11.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F014/F014_AKT_EKMP_TBL" />
+      <nodes>
+        <classShapeMoniker Id="89a00695-ef52-4ff5-83da-b8f933afaf6e" />
+        <classShapeMoniker Id="2f1f19e0-2830-473f-93c2-02b789f87231" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 0.84375); (16.90625 : 0.84375); (16.90625 : 17.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F014/F014_AKT_MEE_TBL" />
+      <nodes>
+        <classShapeMoniker Id="89a00695-ef52-4ff5-83da-b8f933afaf6e" />
+        <classShapeMoniker Id="8190109f-1cb9-46f9-af3c-b58f9e28ee96" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 105.251537461538); (5.87857443490112 : 105.122963026637 : JumpStart); (5.99642556509888 : 105.005111896439 : JumpEnd); (6.125 : 104.876537461538); (6.125 : 66.3565991210938); (6.15885416666667 : 66.3565991210938 : JumpStart); (6.48177083333333 : 66.3565991210938 : JumpEnd); (6.5 : 66.3565991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/LIC_NUM_TBL/LIC_NUM_TBL_LIC_TBL" />
+      <nodes>
+        <classShapeMoniker Id="3280523b-c216-459f-889a-e94f91d587db" />
+        <classShapeMoniker Id="514fae93-5580-469e-8b0a-8d174ab9bf02" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 101.039216308594); (5.85416666666667 : 101.039216308594 : JumpStart); (6.27083333333333 : 101.039216308594 : JumpEnd); (7.5 : 101.039216308594); (7.5 : 86.2901025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F003/F003_LicenseDb" />
+      <nodes>
+        <classShapeMoniker Id="b709177a-fd89-46eb-a8ee-426000b6bffd" />
+        <classShapeMoniker Id="9a56ea7d-6751-4034-81b5-9cc2256db475" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.75 : 97.75); (4.75 : 96.6939111328125); (5.90625 : 96.6939111328125); (5.90625 : 27.1357242838542); (5.94107822916667 : 27.1357242838542 : JumpStart); (6.43587364583333 : 27.1357242838542 : JumpEnd); (6.5 : 27.1357242838542); (6.5 : 21.8822507558594); (6.54166666666667 : 21.8822507558594 : JumpStart); (6.83333333333333 : 21.8822507558594 : JumpEnd); (6.91666666666667 : 21.8822507558594 : JumpStart); (7.08333333333333 : 21.8822507558594 : JumpEnd); (7.91666666666667 : 21.8822507558594 : JumpStart); (8.08333333333333 : 21.8822507558594 : JumpEnd); (8.60416666666667 : 21.8822507558594 : JumpStart); (8.77083333333333 : 21.8822507558594 : JumpEnd); (9.25 : 21.8822507558594)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F003/F003_MEE_DB" />
+      <nodes>
+        <classShapeMoniker Id="b709177a-fd89-46eb-a8ee-426000b6bffd" />
+        <classShapeMoniker Id="3b34d6b4-5aa1-4459-9429-fae8fdc38c3e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.648439 : 3.2901025390625); (10.648439 : 4.25); (11.5 : 4.25); (11.5 : 24.7315991210938); (11.5416666666667 : 24.7315991210938 : JumpStart); (11.8333333333333 : 24.7315991210938 : JumpEnd); (12 : 24.7315991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F014/F014_MekDb" />
+      <nodes>
+        <classShapeMoniker Id="89a00695-ef52-4ff5-83da-b8f933afaf6e" />
+        <classShapeMoniker Id="b10b622f-4b71-4d0c-a3aa-397a477b4cbf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.72760602088341 : 38.2612939453125); (5.73794943490113 : 38.2716373593302 : JumpStart); (6.12337494009887 : 38.657062864528 : JumpEnd); (6.125 : 38.6586879244291); (6.125 : 58.7315584309896); (6.15885416666667 : 58.7315584309896 : JumpStart); (6.43489583333333 : 58.7315584309896 : JumpEnd); (6.5 : 58.7315584309896)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/OsobSluchDb/OsobSluchDb_CalcAmbTARIF" />
+      <nodes>
+        <classShapeMoniker Id="79bb2841-a9fc-4db8-a9a6-9dc0342ca0f7" />
+        <classShapeMoniker Id="4f16cf70-c8e4-44ab-a3d2-fd22e6fc551c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 59.755736129407); (5.76919943490112 : 59.7749355643081 : JumpStart); (6.30111306509888 : 60.3068491945059 : JumpEnd); (6.3125 : 60.318236129407); (6.3125 : 63.2700512695313); (6.5 : 63.2700512695313)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/PodrDb/PodrDb_OtdelDb" />
+      <nodes>
+        <classShapeMoniker Id="01b6ccc6-f508-4106-902b-bc584919928b" />
+        <classShapeMoniker Id="b937bc27-6c73-4716-9a81-d2c789d60c8f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.585935 : 3.2901025390625); (9.585935 : 4.5); (9.90104066666667 : 4.5 : JumpStart); (10.0677073333333 : 4.5 : JumpEnd); (11.4166666666667 : 4.5 : JumpStart); (11.5833333333333 : 4.5 : JumpEnd); (11.625 : 4.5); (11.625 : 30.4815991210938); (11.6666666666667 : 30.4815991210938 : JumpStart); (11.9583333333333 : 30.4815991210938 : JumpEnd); (12 : 30.4815991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F014/F014_RMekDb" />
+      <nodes>
+        <classShapeMoniker Id="89a00695-ef52-4ff5-83da-b8f933afaf6e" />
+        <classShapeMoniker Id="065d1a1c-36f7-4bca-a922-9a9e7bf3dcc6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 17.2315177408854); (11.2916666666667 : 17.2315177408854 : JumpStart); (11.4583333333333 : 17.2315177408854 : JumpEnd); (12 : 17.2315177408854)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SANK/SANK_AKT_EKMP_TBL" />
+      <nodes>
+        <classShapeMoniker Id="5d71621f-0c9d-4dec-aed1-5b6f5fbdbe57" />
+        <classShapeMoniker Id="2f1f19e0-2830-473f-93c2-02b789f87231" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 19.0135725911458); (11.2916666666667 : 19.0135725911458 : JumpStart); (11.7083333333333 : 19.0135725911458 : JumpEnd); (12.9166666666667 : 19.0135725911458 : JumpStart); (13.0833333333333 : 19.0135725911458 : JumpEnd); (14.0729161666667 : 19.0135725911458 : JumpStart); (14.2395828333333 : 19.0135725911458 : JumpEnd); (15 : 19.0135725911458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SANK/SANK_AKT_MEE_TBL" />
+      <nodes>
+        <classShapeMoniker Id="5d71621f-0c9d-4dec-aed1-5b6f5fbdbe57" />
+        <classShapeMoniker Id="8190109f-1cb9-46f9-af3c-b58f9e28ee96" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.5 : 9.4631982421875); (7.5 : 18.2980857753906); (9.25 : 18.2980857753906)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F006/F006_SANK" />
+      <nodes>
+        <classShapeMoniker Id="c4f8e6a1-fcc2-4010-865e-8869f937543c" />
+        <classShapeMoniker Id="5d71621f-0c9d-4dec-aed1-5b6f5fbdbe57" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.25 : 3.25779484675481); (9.03125 : 3.47654484675481); (9.03125 : 15.40625); (9.25 : 15.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F014/F014_SANK" />
+      <nodes>
+        <classShapeMoniker Id="89a00695-ef52-4ff5-83da-b8f933afaf6e" />
+        <classShapeMoniker Id="5d71621f-0c9d-4dec-aed1-5b6f5fbdbe57" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 10.7187475); (13 : 10.7187475); (13 : 11.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SANK_AUTO/SANK_AUTO_AKT_EKMP_TBL" />
+      <nodes>
+        <classShapeMoniker Id="0984c1d9-d58f-4a9c-9953-74ee7ff397dd" />
+        <classShapeMoniker Id="2f1f19e0-2830-473f-93c2-02b789f87231" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 10.2412019856771); (11.2916666666667 : 10.2412019856771 : JumpStart); (11.4583333333333 : 10.2412019856771 : JumpEnd); (14.2916666666667 : 10.2412019856771 : JumpStart); (14.4583333333333 : 10.2412019856771 : JumpEnd); (16.8749975 : 10.2412019856771); (16.8749975 : 17.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SANK_AUTO/SANK_AUTO_AKT_MEE_TBL" />
+      <nodes>
+        <classShapeMoniker Id="0984c1d9-d58f-4a9c-9953-74ee7ff397dd" />
+        <classShapeMoniker Id="8190109f-1cb9-46f9-af3c-b58f9e28ee96" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.95923076923077 : 3.2901025390625); (9.6639088994319 : 3.40146344000586 : JumpStart); (9.5079611005681 : 3.46026872724529 : JumpEnd); (9.1092238994319 : 3.61062580709313 : JumpStart); (8.9532761005681 : 3.66943109433256 : JumpEnd); (8.875 : 3.69894769290866); (8.875 : 9.25); (8.97232443490112 : 9.34732443490112 : JumpStart); (9.09017556509888 : 9.46517556509888 : JumpEnd); (9.25 : 9.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F014/F014_SANK_AUTO" />
+      <nodes>
+        <classShapeMoniker Id="89a00695-ef52-4ff5-83da-b8f933afaf6e" />
+        <classShapeMoniker Id="0984c1d9-d58f-4a9c-9953-74ee7ff397dd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 6.60356307752404); (8.81607443490112 : 6.91963751242516 : JumpStart); (8.93392556509888 : 7.03748864262292 : JumpEnd); (8.9375 : 7.04106307752404); (8.9375 : 16.9615428876953); (9.25 : 16.9615428876953)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SANK_IMPORT_TBL/SANK_IMPORT_TBL_SANK" />
+      <nodes>
+        <classShapeMoniker Id="f6cb5724-ac8d-43f8-bcea-cb3982e8173e" />
+        <classShapeMoniker Id="5d71621f-0c9d-4dec-aed1-5b6f5fbdbe57" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 9.2131957421875); (8.85416666666667 : 9.2131957421875 : JumpStart); (9.11458333333333 : 9.2131957421875 : JumpEnd); (11.2916666666667 : 9.2131957421875 : JumpStart); (11.7083333333333 : 9.2131957421875 : JumpEnd); (13.8229161666667 : 9.2131957421875 : JumpStart); (13.9895828333333 : 9.2131957421875 : JumpEnd); (14.1562495 : 9.2131957421875); (14.1562495 : 20)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F006/F006_SANK_RE" />
+      <nodes>
+        <classShapeMoniker Id="c4f8e6a1-fcc2-4010-865e-8869f937543c" />
+        <classShapeMoniker Id="0a273297-116b-4606-acb6-c63bdca770dc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.984374 : 3.2901025390625); (9.984374 : 4.625); (11.375 : 4.625); (11.375 : 21.3662019856771); (11.4166666666667 : 21.3662019856771 : JumpStart); (11.8333333333333 : 21.3662019856771 : JumpEnd); (12.25 : 21.3662019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F014/F014_SANK_RE" />
+      <nodes>
+        <classShapeMoniker Id="89a00695-ef52-4ff5-83da-b8f933afaf6e" />
+        <classShapeMoniker Id="0a273297-116b-4606-acb6-c63bdca770dc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.75 : 97.75); (4.75 : 96.4439111328125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F003/F003_SCHET_OMS" />
+      <nodes>
+        <classShapeMoniker Id="b709177a-fd89-46eb-a8ee-426000b6bffd" />
+        <classShapeMoniker Id="f4939ca0-9899-43d2-bf6e-ad12ef05e44f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8 : 32.375); (8 : 18.7436002379557); (9.25 : 18.7436002379557)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SCHET_SMO/SCHET_SMO_SANK" />
+      <nodes>
+        <classShapeMoniker Id="f44a6612-16c1-4dac-96b0-72b2b7cbe80f" />
+        <classShapeMoniker Id="5d71621f-0c9d-4dec-aed1-5b6f5fbdbe57" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.70846153846154 : 97.75); (5.85829178538099 : 97.3741072702725 : JumpStart); (6.01670821461901 : 97.3223191179087 : JumpEnd); (6.02332959788099 : 97.3201545115805 : JumpStart); (6.26670821461901 : 97.2405912431345 : JumpEnd); (6.625 : 97.1234615384615); (6.625 : 34.3181062825521); (6.5 : 34.3181062825521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F003/F003_SCHET_SMO" />
+      <nodes>
+        <classShapeMoniker Id="b709177a-fd89-46eb-a8ee-426000b6bffd" />
+        <classShapeMoniker Id="f44a6612-16c1-4dac-96b0-72b2b7cbe80f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 93.6109777832031); (3.75 : 93.6109777832031)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SprPayment/SprPayment_SCHET_OMS" />
+      <nodes>
+        <classShapeMoniker Id="87d8112d-be0a-48e5-9efd-3c00408aba2b" />
+        <classShapeMoniker Id="f4939ca0-9899-43d2-bf6e-ad12ef05e44f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.75 : 8.34699625651042); (13.8229161666667 : 8.34699625651042 : JumpStart); (13.9895828333333 : 8.34699625651042 : JumpEnd); (14.2916666666667 : 8.34699625651042 : JumpStart); (14.4583333333333 : 8.34699625651042 : JumpEnd); (14.5 : 8.34699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SprTableType/SprTableType_SettingsTables" />
+      <nodes>
+        <classShapeMoniker Id="52cb752a-5fbc-4fac-91bc-81cf6822393f" />
+        <classShapeMoniker Id="7f49c577-dccb-4213-8f4c-0c663685fa0e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 37.2574666597055); (5.77604166666667 : 37.2574666597055 : JumpStart); (6.49739583333333 : 37.2574666597055 : JumpEnd); (6.54166666666667 : 37.2574666597055 : JumpStart); (6.70833333333333 : 37.2574666597055 : JumpEnd); (8.60416666666667 : 37.2574666597055 : JumpStart); (8.80208583333333 : 37.2574666597055 : JumpEnd); (8.83463416666667 : 37.2574666597055 : JumpStart); (9.43880333333333 : 37.2574666597055 : JumpEnd); (9.45377791666667 : 37.2574666597055 : JumpStart); (9.62044458333333 : 37.2574666597055 : JumpEnd); (10.5 : 37.2574666597055); (10.5 : 52.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/OsobSluchDb/OsobSluchDb_Tarif" />
+      <nodes>
+        <classShapeMoniker Id="79bb2841-a9fc-4db8-a9a6-9dc0342ca0f7" />
+        <classShapeMoniker Id="8178ede0-1766-474d-9e05-a19a827b1076" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 38.2303679265325); (5.76919943490112 : 38.2495673614336 : JumpStart); (6.29769509634888 : 38.7780630228814 : JumpEnd); (6.3203125 : 38.8006804265325); (6.3203125 : 53.6450512695313); (6.33072916666667 : 53.6450512695313 : JumpStart); (6.49739583333333 : 53.6450512695313 : JumpEnd); (6.5 : 53.6450512695313)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/OsobSluchDb/OsobSluchDb_TARIF_PN" />
+      <nodes>
+        <classShapeMoniker Id="79bb2841-a9fc-4db8-a9a6-9dc0342ca0f7" />
+        <classShapeMoniker Id="e931590d-50dd-43b3-a9ad-0e12642fcb3b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 87.353563077524); (5.84732443490112 : 87.4508875124251 : JumpStart); (6.18392556509888 : 87.7874886426229 : JumpEnd); (6.1875 : 87.791063077524); (6.1875 : 105.548900553385); (6.5 : 105.548900553385)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/Users/Users_FREP" />
+      <nodes>
+        <classShapeMoniker Id="ebfe15c2-c91a-4121-8651-3616618d0b2e" />
+        <classShapeMoniker Id="7d22a65f-446e-4f2a-a2f7-da0ab2e1cc03" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.75 : 84.875); (4.75 : 84.4054996744792); (5.66861979166667 : 84.4054996744792 : JumpStart); (5.98958333333333 : 84.4054996744792 : JumpEnd); (6 : 84.4054996744792); (6 : 27.1357242838542); (6.01920447916667 : 27.1357242838542 : JumpStart); (6.43587364583333 : 27.1357242838542 : JumpEnd); (6.45705128205129 : 27.1357242838542 : JumpStart); (6.62371794871795 : 27.1357242838542 : JumpEnd); (6.625 : 27.1357242838542); (6.625 : 21.2964978372396); (6.66666666666667 : 21.2964978372396 : JumpStart); (6.83333333333333 : 21.2964978372396 : JumpEnd); (6.91666666666667 : 21.2964978372396 : JumpStart); (7.08333333333333 : 21.2964978372396 : JumpEnd); (7.91666666666667 : 21.2964978372396 : JumpStart); (8.08333333333333 : 21.2964978372396 : JumpEnd); (8.60416666666667 : 21.2964978372396 : JumpStart); (8.77083333333333 : 21.2964978372396 : JumpEnd); (9.25 : 21.2964978372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/Users/Users_MEE_DB" />
+      <nodes>
+        <classShapeMoniker Id="ebfe15c2-c91a-4121-8651-3616618d0b2e" />
+        <classShapeMoniker Id="3b34d6b4-5aa1-4459-9429-fae8fdc38c3e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 89.8593671725761); (5.82291666666667 : 89.8593671725761 : JumpStart); (6.27083333333333 : 89.8593671725761 : JumpEnd); (6.54166666666667 : 89.8593671725761 : JumpStart); (6.70833333333333 : 89.8593671725761 : JumpEnd); (7.41666666666667 : 89.8593671725761 : JumpStart); (7.58333333333333 : 89.8593671725761 : JumpEnd); (8.60416666666667 : 89.8593671725761 : JumpStart); (8.80208583333333 : 89.8593671725761 : JumpEnd); (8.87760166666667 : 89.8593671725761 : JumpStart); (9.04426833333333 : 89.8593671725761 : JumpEnd); (12.1666666666667 : 89.8593671725761 : JumpStart); (12.3333333333333 : 89.8593671725761 : JumpEnd); (12.625 : 89.8593671725761); (12.625 : 31.8381982421875); (12.3333333333333 : 31.8381982421875 : JumpStart); (12.1666666666667 : 31.8381982421875 : JumpEnd); (11.875 : 31.8381982421875); (11.875 : 28.3862939453125); (13 : 28.3862939453125); (13 : 28.0112939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/DoctorBd/DoctorBd_USL_ASSIST" />
+      <nodes>
+        <classShapeMoniker Id="6e542005-f29a-4856-96c2-7c27225f1908" />
+        <classShapeMoniker Id="052571c7-1f4c-4ccf-aa82-16041edafbe0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 67.5383622098858); (5.76919943490112 : 67.5575616447869 : JumpStart); (6.32064431509888 : 68.1090065249847 : JumpEnd); (6.328125 : 68.1164872098858); (6.328125 : 69.4239005533854); (6.5 : 69.4239005533854)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V002/V002_AttachedDoctorSpr" />
+      <nodes>
+        <classShapeMoniker Id="56147c75-ad33-48fc-89dd-1d7bffd7fadb" />
+        <classShapeMoniker Id="ca4da032-bc55-4089-bf58-6ac51c73d57f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 65.6733238798077); (5.76919943490112 : 65.6541244449066 : JumpStart); (6.32064431509888 : 65.1026795647088 : JumpEnd); (6.328125 : 65.0951988798077); (6.328125 : 59.8785896464844); (6.5 : 59.8785896464844)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V002/V002_CalcAmbTARIF" />
+      <nodes>
+        <classShapeMoniker Id="56147c75-ad33-48fc-89dd-1d7bffd7fadb" />
+        <classShapeMoniker Id="4f16cf70-c8e4-44ab-a3d2-fd22e6fc551c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 66.9098986816406); (5.77604166666667 : 66.9098986816406 : JumpStart); (6.48177083333333 : 66.9098986816406 : JumpEnd); (6.5 : 66.9098986816406)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V002/V002_LIC_TBL" />
+      <nodes>
+        <classShapeMoniker Id="56147c75-ad33-48fc-89dd-1d7bffd7fadb" />
+        <classShapeMoniker Id="514fae93-5580-469e-8b0a-8d174ab9bf02" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 67.5564840398137); (5.76919943490112 : 67.5756834747148 : JumpStart); (6.18392556509888 : 67.9904096049126 : JumpEnd); (6.1875 : 67.9939840398137); (6.1875 : 85.0200512695313); (6.20377604166667 : 85.0200512695313 : JumpStart); (6.37044270833333 : 85.0200512695313 : JumpEnd); (6.5 : 85.0200512695313)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V002/V002_LicenseDb" />
+      <nodes>
+        <classShapeMoniker Id="56147c75-ad33-48fc-89dd-1d7bffd7fadb" />
+        <classShapeMoniker Id="9a56ea7d-6751-4034-81b5-9cc2256db475" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 65.7020167771935); (5.76919943490112 : 65.6828173422924 : JumpStart); (6.19173806509888 : 65.2602787120946 : JumpEnd); (6.203125 : 65.2488917771935); (6.203125 : 54.3113289042969); (6.20377604166667 : 54.3113289042969 : JumpStart); (6.49739583333333 : 54.3113289042969 : JumpEnd); (6.5 : 54.3113289042969)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V002/V002_TARIF_PN" />
+      <nodes>
+        <classShapeMoniker Id="56147c75-ad33-48fc-89dd-1d7bffd7fadb" />
+        <classShapeMoniker Id="e931590d-50dd-43b3-a9ad-0e12642fcb3b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.70771573016827 : 68.375); (5.72232443490112 : 68.3603912952671 : JumpStart); (6.34603494009888 : 67.7366807900694 : JumpEnd); (6.3515625 : 67.7311532301683); (6.3515625 : 57.5845272154948); (6.5 : 57.5845272154948)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V006/V006_CalcAmbTARIF" />
+      <nodes>
+        <classShapeMoniker Id="c2c31774-f65a-408d-935a-e8c3d5c5f7f6" />
+        <classShapeMoniker Id="4f16cf70-c8e4-44ab-a3d2-fd22e6fc551c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 68.4142629648438); (5.76733023298832 : 68.3980158714172 : JumpStart); (6.34790414201167 : 67.8537278317079 : JumpEnd); (6.5 : 67.7111379648438); (6.5 : 65.8345475605469)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V006/V006_LIC_TBL" />
+      <nodes>
+        <classShapeMoniker Id="c2c31774-f65a-408d-935a-e8c3d5c5f7f6" />
+        <classShapeMoniker Id="514fae93-5580-469e-8b0a-8d174ab9bf02" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 70.2898723623798); (5.76919943490112 : 70.3090717972809 : JumpStart); (6.32064431509888 : 70.8605166774787 : JumpEnd); (6.328125 : 70.8679973623798); (6.328125 : 84.3537736347656); (6.5 : 84.3537736347656)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V006/V006_LicenseDb" />
+      <nodes>
+        <classShapeMoniker Id="c2c31774-f65a-408d-935a-e8c3d5c5f7f6" />
+        <classShapeMoniker Id="9a56ea7d-6751-4034-81b5-9cc2256db475" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 68.3870802199519); (5.76919943490112 : 68.3678807850508 : JumpStart); (6.34603494009888 : 67.791045279853 : JumpEnd); (6.3984375 : 67.7386427199519); (6.3984375 : 63.9363289042969); (6.5 : 63.9363289042969)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V006/V006_OtdelDb" />
+      <nodes>
+        <classShapeMoniker Id="c2c31774-f65a-408d-935a-e8c3d5c5f7f6" />
+        <classShapeMoniker Id="b937bc27-6c73-4716-9a81-d2c789d60c8f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 68.4414457097356); (5.76919943490112 : 68.4222462748345 : JumpStart); (6.34603494009888 : 67.8454107696367 : JumpEnd); (6.4765625 : 67.7148832097356); (6.4765625 : 55.3574039713542); (6.54166666666667 : 55.3574039713542 : JumpStart); (6.70833333333333 : 55.3574039713542 : JumpEnd); (8.60416666666667 : 55.3574039713542 : JumpStart); (8.80208583333333 : 55.3574039713542 : JumpEnd); (8.83463416666667 : 55.3574039713542 : JumpStart); (9.04426833333333 : 55.3574039713542 : JumpEnd); (9.125 : 55.3574039713542); (9.15884505990112 : 55.3235589114531 : JumpStart); (9.27669619009888 : 55.2057077812553 : JumpEnd); (9.29654443490112 : 55.1858595364531 : JumpStart); (9.41439556509888 : 55.0680084062553 : JumpEnd); (9.5 : 54.9824039713542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V006/V006_Tarif" />
+      <nodes>
+        <classShapeMoniker Id="c2c31774-f65a-408d-935a-e8c3d5c5f7f6" />
+        <classShapeMoniker Id="8178ede0-1766-474d-9e05-a19a827b1076" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.6880837477464 : 68.375); (5.69302755990113 : 68.3700561878453 : JumpStart); (6.23080056509887 : 67.8322831826475 : JumpEnd); (6.2421875 : 67.8208962477464); (6.2421875 : 52.9787736347656); (6.31510416666667 : 52.9787736347656 : JumpStart); (6.49739583333333 : 52.9787736347656 : JumpEnd); (6.5 : 52.9787736347656)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V006/V006_TARIF_PN" />
+      <nodes>
+        <classShapeMoniker Id="c2c31774-f65a-408d-935a-e8c3d5c5f7f6" />
+        <classShapeMoniker Id="e931590d-50dd-43b3-a9ad-0e12642fcb3b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 71.1582223548678); (5.76919943490112 : 71.1390229199667 : JumpStart); (6.16146337759888 : 70.7467589772689 : JumpEnd); (6.171875 : 70.7363473548678); (6.171875 : 66.6332489013672); (6.17838541666667 : 66.6332489013672 : JumpStart); (6.48177083333333 : 66.6332489013672 : JumpEnd); (6.5 : 66.6332489013672)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V008/V008_LIC_TBL" />
+      <nodes>
+        <classShapeMoniker Id="d1bee114-e6bc-43a8-94a2-da79c54fc093" />
+        <classShapeMoniker Id="514fae93-5580-469e-8b0a-8d174ab9bf02" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 73.0398723623798); (5.76733023298833 : 73.0561194558064 : JumpStart); (6.38891976701167 : 73.6388596439532 : JumpEnd); (6.5 : 73.7429973623798); (6.5 : 85.6863289042969)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V008/V008_LicenseDb" />
+      <nodes>
+        <classShapeMoniker Id="d1bee114-e6bc-43a8-94a2-da79c54fc093" />
+        <classShapeMoniker Id="9a56ea7d-6751-4034-81b5-9cc2256db475" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 76.5332223548678); (5.76919943490112 : 76.5140229199667 : JumpStart); (6.12337494009887 : 76.1598474147689 : JumpEnd); (6.1328125 : 76.1504098548678); (6.1328125 : 60.4521052542318); (6.15885416666667 : 60.4521052542318 : JumpStart); (6.43489583333333 : 60.4521052542318 : JumpEnd); (6.5 : 60.4521052542318)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V010/V010_CalcAmbTARIF" />
+      <nodes>
+        <classShapeMoniker Id="fd51a2cd-3a2a-43d4-a796-27a4f710a605" />
+        <classShapeMoniker Id="4f16cf70-c8e4-44ab-a3d2-fd22e6fc551c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 97.8284605384615); (5.87857443490112 : 97.6998861035604 : JumpStart); (5.99642556509888 : 97.5820349733626 : JumpEnd); (6.04361224740112 : 97.5348482910604 : JumpStart); (6.16146337759888 : 97.4169971608626 : JumpEnd); (6.171875 : 97.4065855384615); (6.171875 : 81.2892976888021); (6.20377604166667 : 81.2892976888021 : JumpStart); (6.41145833333333 : 81.2892976888021 : JumpEnd); (6.5 : 81.2892976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F003/F003_WORK_DAY" />
+      <nodes>
+        <classShapeMoniker Id="b709177a-fd89-46eb-a8ee-426000b6bffd" />
+        <classShapeMoniker Id="9a2be1d8-0552-48fa-95b6-c3c44e0d7f3f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.72814252554087 : 59.8285953776042); (5.73794943490112 : 59.8384022869644 : JumpStart); (6.22689431509888 : 60.3273471671622 : JumpEnd); (6.26171875 : 60.3621716020633); (6.26171875 : 80.863396844401); (6.5 : 80.863396844401)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/PodrDb/PodrDb_WORK_DAY" />
+      <nodes>
+        <classShapeMoniker Id="01b6ccc6-f508-4106-902b-bc584919928b" />
+        <classShapeMoniker Id="9a2be1d8-0552-48fa-95b6-c3c44e0d7f3f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="21f7d374-081e-499c-84ed-ce309c79fcf2" absoluteBounds="75.25, 62.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/YamedRegistry" />
+      <nestedChildShapes>
+        <elementListCompartment Id="785fb7ca-40db-4674-bbb6-f9cfdff3d713" absoluteBounds="75.265, 62.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="16a636d8-9543-419b-a24d-61ec9d57d76d" absoluteBounds="44.75, 54.875, 2, 6.9630354817708326">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SANK_IMP_TT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0543e6ad-172b-41a2-83fe-0aa6d120bf0b" absoluteBounds="44.765, 55.335, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e7fc662d-96cf-40c9-8e8c-bf28af05bdf2" absoluteBounds="6.875, 0.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/CalcKsgTarif" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da8af802-9c31-4093-b1d3-0478769f857e" absoluteBounds="6.8900000000000006, 1.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3af1f1f1-c1d2-453b-ad54-3455f9d64bcc" absoluteBounds="12.125, 1.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SprKsg" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3904aaa5-e198-4520-93ee-396484b29f11" absoluteBounds="12.14, 1.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(13.125 : 3.53049967447917); (13.125 : 4.3381987421875); (14.5 : 4.3381987421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SprKsg/SprKsg_CalcUprk" />
+      <nodes>
+        <classShapeMoniker Id="3af1f1f1-c1d2-453b-ad54-3455f9d64bcc" />
+        <classShapeMoniker Id="ba312177-76ce-4369-b8ea-430d302dd933" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.125 : 1.97679768880208); (14.5 : 1.97679768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SprKsg/SprKsg_CalNotKus" />
+      <nodes>
+        <classShapeMoniker Id="3af1f1f1-c1d2-453b-ad54-3455f9d64bcc" />
+        <classShapeMoniker Id="701b1110-c244-4c74-bf60-759ebcf18af5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="17d4cd68-0d82-487b-9a8f-89fdf7c7c564" absoluteBounds="4.125, 116, 2, 9.4629541015625">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/PACIENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8f105b50-ca2f-44bd-bef1-88cff1a022ac" absoluteBounds="4.14, 116.46, 1.9700000000000002, 8.9029541015625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.125 : 117.135991262695); (6.41666666666667 : 117.135991262695 : JumpStart); (6.58333333333333 : 117.135991262695 : JumpEnd); (8.60416666666667 : 117.135991262695 : JumpStart); (8.80208583333333 : 117.135991262695 : JumpEnd); (8.87760166666667 : 117.135991262695 : JumpStart); (9.04426833333333 : 117.135991262695 : JumpEnd); (9.29166716666667 : 117.135991262695 : JumpStart); (9.45833383333333 : 117.135991262695 : JumpEnd); (9.76041941666667 : 117.135991262695 : JumpStart); (9.92708608333333 : 117.135991262695 : JumpEnd); (12.25 : 117.135991262695); (12.25 : 31.7131982421875); (11.9583333333333 : 31.7131982421875 : JumpStart); (11.7916666666667 : 31.7131982421875 : JumpEnd); (11.75 : 31.7131982421875); (11.75 : 19.4630354817708); (13 : 19.4630354817708); (13 : 18.8380354817708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/PACIENT/PACIENT_AKT_EKMP_TBL" />
+      <nodes>
+        <classShapeMoniker Id="17d4cd68-0d82-487b-9a8f-89fdf7c7c564" />
+        <classShapeMoniker Id="2f1f19e0-2830-473f-93c2-02b789f87231" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.125 : 118.334486525391); (6.41666666666667 : 118.334486525391 : JumpStart); (6.58333333333333 : 118.334486525391 : JumpEnd); (8 : 118.334486525391); (8 : 119.5); (8.60416666666667 : 119.5 : JumpStart); (8.80208583333333 : 119.5 : JumpEnd); (8.87760166666667 : 119.5 : JumpStart); (9.04426833333333 : 119.5 : JumpEnd); (9.29166716666667 : 119.5 : JumpStart); (9.45833383333333 : 119.5 : JumpEnd); (9.76041941666667 : 119.5 : JumpStart); (9.92708608333333 : 119.5 : JumpEnd); (15.5 : 119.5); (15.5 : 30.1939925130208); (17 : 30.1939925130208); (17 : 24.1361311848958); (16 : 24.1361311848958); (16 : 23.5111311848958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/PACIENT/PACIENT_AKT_MEE_TBL" />
+      <nodes>
+        <classShapeMoniker Id="17d4cd68-0d82-487b-9a8f-89fdf7c7c564" />
+        <classShapeMoniker Id="8190109f-1cb9-46f9-af3c-b58f9e28ee96" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 130.481517740885); (5.125 : 130.481517740885); (5.125 : 125.462954101563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F002/F002_PACIENT" />
+      <nodes>
+        <classShapeMoniker Id="d4768300-6221-4575-96e9-0da2afe65c6d" />
+        <classShapeMoniker Id="17d4cd68-0d82-487b-9a8f-89fdf7c7c564" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 114.606599121094); (4.22134979166667 : 114.606599121094 : JumpStart); (4.38801645833333 : 114.606599121094 : JumpEnd); (4.46353791666667 : 114.606599121094 : JumpStart); (4.63020458333333 : 114.606599121094 : JumpEnd); (5.0312475 : 114.606599121094); (5.0312475 : 116)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F008/F008_PACIENT" />
+      <nodes>
+        <classShapeMoniker Id="9f3a0430-2949-42e5-8f29-42bd170cb11e" />
+        <classShapeMoniker Id="17d4cd68-0d82-487b-9a8f-89fdf7c7c564" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 117.45274983724); (4.125 : 117.45274983724)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F010/F010_PACIENT" />
+      <nodes>
+        <classShapeMoniker Id="2b98e446-070f-4440-ae76-9cfa1dd3ced7" />
+        <classShapeMoniker Id="17d4cd68-0d82-487b-9a8f-89fdf7c7c564" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 120.423900553385); (4.125 : 120.423900553385)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F011/F011_PACIENT" />
+      <nodes>
+        <classShapeMoniker Id="dae44dd1-9579-4853-b550-b1e20f9de921" />
+        <classShapeMoniker Id="17d4cd68-0d82-487b-9a8f-89fdf7c7c564" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 105.15625); (5.8749975 : 105.15625); (5.8749975 : 116)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/KatLgot/KatLgot_PACIENT" />
+      <nodes>
+        <classShapeMoniker Id="a6770167-9c6f-4723-b38c-b6c2fa8b770d" />
+        <classShapeMoniker Id="17d4cd68-0d82-487b-9a8f-89fdf7c7c564" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 108.052146809896); (5.79166416666667 : 108.052146809896 : JumpStart); (5.95833083333333 : 108.052146809896 : JumpEnd); (6.0312525 : 108.052146809896); (6.0312525 : 116)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/KodTer/KodTer_PACIENT" />
+      <nodes>
+        <classShapeMoniker Id="89c83f4b-b9d3-458a-b3c7-e8ab893ae087" />
+        <classShapeMoniker Id="17d4cd68-0d82-487b-9a8f-89fdf7c7c564" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 110.068146972656); (4.54687125 : 110.068146972656); (4.54687125 : 116)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SocStat/SocStat_PACIENT" />
+      <nodes>
+        <classShapeMoniker Id="0fe9c3c5-d2a7-488c-bbdf-5c1abbd139b8" />
+        <classShapeMoniker Id="17d4cd68-0d82-487b-9a8f-89fdf7c7c564" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 112.193146972656); (4.46353791666667 : 112.193146972656 : JumpStart); (4.63020458333333 : 112.193146972656 : JumpEnd); (5.4531225 : 112.193146972656); (5.4531225 : 116)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V005/V005_PACIENT" />
+      <nodes>
+        <classShapeMoniker Id="1f40280f-9ec5-49a5-9830-137b4840fc23" />
+        <classShapeMoniker Id="17d4cd68-0d82-487b-9a8f-89fdf7c7c564" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 112.570972958984); (4.304683125 : 112.570972958984); (4.304683125 : 116)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V005/V005_PACIENT1" />
+      <nodes>
+        <classShapeMoniker Id="1f40280f-9ec5-49a5-9830-137b4840fc23" />
+        <classShapeMoniker Id="17d4cd68-0d82-487b-9a8f-89fdf7c7c564" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 20.3181469726563); (3.5 : 20.3181469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/M001_KSG/M001_KSG_SLUCH_DS2" />
+      <nodes>
+        <classShapeMoniker Id="df07c3de-afd5-43b0-b06b-f6f0cd65c2fa" />
+        <classShapeMoniker Id="85fc38be-4a1b-46be-80f9-f3b782db806c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 22.4383048502604); (3.5 : 22.4383048502604)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/M001_KSG/M001_KSG_SLUCH_DS3" />
+      <nodes>
+        <classShapeMoniker Id="df07c3de-afd5-43b0-b06b-f6f0cd65c2fa" />
+        <classShapeMoniker Id="b4c45bcf-7d37-4fad-bf3e-4a18e1118f41" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c34a3b8d-3f34-4a5c-ab23-2bba89842862" absoluteBounds="3.5, 4.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/USL_KSLP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c9c0676e-885f-4835-8d21-735044431c45" absoluteBounds="3.515, 4.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7ffcef19-584e-4398-a310-c644e17fb95f" absoluteBounds="8.25, 119.75, 2, 5.2323225911458326">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SCHET" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1a6d2e3-29ff-4aec-8d70-69ea01913c1e" absoluteBounds="8.265, 120.21, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.3750005 : 119.75); (9.3750005 : 105.548900553385); (9.04426833333333 : 105.548900553385 : JumpStart); (8.87760166666667 : 105.548900553385 : JumpEnd); (8.80208583333333 : 105.548900553385 : JumpStart); (8.60416666666667 : 105.548900553385 : JumpEnd); (8.5 : 105.548900553385)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SCHET/SCHET_FREP" />
+      <nodes>
+        <classShapeMoniker Id="7ffcef19-584e-4398-a310-c644e17fb95f" />
+        <classShapeMoniker Id="7d22a65f-446e-4f2a-a2f7-da0ab2e1cc03" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.6875 : 119.75); (8.6875 : 17.6298143315429); (9.25 : 17.6298143315429)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SCHET/SCHET_SANK" />
+      <nodes>
+        <classShapeMoniker Id="7ffcef19-584e-4398-a310-c644e17fb95f" />
+        <classShapeMoniker Id="5d71621f-0c9d-4dec-aed1-5b6f5fbdbe57" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.7187525 : 119.75); (8.7187525 : 22.6002018229167); (11.4166666666667 : 22.6002018229167 : JumpStart); (11.8333333333333 : 22.6002018229167 : JumpEnd); (12.25 : 22.6002018229167)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SCHET/SCHET_SANK_RE" />
+      <nodes>
+        <classShapeMoniker Id="7ffcef19-584e-4398-a310-c644e17fb95f" />
+        <classShapeMoniker Id="0a273297-116b-4606-acb6-c63bdca770dc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.84375275 : 119.75); (9.84375275 : 95.0852106310847); (9.04426833333333 : 95.0852106310847 : JumpStart); (8.87760166666667 : 95.0852106310847 : JumpEnd); (8.80208583333333 : 95.0852106310847 : JumpStart); (8.60416666666667 : 95.0852106310847 : JumpEnd); (7.58333333333333 : 95.0852106310847 : JumpStart); (7.41666666666667 : 95.0852106310847 : JumpEnd); (6.70833333333333 : 95.0852106310847 : JumpStart); (6.54166666666667 : 95.0852106310847 : JumpEnd); (6.27083333333333 : 95.0852106310847 : JumpStart); (5.82291666666667 : 95.0852106310847 : JumpEnd); (5.75 : 95.0852106310847)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SCHET/SCHET_SCHET_OMS" />
+      <nodes>
+        <classShapeMoniker Id="7ffcef19-584e-4398-a310-c644e17fb95f" />
+        <classShapeMoniker Id="f4939ca0-9899-43d2-bf6e-ad12ef05e44f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.960935 : 119.75); (8.960935 : 35.4223046875); (8.80208583333333 : 35.4223046875 : JumpStart); (8.60416666666667 : 35.4223046875 : JumpEnd); (8.5 : 35.4223046875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SCHET/SCHET_SCHET_SMO" />
+      <nodes>
+        <classShapeMoniker Id="7ffcef19-584e-4398-a310-c644e17fb95f" />
+        <classShapeMoniker Id="f44a6612-16c1-4dac-96b0-72b2b7cbe80f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3227ec28-79c2-43c6-97f0-2f575673ca00" absoluteBounds="4.375, 8, 2, 18.885724283854167">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/SLUCH" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8ef25f3-0d23-407b-9a0e-f2ccee43c47a" absoluteBounds="4.39, 8.46, 1.9700000000000002, 18.325724283854164" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.375 : 16.2620239438476); (6.91666666666667 : 16.2620239438476 : JumpStart); (7.08333333333333 : 16.2620239438476 : JumpEnd); (7.41666666666667 : 16.2620239438476 : JumpStart); (7.58333333333333 : 16.2620239438476 : JumpEnd); (8.85416666666667 : 16.2620239438476 : JumpStart); (9.02083333333333 : 16.2620239438476 : JumpEnd); (9.25 : 16.2620239438476)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SLUCH/SLUCH_SANK" />
+      <nodes>
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+        <classShapeMoniker Id="5d71621f-0c9d-4dec-aed1-5b6f5fbdbe57" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 41.9431469726563); (5.77604166666667 : 41.9431469726563 : JumpStart); (6.20833333333333 : 41.9431469726563 : JumpEnd); (6.22265625 : 41.9431469726563); (6.22265625 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SprDEFGOSP/SprDEFGOSP_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="2dc01076-8e0b-4602-acb7-a0a8420a12fa" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 28.750700625); (5.77604166666667 : 28.750700625 : JumpStart); (6.06770833333333 : 28.750700625 : JumpEnd); (6.080075625 : 28.750700625); (6.080075625 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/DetProfilDb/DetProfilDb_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="88ca5055-45db-4fa5-bd34-248d132d3742" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 31.1931469726563); (5.77604166666667 : 31.1931469726563 : JumpStart); (6.32210286458333 : 31.1931469726563 : JumpEnd); (6.330080625 : 31.1931469726563); (6.330080625 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/Dostav/Dostav_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="fae63947-6d41-4a57-ab31-c1ae49aadb38" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 21.3806469726563); (4.375 : 21.3806469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/M001_KSG/M001_KSG_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="df07c3de-afd5-43b0-b06b-f6f0cd65c2fa" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 21.1647204589844); (4.375 : 21.1647204589844)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/M001_KSG/M001_KSG_SLUCH1" />
+      <nodes>
+        <classShapeMoniker Id="df07c3de-afd5-43b0-b06b-f6f0cd65c2fa" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 21.5965734863281); (4.375 : 21.5965734863281)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/M001_KSG/M001_KSG_SLUCH2" />
+      <nodes>
+        <classShapeMoniker Id="df07c3de-afd5-43b0-b06b-f6f0cd65c2fa" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 23.1266097005208); (1.75 : 23.6931469726563); (4.375 : 23.6931469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/M001_KSG/M001_KSG_SLUCH3" />
+      <nodes>
+        <classShapeMoniker Id="df07c3de-afd5-43b0-b06b-f6f0cd65c2fa" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 61.5104484049479); (5.77604166666667 : 61.5104484049479 : JumpStart); (6.14778270833333 : 61.5104484049479 : JumpEnd); (6.16796875 : 61.5104484049479); (6.16796875 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F005/F005_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="c59f27e5-c606-4dd9-a1c7-5d7097f60eac" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 33.3181469726563); (5.77604166666667 : 33.3181469726563 : JumpStart); (6.02083333333333 : 33.3181469726563 : JumpEnd); (6.048823125 : 33.3181469726563); (6.048823125 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/Gospit/Gospit_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="f4214ea3-c957-4079-9632-55c94aad7ce0" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 35.4431469726563); (5.77604166666667 : 35.4431469726563 : JumpStart); (6.18587114583333 : 35.4431469726563 : JumpEnd); (6.1953125 : 35.4431469726563); (6.1953125 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/GrZdorovDb/GrZdorovDb_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="3426f9b6-a428-4726-b3b5-a10edbf45f5f" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 88.960931086288); (5.82291666666667 : 88.960931086288 : JumpStart); (6.27083333333333 : 88.960931086288 : JumpEnd); (6.287109375 : 88.960931086288); (6.287109375 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/DoctorBd/DoctorBd_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="6e542005-f29a-4856-96c2-7c27225f1908" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 90.6780902204026); (5.82291666666667 : 90.6780902204026 : JumpStart); (6.02083333333333 : 90.6780902204026 : JumpEnd); (6.0244115625 : 90.6780902204026); (6.0244115625 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/DoctorBd/DoctorBd_SLUCH1" />
+      <nodes>
+        <classShapeMoniker Id="6e542005-f29a-4856-96c2-7c27225f1908" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 102.715076962891); (5.85416666666667 : 102.715076962891 : JumpStart); (6.02083333333333 : 102.715076962891 : JumpEnd); (6.1025378125 : 102.715076962891); (6.1025378125 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F003/F003_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="b709177a-fd89-46eb-a8ee-426000b6bffd" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 99.4338384235278); (5.85416666666667 : 99.4338384235278 : JumpStart); (6.02083333333333 : 99.4338384235278 : JumpEnd); (6.150390625 : 99.4338384235278); (6.150390625 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/F003/F003_SLUCH1" />
+      <nodes>
+        <classShapeMoniker Id="b709177a-fd89-46eb-a8ee-426000b6bffd" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 37.743917293119); (5.77604166666667 : 37.743917293119 : JumpStart); (6.25130208333333 : 37.743917293119 : JumpEnd); (6.2548828125 : 37.743917293119); (6.2548828125 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/OsobSluchDb/OsobSluchDb_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="79bb2841-a9fc-4db8-a9a6-9dc0342ca0f7" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.125 : 120.731477050781); (6.5 : 120.731477050781); (6.5 : 106.972801106771); (5.9375 : 106.972801106771); (5.9375 : 27.2607242838542); (5.94107822916667 : 27.2607242838542 : JumpStart); (6.43587364583333 : 27.2607242838542 : JumpEnd); (6.58205128205129 : 27.2607242838542 : JumpStart); (6.88871894871795 : 27.2607242838542 : JumpEnd); (7 : 27.2607242838542); (7 : 14.4243989883814); (6.375 : 14.4243989883814)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/PACIENT/PACIENT_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="17d4cd68-0d82-487b-9a8f-89fdf7c7c564" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 93.8863528155424); (5.82291666666667 : 93.8863528155424 : JumpStart); (6.02083333333333 : 93.8863528155424 : JumpEnd); (6.064449375 : 93.8863528155424); (6.064449375 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SCHET_OMS/SCHET_OMS_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="f4939ca0-9899-43d2-bf6e-ad12ef05e44f" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 39.8181469726563); (5.77604166666667 : 39.8181469726563 : JumpStart); (6.32210286458333 : 39.8181469726563 : JumpEnd); (6.3525403125 : 39.8181469726563); (6.3525403125 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SchoolStatusDb/SchoolStatusDb_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="af9b2bb0-8c45-4c9b-bbe3-faa1cae88eb0" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 44.0681469726563); (5.77604166666667 : 44.0681469726563 : JumpStart); (6.25130208333333 : 44.0681469726563 : JumpEnd); (6.3037109375 : 44.0681469726563); (6.3037109375 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SprExtr/SprExtr_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="ce28b24f-22ed-4136-95c9-23b608f843fb" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 46.1931469726563); (5.77604166666667 : 46.1931469726563 : JumpStart); (6.23372395833333 : 46.1931469726563 : JumpEnd); (6.23876953125 : 46.1931469726563); (6.23876953125 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SprKDOST/SprKDOST_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="8777dab8-14d6-4c42-a6a4-a849aedc39db" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 48.3181469726563); (5.77604166666667 : 48.3181469726563 : JumpStart); (6.25130208333333 : 48.3181469726563 : JumpEnd); (6.27099609375 : 48.3181469726563); (6.27099609375 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SprVOPL/SprVOPL_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="57f52a12-2675-481c-bbae-5d4aa25af86d" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 49.7574636597055); (5.751953125 : 49.7555105347055); (5.751953125 : 28.0107242838542); (5.77604166666667 : 28.0107242838542 : JumpStart); (6.49739583333333 : 28.0107242838542 : JumpEnd); (7.11300594163339 : 28.0107242838542 : JumpStart); (7.27967260830006 : 28.0107242838542 : JumpEnd); (7.28538561538462 : 28.0107242838542); (6.55015243264924 : 27.0350729100119 : JumpStart); (6.44984756735076 : 26.9019687711761 : JumpEnd); (6.375 : 26.8026463607772)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/TravmaTbl/TravmaTbl_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="67f1107e-0f44-4f98-b89e-f32d2450b7cd" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 51.8824636597055); (5.7734375 : 51.8590261597055); (5.7734375 : 28.1357242838542); (5.77604166666667 : 28.1357242838542 : JumpStart); (6.49739583333333 : 28.1357242838542 : JumpEnd); (7.28230869230769 : 28.1357242838542); (6.54722263959126 : 27.0669051685039 : JumpStart); (6.45277736040874 : 26.9295812193256 : JumpEnd); (6.375 : 26.8164925146234)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/TypeSluchDb/TypeSluchDb_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="fa71b543-d5e1-4c3e-8747-459c870cbba8" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 84.8919220769231); (5.751953125 : 84.8899689519231); (5.751953125 : 27.5107242838542); (5.82291666666667 : 27.5107242838542 : JumpStart); (6.43587364583333 : 27.5107242838542 : JumpEnd); (6.76912827226954 : 27.5107242838542 : JumpStart); (7.02284473428762 : 27.5107242838542 : JumpEnd); (7.05538561538462 : 27.5107242838542); (6.55892556509888 : 27.0142642335685 : JumpStart); (6.40076146889064 : 26.8561001373602 : JumpEnd); (6.375 : 26.8303386684696)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/Users/Users_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="ebfe15c2-c91a-4121-8651-3616618d0b2e" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 65.6401005249399); (5.75390625 : 65.6361942749399); (5.75390625 : 27.5107242838542); (5.82291666666667 : 27.5107242838542 : JumpStart); (6.43587364583333 : 27.5107242838542 : JumpEnd); (6.76912827226954 : 27.5107242838542 : JumpStart); (7.02284473428762 : 27.5107242838542 : JumpEnd); (7.04153946153846 : 27.5107242838542); (6.56095611608289 : 27.0301409383986 : JumpStart); (6.37706997724113 : 26.8462547995568 : JumpEnd); (6.375 : 26.8441848223157)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V002/V002_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="56147c75-ad33-48fc-89dd-1d7bffd7fadb" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 63.1413457397837); (5.76919943490113 : 63.1221463048826 : JumpStart); (5.96517556509886 : 62.9261701746847 : JumpEnd); (5.984375 : 62.9069707397836); (5.984375 : 27.8857242838542); (5.99674229166667 : 27.8857242838542 : JumpStart); (6.49739583333333 : 27.8857242838542 : JumpEnd); (7.02703652429243 : 27.8857242838542 : JumpStart); (7.1937031909591 : 27.8857242838542 : JumpEnd); (7.26384715384615 : 27.8857242838542); (6.75380513590712 : 27.2960089810491 : JumpStart); (6.64477761593964 : 27.1699503531511 : JumpEnd); (6.56899997490735 : 27.0823355430855 : JumpStart); (6.44548624001626 : 26.9395278193882 : JumpEnd); (6.375 : 26.8580309761619)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V004/V004_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="e454f556-f103-4ef4-ad78-47d9bcc52936" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 68.3901005249399); (5.7578125 : 68.3822880249399); (5.7578125 : 27.5107242838542); (5.82291666666667 : 27.5107242838542 : JumpStart); (6.43587364583333 : 27.5107242838542 : JumpEnd); (6.76912827226954 : 27.5107242838542 : JumpStart); (7.0125641025641 : 27.5107242838542 : JumpEnd); (7.01384715384615 : 27.5107242838542); (6.64564315007214 : 27.1425202800802 : JumpStart); (6.40471293223727 : 26.9015900622453 : JumpEnd); (6.375 : 26.871877130008)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V006/V006_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="c2c31774-f65a-408d-935a-e8c3d5c5f7f6" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 71.1401005249399); (5.765625 : 71.1244755249399); (5.765625 : 27.5107242838542); (5.82291666666667 : 27.5107242838542 : JumpStart); (6.43587364583333 : 27.5107242838542 : JumpEnd); (6.76912827226954 : 27.5107242838542 : JumpStart); (6.99192801578465 : 27.5107242838542 : JumpEnd); (6.99846153846154 : 27.5107242838542); (6.69269456043137 : 27.204957305824 : JumpStart); (6.44107443490112 : 26.9533371802938 : JumpEnd); (6.37346153846154 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V008/V008_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="d1bee114-e6bc-43a8-94a2-da79c54fc093" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 73.7651005249399); (5.78125 : 73.7338505249399); (5.78125 : 27.5107242838542); (5.82291666666667 : 27.5107242838542 : JumpStart); (6.43587364583333 : 27.5107242838542 : JumpEnd); (6.76912827226954 : 27.5107242838542 : JumpStart); (6.9357949389362 : 27.5107242838542 : JumpEnd); (6.98461538461538 : 27.5107242838542); (6.735038077426 : 27.2611469766648 : JumpStart); (6.44107443490112 : 26.9671833341399 : JumpEnd); (6.35961538461539 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V009/V009_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="c8244c33-8867-4bf3-b3c5-827666e6234b" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 76.5151005249399); (5.796875 : 76.4682255249399); (5.796875 : 27.5107242838542); (5.82291666666667 : 27.5107242838542 : JumpStart); (6.43587364583333 : 27.5107242838542 : JumpEnd); (6.76912827226954 : 27.5107242838542 : JumpStart); (6.9357949389362 : 27.5107242838542 : JumpEnd); (6.97076923076923 : 27.5107242838542); (6.79833467804018 : 27.3382897311251 : JumpStart); (6.65953046422286 : 27.1994855173078 : JumpEnd); (6.65080080714689 : 27.1907558602319 : JumpStart); (6.44107443490112 : 26.9810294879861 : JumpEnd); (6.34576923076923 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V010/V010_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="fd51a2cd-3a2a-43d4-a796-27a4f710a605" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 79.2651005249399); (5.828125 : 79.1869755249399); (5.828125 : 27.5107242838542); (5.85416666666667 : 27.5107242838542 : JumpStart); (6.43587364583333 : 27.5107242838542 : JumpEnd); (6.76912827226954 : 27.5107242838542 : JumpStart); (6.9357949389362 : 27.5107242838542 : JumpEnd); (6.95692307692308 : 27.5107242838542); (6.88697317537664 : 27.4407743823078 : JumpStart); (6.70187398121748 : 27.2556751881486 : JumpEnd); (6.6812985783169 : 27.235099785248 : JumpStart); (6.56344744811914 : 27.1172486550503 : JumpEnd); (6.33192307692308 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V012/V012_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="73abcb63-ed19-4eb4-bcbb-2c4e45220bb3" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 82.0169220769231); (5.859375 : 81.9075470769231); (5.859375 : 27.5107242838542); (5.91666666666667 : 27.5107242838542 : JumpStart); (6.43587364583333 : 27.5107242838542 : JumpEnd); (6.76912827226954 : 27.5107242838542 : JumpStart); (6.9357949389362 : 27.5107242838542 : JumpEnd); (6.94307692307692 : 27.5107242838542); (6.86206862840988 : 27.4297159891872 : JumpStart); (6.74421749821212 : 27.3118648589894 : JumpEnd); (6.71179634948691 : 27.2794437102642 : JumpStart); (6.59394521928915 : 27.1615925800664 : JumpEnd); (6.31807692307692 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V015/V015_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="d027e5b7-5c49-495e-a09c-49b3c28f3e8b" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 54.0074636597055); (5.76919943490112 : 53.9882642248044 : JumpStart); (6.37923806509888 : 53.3782255946066 : JumpEnd); (6.3984375 : 53.3590261597055); (6.3984375 : 27.7607242838542); (6.94106710695147 : 27.7607242838542 : JumpStart); (7.10773377361813 : 27.7607242838542 : JumpEnd); (7.17923076923077 : 27.7607242838542); (7.06425017004957 : 27.645743684673 : JumpStart); (6.94639903985181 : 27.5278925544752 : JumpEnd); (6.90441214540449 : 27.4859056600279 : JumpStart); (6.78656101520673 : 27.3680545298302 : JumpEnd); (6.74229412065691 : 27.3237876352803 : JumpStart); (6.62444299045915 : 27.2059365050826 : JumpEnd); (6.30423076923077 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/VeteranDb/VeteranDb_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="68e521ce-f0ea-413a-b4a7-9c5227692bb6" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 24.8469962565104); (6.75 : 24.8469962565104); (6.75 : 20.6050616361178); (6.375 : 20.6050616361178)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SprVozr/SprVozr_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="f483ec2a-4870-4279-b60a-0d79ce61607b" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 56.1324636597055); (5.76919943490112 : 56.1132642248044 : JumpStart); (6.34603494009888 : 55.5364287196066 : JumpEnd); (6.4140625 : 55.4684011597055); (6.4140625 : 27.5107242838542); (6.91538461538462 : 27.5107242838542); (6.7727918918269 : 27.3681315602965 : JumpStart); (6.65494076162914 : 27.2502804300987 : JumpEnd); (6.29038461538462 : 26.8857242838542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/WorkStatDb/WorkStatDb_SLUCH" />
+      <nodes>
+        <classShapeMoniker Id="94c8c1a2-d1ce-4d61-a7a2-9b6ef38b6eb7" />
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="93707c7d-a7ff-4a84-851b-4fd0c82fbe2f" absoluteBounds="8.875, 24, 2, 7.9245426432291648">
+      <DataClassMoniker Name="/ElmedDataClassesDataContext/USL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e47b268c-6392-40bc-ba84-abd0e6302d97" absoluteBounds="8.89, 24.46, 1.9700000000000002, 7.3645426432291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.875 : 27.3181469726563); (11.5416666666667 : 27.3181469726563 : JumpStart); (11.8333333333333 : 27.3181469726563 : JumpEnd); (12 : 27.3181469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/USL/USL_USL_ASSIST" />
+      <nodes>
+        <classShapeMoniker Id="93707c7d-a7ff-4a84-851b-4fd0c82fbe2f" />
+        <classShapeMoniker Id="052571c7-1f4c-4ccf-aa82-16041edafbe0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 38.3181469726563); (8.63541916666667 : 38.3181469726563 : JumpStart); (8.80208583333333 : 38.3181469726563 : JumpEnd); (8.83463416666667 : 38.3181469726563 : JumpStart); (9.30110395833333 : 38.3181469726563 : JumpEnd); (9.3242175 : 38.3181469726563); (9.3242175 : 31.9245426432292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SprANEST/SprANEST_USL" />
+      <nodes>
+        <classShapeMoniker Id="26bb2337-3a35-4739-92e2-7f63fc1add99" />
+        <classShapeMoniker Id="93707c7d-a7ff-4a84-851b-4fd0c82fbe2f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 88.511713043144); (5.82291666666667 : 88.511713043144 : JumpStart); (6.37044270833333 : 88.511713043144 : JumpEnd); (6.54166666666667 : 88.511713043144 : JumpStart); (6.70833333333333 : 88.511713043144 : JumpEnd); (7.41666666666667 : 88.511713043144 : JumpStart); (7.58333333333333 : 88.511713043144 : JumpEnd); (8.60416666666667 : 88.511713043144 : JumpStart); (8.80208583333333 : 88.511713043144 : JumpEnd); (8.87760166666667 : 88.511713043144 : JumpStart); (9.04426833333333 : 88.511713043144 : JumpEnd); (9.11132375 : 88.511713043144); (9.11132375 : 31.9245426432292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/DoctorBd/DoctorBd_USL" />
+      <nodes>
+        <classShapeMoniker Id="6e542005-f29a-4856-96c2-7c27225f1908" />
+        <classShapeMoniker Id="93707c7d-a7ff-4a84-851b-4fd0c82fbe2f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 29.3184972851563); (5.77604166666667 : 29.3184972851563 : JumpStart); (6.49739583333333 : 29.3184972851563 : JumpEnd); (7.91666666666667 : 29.3184972851563 : JumpStart); (8.08333333333333 : 29.3184972851563 : JumpEnd); (8.60416666666667 : 29.3184972851563 : JumpStart); (8.80208583333333 : 29.3184972851563 : JumpEnd); (8.875 : 29.3184972851563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/DetProfilDb/DetProfilDb_USL" />
+      <nodes>
+        <classShapeMoniker Id="88ca5055-45db-4fa5-bd34-248d132d3742" />
+        <classShapeMoniker Id="93707c7d-a7ff-4a84-851b-4fd0c82fbe2f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 40.4431469726563); (8.60416666666667 : 40.4431469726563 : JumpStart); (8.80208583333333 : 40.4431469726563 : JumpEnd); (8.83463416666667 : 40.4431469726563 : JumpStart); (9.43880333333333 : 40.4431469726563 : JumpEnd); (9.53711125 : 40.4431469726563); (9.53711125 : 31.9245426432292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SprKSGOPLATA/SprKSGOPLATA_USL" />
+      <nodes>
+        <classShapeMoniker Id="fd2b03b3-10c3-48cb-bdf7-e1ee1cb58e16" />
+        <classShapeMoniker Id="93707c7d-a7ff-4a84-851b-4fd0c82fbe2f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 42.5681469726563); (8.63541916666667 : 42.5681469726563 : JumpStart); (8.80208583333333 : 42.5681469726563 : JumpEnd); (8.83463416666667 : 42.5681469726563 : JumpStart); (9.00130083333333 : 42.5681469726563 : JumpEnd); (9.004876875 : 42.5681469726563); (9.004876875 : 31.9245426432292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SprOSL/SprOSL_USL" />
+      <nodes>
+        <classShapeMoniker Id="4c5b20a2-7eb9-4d0c-99a7-f3c05f28608c" />
+        <classShapeMoniker Id="93707c7d-a7ff-4a84-851b-4fd0c82fbe2f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(32.75 : 20.2507641601563); (26 : 20.2507641601563); (26 : 22.2708154296875); (17.25 : 22.2708154296875); (17.25 : 23.7611311848958); (16.0833333333333 : 23.7611311848958 : JumpStart); (15.9166666666667 : 23.7611311848958 : JumpEnd); (14.5 : 23.7611311848958); (14.5 : 22.9824039713542); (11.8333333333333 : 22.9824039713542 : JumpStart); (11.4166666666667 : 22.9824039713542 : JumpEnd); (9.875 : 22.9824039713542); (9.875 : 24)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/YesNoTbl/YesNoTbl_USL" />
+      <nodes>
+        <classShapeMoniker Id="7863fc9c-c9f1-4e52-b9d4-4f4307650df1" />
+        <classShapeMoniker Id="93707c7d-a7ff-4a84-851b-4fd0c82fbe2f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.375 : 25.8560688086438); (6.41666666666667 : 25.8560688086438 : JumpStart); (6.70833333333333 : 25.8560688086438 : JumpEnd); (6.91666666666667 : 25.8560688086438 : JumpStart); (7.08333333333333 : 25.8560688086438 : JumpEnd); (7.91666666666667 : 25.8560688086438 : JumpStart); (8.08333333333333 : 25.8560688086438 : JumpEnd); (8.60416666666667 : 25.8560688086438 : JumpStart); (8.80208583333333 : 25.8560688086438 : JumpEnd); (8.875 : 25.8560688086438)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/SLUCH/SLUCH_USL" />
+      <nodes>
+        <classShapeMoniker Id="3227ec28-79c2-43c6-97f0-2f575673ca00" />
+        <classShapeMoniker Id="93707c7d-a7ff-4a84-851b-4fd0c82fbe2f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 67.5410886410006); (5.77604166666667 : 67.5410886410006 : JumpStart); (6.70833333333333 : 67.5410886410006 : JumpEnd); (8.60416666666667 : 67.5410886410006 : JumpStart); (8.80208583333333 : 67.5410886410006 : JumpEnd); (8.87760166666667 : 67.5410886410006 : JumpStart); (9.19465708333333 : 67.5410886410006 : JumpEnd); (9.217770625 : 67.5410886410006); (9.217770625 : 31.9245426432292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V002/V002_USL" />
+      <nodes>
+        <classShapeMoniker Id="56147c75-ad33-48fc-89dd-1d7bffd7fadb" />
+        <classShapeMoniker Id="93707c7d-a7ff-4a84-851b-4fd0c82fbe2f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 64.7492496744792); (5.77604166666667 : 64.7492496744792 : JumpStart); (6.70833333333333 : 64.7492496744792 : JumpEnd); (8.60416666666667 : 64.7492496744792 : JumpStart); (8.80208583333333 : 64.7492496744792 : JumpEnd); (8.9179675 : 64.7492496744792); (8.9179675 : 31.9245426432292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V004/V004_USL" />
+      <nodes>
+        <classShapeMoniker Id="e454f556-f103-4ef4-ad78-47d9bcc52936" />
+        <classShapeMoniker Id="93707c7d-a7ff-4a84-851b-4fd0c82fbe2f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 82.9142976888021); (5.82291666666667 : 82.9142976888021 : JumpStart); (6.41145833333333 : 82.9142976888021 : JumpEnd); (6.41666666666667 : 82.9142976888021 : JumpStart); (6.70833333333333 : 82.9142976888021 : JumpEnd); (8.60416666666667 : 82.9142976888021 : JumpStart); (8.80208583333333 : 82.9142976888021 : JumpEnd); (8.87760166666667 : 82.9142976888021 : JumpStart); (9.19465708333333 : 82.9142976888021 : JumpEnd); (9.35547 : 82.9142976888021); (9.35547 : 31.9245426432292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ElmedDataClassesDataContext/V015/V015_USL" />
+      <nodes>
+        <classShapeMoniker Id="d027e5b7-5c49-495e-a09c-49b3c28f3e8b" />
+        <classShapeMoniker Id="93707c7d-a7ff-4a84-851b-4fd0c82fbe2f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

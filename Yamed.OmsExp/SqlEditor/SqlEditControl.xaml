@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Yamed.OmsExp.SqlEditor.SqlEditControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:sqlEditor="clr-namespace:Yamed.OmsExp.SqlEditor"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <dxb:BarContainerControl >
+            <dxb:ToolBarControl AllowCustomizationMenu="False" AllowHide="False" AllowQuickCustomization="False" IsCollapsed="False" ShowDragWidget="False" UseWholeRow="True" >
+                <dxb:BarButtonItem x:Name="SqlScriptRun" GlyphAlignment="Top" BarItemDisplayMode="ContentAndGlyph"  Content="Выполнить" LargeGlyph="pack://application:,,,/Yamed.Icons;component/Icons/знак.png" ItemClick="SqlScriptRun_OnItemClick" Glyph="pack://application:,,,/Yamed.Icons;component/Icons/знак.png"  />
+                <dxb:BarItemSeparator/>
+
+                <dxb:BarButtonItem GlyphAlignment="Top" BarItemDisplayMode="ContentAndGlyph" ItemClick="RefreshTbl_OnItemClick" x:Name="RefreshTbl" Content="Обновить" Glyph="pack://application:,,,/Yamed.Icons;component/Icons/reload.png" LargeGlyph="pack://application:,,,/Yamed.Icons;component/Icons/reload.png" />
+                <dxb:BarButtonItem GlyphAlignment="Top" BarItemDisplayMode="ContentAndGlyph"  ItemClick="AddItem_OnItemClick" x:Name="AddItem" Content="Добавить" Glyph="pack://application:,,,/Yamed.Icons;component/Icons/plus_orange.png" LargeGlyph="pack://application:,,,/Yamed.Icons;component/Icons/plus_orange.png" RibbonStyle="SmallWithText" />
+                <dxb:BarButtonItem GlyphAlignment="Top" BarItemDisplayMode="ContentAndGlyph" ItemClick="CopyItem_OnItemClick" x:Name="CopyItem" Content="Копировать" Glyph="pack://application:,,,/Yamed.Icons;component/Icons/copy.png" LargeGlyph="pack://application:,,,/Yamed.Icons;component/Icons/copy.png" RibbonStyle="SmallWithText" />
+                <dxb:BarButtonItem GlyphAlignment="Top" BarItemDisplayMode="ContentAndGlyph"  ItemClick="DelItem_OnItemClick" x:Name="DelItem" Content="Удалить" Glyph="pack://application:,,,/Yamed.Icons;component/Icons/deletered.png" LargeGlyph="pack://application:,,,/Yamed.Icons;component/Icons/deletered.png" RibbonStyle="SmallWithText" />
+                <dxb:BarButtonItem GlyphAlignment="Top" BarItemDisplayMode="ContentAndGlyph"  ItemClick="SaveItem_OnItemClick" x:Name="SaveItem" Content="Сохранить" Glyph="pack://application:,,,/Yamed.Icons;component/Icons/save_gr.png" LargeGlyph="pack://application:,,,/Yamed.Icons;component/Icons/save_gr.png" />
+                <dxb:BarButtonItem GlyphAlignment="Top" BarItemDisplayMode="ContentAndGlyph" ItemClick="SaveAllItem_OnItemClick" x:Name="SaveAllItem" Content="Сохранить все" Glyph="pack://application:,,,/Yamed.Icons;component/Icons/save.png" LargeGlyph="pack://application:,,,/Yamed.Icons;component/Icons/save.png" />
+                <dxb:BarItemSeparator/>
+
+                <dxb:BarButtonItem x:Name="ExportXlsxItem" ItemClick="ExportXlsxItem_OnItemClick" Content="Сохранить xlsx" RibbonStyle="Default" Glyph="pack://application:,,,/Yamed.Icons;component/Icons/excel_2003_01.png" LargeGlyph="pack://application:,,,/Yamed.Icons;component/Icons/excel_2003_01.png" />
+
+            </dxb:ToolBarControl>
+            <dxb:ToolBarControl AllowCustomizationMenu="False" AllowHide="False" AllowQuickCustomization="False" IsCollapsed="False" ShowDragWidget="False" UseWholeRow="True" >
+                <dxb:BarButtonItem Command="Undo" Glyph="{dx:DXImage Image=Undo_32x32.png}" LargeGlyph="{dx:DXImage Image=Undo_32x32.png}" RibbonStyle="Default" Content="Отменить ввод" />
+                <dxb:BarButtonItem Command="Redo" Content="Вернуть ввод" Glyph="{dx:DXImage Image=Redo_32x32.png}" LargeGlyph="{dx:DXImage Image=Redo_32x32.png}" />
+                <dxb:BarItemSeparator/>
+                <dxb:BarButtonItem Command="Paste" Content="Вставить" Glyph="{dx:DXImage Image=Paste_32x32.png}" LargeGlyph="{dx:DXImage Image=Paste_32x32.png}" RibbonStyle="Large" />
+                <dxb:BarButtonItem Command="Copy" Content="Копировать" Glyph="{dx:DXImage Image=Copy_32x32.png}" LargeGlyph="{dx:DXImage Image=Copy_32x32.png}" RibbonStyle="SmallWithText" />
+                <dxb:BarButtonItem Command="Cut" Content="Вырезать" Glyph="{dx:DXImage Image=Cut_32x32.png}" LargeGlyph="{dx:DXImage Image=Cut_32x32.png}" RibbonStyle="SmallWithText" />
+                <dxb:BarButtonItem Command="Delete" Content="Удалить" Glyph="{dx:DXImage Image=Delete_32x32.png}" LargeGlyph="{dx:DXImage Image=Delete_32x32.png}" RibbonStyle="SmallWithText" />
+                <dxb:BarButtonItem Command="SelectAll" Content="Выделить все" Glyph="{dx:DXImage Image=SelectAll2_32x32.png}" LargeGlyph="{dx:DXImage Image=SelectAll2_32x32.png}" RibbonStyle="Default" />
+            </dxb:ToolBarControl>
+
+        </dxb:BarContainerControl>
+        <sqlEditor:AlgEditControl Grid.Row="1" x:Name="ControlRule"/>
+    </Grid>
+</UserControl>
+

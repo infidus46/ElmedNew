@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Yamed.Control.Editors.NsiControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <GridSplitter Grid.Row="1" Grid.Column="1" Width="5" ShowsPreview="False" 
+                          HorizontalAlignment="Center" VerticalAlignment="Stretch" />
+        <dxwui:AppBar IsOpen="True" HideMode="Sticky" Grid.ColumnSpan="3" dxwui:Name="MyBar">
+            <dxwui:AppBarButton Content="&#xE112;" x:Name="BackButton" Label="Назад" Click="BackButton_OnClick" AllowGlyphTheming="False" IsEllipseEnabled="True" GlyphStretch="UniformToFill"/>
+            <dxwui:AppBarSeparator/>
+            <dxwui:AppBarButton Content="&#xE109;" x:Name="NewButton" Label="Новая запись" Click="NewButton_OnClick"/>
+            <dxwui:AppBarButton Content="&#xE104;" x:Name="EditButton" Label="Редактировать запись" Click="EditButton_OnClick"/>
+            <dxwui:AppBarSeparator/>
+            <dxwui:AppBarButton Content="&#xE105;" x:Name="SaveButton" Label="Сохранить" Click="SaveButton_OnClick" IsCancel="False"/>
+            <dxwui:AppBarSeparator/>
+            <dxwui:AppBarButton Content="&#xE107;" x:Name="DeleteButton" Label="Удалить запись" HorizontalAlignment="Right" Click="DeleteButton_OnClick"/>
+        </dxwui:AppBar>
+
+        <dxg:GridControl x:Name="SprControl" Grid.Row="1" Grid.Column="0"  AutoGenerateColumns="AddNew" 
+                             ItemsSource="{Binding}" EnableSmartColumnsGeneration="True" SelectedItemChanged="SprControl_SelectedItemChanged" >
+
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn Header="ИД" Binding="{Binding ИД, Mode=OneWay}" Width="*" MinWidth="50" />
+                <dxg:GridColumn Header="Наименование" Binding="{Binding Наименование,Mode=OneWay}" Width="5*"/>
+                <dxg:GridColumn Header="Коментарий" Binding="{Binding Коментарий, Mode=TwoWay}" Width="2*"/>
+            </dxg:GridControl.Columns>
+
+            <dxg:GridControl.View>
+                <dxg:TableView/>
+            </dxg:GridControl.View>
+
+
+
+        </dxg:GridControl>
+
+        <dxwui:NavigationFrame  x:Name="NavigationFrame2"
+                                   Grid.Row="1" Grid.Column="2" AnimationType="SlideHorizontal" AnimationSpeedRatio="2"  
+                                   >
+            <dxwui:NavigationFrame.Source >
+                <dxg:GridControl x:Name="GridControl2" AutoGenerateColumns="AddNew" Grid.Row="1"  Grid.Column="1"
+					ItemsSource="{Binding}" EnableSmartColumnsGeneration="True" Grid.RowSpan="2" >
+
+
+
+                </dxg:GridControl>
+
+            </dxwui:NavigationFrame.Source>
+        </dxwui:NavigationFrame>
+    </Grid>
+</UserControl>
